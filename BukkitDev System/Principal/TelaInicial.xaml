@@ -1,0 +1,369 @@
+<Window
+    x:Class="BukkitDev_System.Principal.TelaInicial"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:BukkitDev_System.Principal"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="TelaInicial"
+    Width="800"
+    Height="500"
+    MinWidth="350"
+    MinHeight="550"
+    materialDesign:TransitionAssist.DisableTransitions="true"
+    AllowDrop="True"
+    AllowsTransparency="True"
+    Background="{DynamicResource MaterialDesignPaper}"
+    BorderThickness="0"
+    FontFamily="{DynamicResource MaterialDesignFont}"
+    Loaded="Window_Loaded"
+    ResizeMode="CanResizeWithGrip"
+    TextElement.FontSize="13"
+    TextElement.FontWeight="Regular"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    TextOptions.TextFormattingMode="Ideal"
+    TextOptions.TextRenderingMode="Auto"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Normal"
+    WindowStyle="None"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <!--  Grid do topo  -->
+            <Grid
+                VerticalAlignment="Top"
+                Background="{DynamicResource PrimaryHueMidBrush}"
+                MouseDown="Grid_MouseDown">
+                <Grid.ToolTip>
+                    <StackPanel Orientation="Vertical">
+                        <materialDesign:PackIcon HorizontalAlignment="Center" Kind="ChevronRightCircle" />
+                        <TextBlock Text="Clique com direito para fixar/desfixar tela!" TextAlignment="Center" />
+                    </StackPanel>
+                </Grid.ToolTip>
+
+                <WrapPanel HorizontalAlignment="Right">
+                    <Button Click="Button_Click" Style="{DynamicResource MaterialDesignFlatButton}">
+                        <materialDesign:PackIcon Foreground="White" Kind="WindowMinimize" />
+                    </Button>
+                    <Button
+                        VerticalAlignment="Top"
+                        Click="Button_Click_1"
+                        Style="{DynamicResource MaterialDesignFlatButton}">
+                        <materialDesign:PackIcon Foreground="White" Kind="WindowMaximize" />
+                    </Button>
+                    <Button Click="Button_Click_2" Style="{DynamicResource MaterialDesignFlatButton}">
+                        <materialDesign:PackIcon Foreground="White" Kind="Power" />
+                    </Button>
+                </WrapPanel>
+
+                <StackPanel
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <materialDesign:PackIcon
+                        Width="26"
+                        Height="26"
+                        VerticalAlignment="Center"
+                        Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                        Kind="LanguageJava" />
+                    <TextBlock
+                        x:Name="TituloPrograma_txt"
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Center"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Text="nome" />
+                </StackPanel>
+            </Grid>
+
+            <!--  Grid menu  -->
+            <Grid>
+                <Menu VerticalAlignment="Top">
+                    <MenuItem Header="Gerenciar">
+                        <MenuItem Header="Plugins">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="FilePlus" />
+                            </MenuItem.Icon>
+                            <MenuItem Click="MenuItem_Click" Header="Adicionar Plugin">
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon Kind="AddCircle" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Editar Plugin (Em Breve)">
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon Kind="CircleEditOutline" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Click="MenuItem_Click_3" Header="Listar Plugins">
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon Kind="FormatListBulleted" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Click="MenuItem_Click_6" Header="Remover Plugins">
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon Kind="DeleteCircle" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Licenças">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="Key" />
+                            </MenuItem.Icon>
+                            <MenuItem Click="MenuItem_Click_4" Header="Adicionar Licença">
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon Kind="KeyPlus" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Click="MenuItem_Click_5" Header="Listar Licenças (Em Breve)">
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon Kind="KeyChange" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Remover Licença (Em Breve)">
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon Kind="KeyRemove" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Configuraçao">
+                        <MenuItem Header="Tema">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="ThemeLightDark" />
+                            </MenuItem.Icon>
+                            <MenuItem
+                                x:Name="Light_mi"
+                                Click="MudarTema_Click"
+                                Header="Light"
+                                IsCheckable="True" />
+                            <MenuItem
+                                x:Name="Dark_mi"
+                                Click="MudarTema_Click"
+                                Header="Dark"
+                                IsCheckable="True" />
+                            <MenuItem
+                                x:Name="PadraoWindows_mi"
+                                Click="PadraoWindows_mi_Click"
+                                Header="Padrao do Windows"
+                                IsCheckable="True">
+                                <MenuItem.ToolTip>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="Se esta opçao estiver marcada" TextAlignment="Center" />
+                                        <TextBlock Text="o programa terá o tema alterado para o atual no sistema" TextAlignment="Center" />
+                                        <TextBlock Text="OBS: só funciona no winodws 10 build 1709+ (eu acho), ja que o modo escuro está disponível a partir daí!" TextAlignment="Center" />
+                                    </StackPanel>
+                                </MenuItem.ToolTip>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Cor">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="ColorLens" />
+                            </MenuItem.Icon>
+                            <MenuItem
+                                x:Name="LightBlue_mi"
+                                Click="SelecionarCorPrograma_Click"
+                                Header="Azul"
+                                IsCheckable="True"
+                                IsChecked="True" />
+                            <MenuItem
+                                x:Name="Purple_mi"
+                                Click="SelecionarCorPrograma_Click"
+                                Header="Roxo"
+                                IsCheckable="True" />
+                            <MenuItem
+                                x:Name="Pink_mi"
+                                Click="SelecionarCorPrograma_Click"
+                                Header="Rosa"
+                                IsCheckable="True" />
+                            <MenuItem
+                                x:Name="Green_mi"
+                                Click="SelecionarCorPrograma_Click"
+                                Header="Verde"
+                                IsCheckable="True" />
+                            <MenuItem
+                                x:Name="Red_mi"
+                                Click="SelecionarCorPrograma_Click"
+                                Header="Vermelho"
+                                IsCheckable="True" />
+                        </MenuItem>
+                        <MenuItem Header="Tool" Icon="{materialDesign:PackIcon TooltipOutlinePlus}">
+                            <MenuItem
+                                x:Name="AtivarTool_mi"
+                                Click="SelecionarToolPrograma_Click"
+                                Header="Ativar"
+                                IsCheckable="True"
+                                IsChecked="True" />
+                            <MenuItem
+                                x:Name="DesativarTool_mi"
+                                Click="SelecionarToolPrograma_Click"
+                                Header="Desativar"
+                                IsCheckable="True" />
+                        </MenuItem>
+                        <MenuItem Header="Menssagem" Icon="{materialDesign:PackIcon ChatBubbleOutline}">
+                            <MenuItem
+                                x:Name="AtivarMenssagem_mi"
+                                Click="MenssagemPrograma_Click"
+                                Header="Ativar"
+                                IsCheckable="True"
+                                IsChecked="True" />
+                            <MenuItem
+                                x:Name="DesativarMenssagem_mi"
+                                Click="MenssagemPrograma_Click"
+                                Header="Desativar"
+                                IsCheckable="True" />
+                        </MenuItem>
+                        <MenuItem x:Name="testeItem" Header="MySQL">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="Database" />
+                            </MenuItem.Icon>
+                            <MenuItem
+                                x:Name="LocalSelecionadoMySQL_mi"
+                                Click="TipoMySQLLocal_Click"
+                                Header="Local"
+                                IsCheckable="True"
+                                IsChecked="True" />
+                            <MenuItem
+                                x:Name="ExternoSelecionadoMySQL_mi"
+                                Click="TipoMySQLExterno_Click"
+                                Header="Externo"
+                                IsCheckable="True" />
+                            <Separator />
+                            <MenuItem Click="MenuItem_Click_1">
+                                <MenuItem.Header>
+                                    <TextBlock HorizontalAlignment="Center" Text="Config" />
+                                </MenuItem.Header>
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon Kind="Settings" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="FTP">
+                            <MenuItem.Icon>
+                                <materialDesign:PackIcon Kind="LanConnect" />
+                            </MenuItem.Icon>
+                            <MenuItem
+                                x:Name="LocalSelecionadoFTP_mi"
+                                Click="TipoFTPLocal_Click"
+                                Header="Local"
+                                IsCheckable="True"
+                                IsChecked="True" />
+                            <MenuItem
+                                x:Name="ExternoSelecionadoFTP_mi"
+                                Click="TipoFTPExterno_Click"
+                                Header="Externo"
+                                IsCheckable="True" />
+                            <Separator />
+                            <MenuItem Click="MenuItem_Click_2" Header="Config">
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon Kind="Settings" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem
+                            Header="Taxa de Transferencia"
+                            Icon="{materialDesign:PackIcon FileSend}"
+                            IsCheckable="False">
+                            <TextBlock Text="Informe um valor em Bytes" TextAlignment="Center" />
+                            <TextBlock Text="Quanto maior o numero, mais rapido *" TextAlignment="Center" />
+                            <TextBlock Text="Padrao (2048)" TextAlignment="Center" />
+                            <Separator />
+                            <TextBox
+                                x:Name="TaxaInformada_txt"
+                                Text="2048"
+                                TextAlignment="Center" />
+                            <Button
+                                x:Name="GravarTaxa_bt"
+                                Click="GravarTaxa_bt_Click"
+                                Content="Gravar"
+                                Style="{DynamicResource MaterialDesignFlatButton}" />
+                        </MenuItem>
+                        <MenuItem
+                            Header="Tamanho Maximo do Arquivo"
+                            Icon="{materialDesign:PackIcon TransferRight}"
+                            IsCheckable="False">
+                            <TextBlock Text="Tamanho Maximo do plugin (Em Bytes)" TextAlignment="Center" />
+                            <TextBlock Text="Padrao (5120)" TextAlignment="Center" />
+                            <Separator />
+                            <TextBox
+                                x:Name="TamanhoInformado_txt"
+                                Text="2048"
+                                TextAlignment="Center" />
+                            <Button
+                                x:Name="GravarTamanho_bt"
+                                Click="GravarTamanho_bt_Click"
+                                Content="Gravar"
+                                Style="{DynamicResource MaterialDesignFlatButton}" />
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+            </Grid>
+
+        </StackPanel>
+
+        <!--  ScrollViewer usersControls  -->
+        <ScrollViewer
+            x:Name="ControlesDeTela_sv"
+            Margin="0,80,0,15"
+            VerticalScrollBarVisibility="Hidden">
+            <local:HomeControl />
+        </ScrollViewer>
+
+        <!--  Botao de ajuda  -->
+        <materialDesign:PopupBox
+            x:Name="Tool_bt"
+            Width="40"
+            Height="40"
+            Margin="20"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            PlacementMode="TopAndAlignCentres"
+            Style="{DynamicResource MaterialDesignMultiFloatingActionPopupBox}">
+            <materialDesign:PopupBox.ToggleContent>
+                <materialDesign:PackIcon Kind="Help" />
+            </materialDesign:PopupBox.ToggleContent>
+            <materialDesign:PopupBox.ToggleCheckedContent>
+                <materialDesign:PackIcon
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Kind="Close" />
+            </materialDesign:PopupBox.ToggleCheckedContent>
+            <StackPanel Orientation="Vertical">
+                <Button
+                    Width="30"
+                    Height="30"
+                    Margin="0,0,0,10"
+                    Click="Button_Click_4"
+                    Content="{materialDesign:PackIcon StarRate}"
+                    Style="{DynamicResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="Avaliar"
+                    ToolTipService.Placement="Left" />
+                <Button
+                    Width="30"
+                    Height="30"
+                    Margin="0,0,0,10"
+                    Click="Button_Click_3"
+                    Content="{materialDesign:PackIcon InformationVariant}"
+                    Style="{DynamicResource MaterialDesignFloatingActionMiniDarkButton}"
+                    ToolTip="Sobre"
+                    ToolTipService.Placement="Left" />
+            </StackPanel>
+
+        </materialDesign:PopupBox>
+
+        <materialDesign:Snackbar
+            x:Name="BarraNotificacao_sb"
+            Margin="10"
+            HorizontalAlignment="Left"
+            MessageQueue="{materialDesign:MessageQueue}"
+            Opacity=".7" />
+
+        <!--  DialogHost  -->
+        <materialDesign:DialogHost
+            x:Name="MensagemDialog_dh"
+            d:IsHidden="True"
+            Identifier="RootDialog" />
+    </Grid>
+</Window>

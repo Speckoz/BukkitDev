@@ -1,0 +1,17 @@
+﻿using BukkitDev_System._dep.SQLite;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace BukkitDev_System._dep.MySQL
+{
+	internal class PegarConexaoMySQL
+	{
+		public static async Task<string> ConexaoAsync()
+		{
+			//pegando dados de conexao do MySQL de dentro SQLite
+			List<string> db = await new CriarBanco().PegarAsync(PegarInfos.NomeArquivoSQLite, PegarInfos.ConfigMySQL, "mysql");
+
+			return $"server={db[0]};user={db[1]};password={db[2]};port={db[3]};database={db[4]}";
+		}
+	}
+}

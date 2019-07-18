@@ -1,0 +1,149 @@
+﻿<Window
+    x:Class="BukkitDev_System.Principal.Sobre"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:BukkitDev_System.Principal"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Sobre"
+    Width="400"
+    Height="300"
+    AllowsTransparency="True"
+    Background="{x:Null}"
+    MouseDown="Window_MouseDown"
+    ResizeMode="NoResize"
+    Topmost="True"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border
+        Background="{DynamicResource MaterialDesignBody}"
+        CornerRadius="25"
+        TextElement.FontSize="13"
+        TextElement.FontWeight="Regular"
+        TextElement.Foreground="{DynamicResource MaterialDesignPaper}"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto">
+        <Grid>
+            <TextBlock
+                Margin="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="20"
+                FontWeight="DemiBold"
+                Foreground="{StaticResource PrimaryHueDarkBrush}"
+                Text="Informaçoes" />
+            <Image
+                Width="120"
+                Height="120"
+                Margin="50"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Source="/BukkitDev System;component/favicon.ico" />
+            <StackPanel Margin="40,60,0,0" Orientation="Vertical">
+                <TextBlock x:Name="NomeShow_txt" Text="Nome: " />
+                <TextBlock />
+                <TextBlock x:Name="VersionShow_txt" Text="Versao: " />
+                <TextBlock />
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Desenvolvedor: " />
+                        <TextBlock ToolTip="Facebook" ToolTipService.Placement="Top">
+                            <Hyperlink NavigateUri="Contato" RequestNavigate="Hyperlink_RequestNavigate">
+                                Logikoz
+                            </Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="30,5,0,0" Orientation="Horizontal">
+                        <Button
+                            HorizontalAlignment="Left"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Cursor="Arrow"
+                            Style="{x:Null}"
+                            ToolTip="Logikoz#9821"
+                            ToolTipService.Placement="Top">
+                            <materialDesign:PackIcon Foreground="#FF767BEA" Kind="Discord" />
+                        </Button>
+                        <Button
+                            HorizontalAlignment="Left"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Click="Button_Click_1"
+                            Style="{x:Null}"
+                            ToolTip="Twitter"
+                            ToolTipService.Placement="Top">
+                            <materialDesign:PackIcon Foreground="#FF4AF3EB" Kind="Twitter" />
+                        </Button>
+                        <Button
+                            HorizontalAlignment="Left"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Click="Button_Click_2"
+                            Style="{x:Null}"
+                            ToolTip="Instagram"
+                            ToolTipService.Placement="Top">
+                            <materialDesign:PackIcon Kind="Instagram">
+                                <materialDesign:PackIcon.Foreground>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <LinearGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterX="0.5" CenterY="0.5" />
+                                                <SkewTransform CenterX="0.5" CenterY="0.5" />
+                                                <RotateTransform Angle="-125.538" CenterX="0.5" CenterY="0.5" />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </LinearGradientBrush.RelativeTransform>
+                                        <GradientStop Offset="0" Color="#feda75" />
+                                        <GradientStop Offset="0.171" Color="#fa7e1e" />
+                                        <GradientStop Offset="0.558" Color="#d62976" />
+                                        <GradientStop Offset="1" Color="#4f5bd5" />
+                                        <GradientStop Offset="0.781" Color="#962fbf" />
+                                    </LinearGradientBrush>
+                                </materialDesign:PackIcon.Foreground>
+                            </materialDesign:PackIcon>
+                        </Button>
+                        <Button
+                            HorizontalAlignment="Left"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Click="Button_Click_3"
+                            Style="{x:Null}"
+                            ToolTip="GitHub"
+                            ToolTipService.Placement="Top">
+                            <materialDesign:PackIcon Foreground="{StaticResource MaterialDesignPaper}" Kind="GithubCircle" />
+                        </Button>
+                    </StackPanel>
+                    <TextBlock Text="Linguagem/Plataforma:" />
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon
+                            Width="30"
+                            Height="30"
+                            Kind="LanguageCsharp" />
+                        <materialDesign:PackIcon
+                            Width="30"
+                            Height="30"
+                            Kind="DotNet" />
+                    </StackPanel>
+
+                </StackPanel>
+            </StackPanel>
+            <materialDesign:PackIcon
+                Margin="0,20,20,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Kind="Information"
+                ToolTip="Aprimeira impressao é a que fica!"
+                ToolTipService.Placement="Left" />
+            <!--  Fechar janela  -->
+            <Button
+                Margin="10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Click="Button_Click"
+                Content="Fechar"
+                Style="{StaticResource MaterialDesignFlatButton}" />
+        </Grid>
+    </Border>
+</Window>
