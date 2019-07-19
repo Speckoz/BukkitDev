@@ -40,16 +40,12 @@ namespace BukkitDev_System._dep
 				PegarInfos.TamanhoLimitePlugin = TamanhoMaxPlugin(dados);
 				PegarInfos.Tema = TemaPrograma(dados);
 				PegarInfos.Cor = CorPrograma(dados);
-				PegarInfos.TaxaTransferencia = TaxaTransfer(dados);
+				PegarInfos.TaxaTransferencia = ushort.Parse(dados[5]);
 			}
 			catch (Exception e)
 			{
 				MostrarExceptions(e);
 			}
-		}
-		private static ushort TaxaTransfer(List<string> dados)
-		{
-			return ushort.Parse(dados[5]);
 		}
 		private static string CorPrograma(List<string> dados)
 		{
