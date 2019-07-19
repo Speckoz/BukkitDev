@@ -35,37 +35,17 @@ namespace BukkitDev_System._dep
 
 			try
 			{
-				PegarInfos.ConfigMySQL = ConfigMySQL(dados);
-				PegarInfos.ConfigFTP = ConfigFTP(dados);
-				PegarInfos.TamanhoLimitePlugin = TamanhoMaxPlugin(dados);
-				PegarInfos.Tema = TemaPrograma(dados);
-				PegarInfos.Cor = CorPrograma(dados);
+				PegarInfos.ConfigMySQL = dados[0];
+				PegarInfos.ConfigFTP = dados[1];
+				PegarInfos.TamanhoLimitePlugin = ushort.Parse(dados[2]);
+				PegarInfos.Tema = dados[3];
+				PegarInfos.Cor = dados[4];
 				PegarInfos.TaxaTransferencia = ushort.Parse(dados[5]);
 			}
 			catch (Exception e)
 			{
 				MostrarExceptions(e);
 			}
-		}
-		private static string CorPrograma(List<string> dados)
-		{
-			return dados[4];
-		}
-		private static string TemaPrograma(List<string> dados)
-		{
-			return dados[3];
-		}
-		private static ushort TamanhoMaxPlugin(List<string> dados)
-		{
-			return ushort.Parse(dados[2]);
-		}
-		private static string ConfigFTP(List<string> dados)
-		{
-			return dados[1];
-		}
-		private static string ConfigMySQL(List<string> dados)
-		{
-			return dados[0];
 		}
 		#endregion
 	}
