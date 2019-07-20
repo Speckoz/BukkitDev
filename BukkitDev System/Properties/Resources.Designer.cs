@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BukkitDev_System.Properties {
+namespace BukkitDev.System.Properties {
     using System;
     
     
