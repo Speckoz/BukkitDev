@@ -18,7 +18,8 @@ namespace BukkitDev_System._dep
 			//Metodo: deveria mostrar o metodo onde a exceçao foi disparada, mas eu to com preguiça de estudar esse troço ai
 			//Linha: troço dificil do cao, passei horas tentando achar um jeito, e nao deu muito certo '-'
 			string MensagemErro = $"Tipo: {e.GetType().FullName}\n\nErro: {e.Message}\n\nInformaçoes: {e.StackTrace}";/*\n\nMetodo: {e.StackTrace}\n\nLinha: {new StackTrace().GetFrame(0).GetFileLineNumber()}*/
-																													  //enviando mensagem com o erro
+
+			//enviando mensagem com o erro
 			TelaInicial.EnviarMensagemDialogHostAsync(MensagemErro);
 		}
 		public static void EnviarMenssagem(string mensagem)

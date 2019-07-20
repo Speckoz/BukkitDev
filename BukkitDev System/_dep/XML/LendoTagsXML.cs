@@ -7,6 +7,7 @@ namespace BukkitDev_System._dep.XML
 {
 	internal class LendoTagsXML
 	{
+		//
 		public async Task<List<string>> LerXml(string nome)
 		{
 			List<string> infos = new List<string>();

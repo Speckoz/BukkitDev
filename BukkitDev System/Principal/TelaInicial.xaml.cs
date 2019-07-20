@@ -38,18 +38,6 @@ namespace BukkitDev_System.Principal
 			barraDeNotificacao = BarraNotificacao_sb;
 			MensagemPerso = MensagemDialog_dh;
 		}
-
-		[Obsolete]
-		private void Tema_Tick(object sender, EventArgs e)
-		{
-			TemaWindows temaConfig = new TemaWindows();
-			if (temaConfig.TemaClaroHabilitado().@string != temaAtual)
-			{
-				new PaletteHelper().SetLightDark(!temaConfig.TemaClaroHabilitado().@bool);
-				//MetodosConstantes.EnviarMenssagem("foi mudado");
-				temaAtual = temaConfig.TemaClaroHabilitado().@string;
-			}
-		}
 		#region Botoes do topo
 		//minimiza a tela
 		private void Button_Click(object sender, RoutedEventArgs e)
@@ -203,6 +191,17 @@ namespace BukkitDev_System.Principal
 			}
 		}
 		#endregion
+		[Obsolete]
+		private void Tema_Tick(object sender, EventArgs e)
+		{
+			TemaWindows temaConfig = new TemaWindows();
+			if (temaConfig.TemaClaroHabilitado().@string != temaAtual)
+			{
+				new PaletteHelper().SetLightDark(!temaConfig.TemaClaroHabilitado().@bool);
+				//MetodosConstantes.EnviarMenssagem("foi mudado");
+				temaAtual = temaConfig.TemaClaroHabilitado().@string;
+			}
+		}
 		//mover a tela
 		private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
 		{

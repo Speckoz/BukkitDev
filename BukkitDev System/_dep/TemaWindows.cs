@@ -28,7 +28,7 @@ namespace BukkitDev_System._dep
 			{
 				//verificando qual a cor que esta na config
 				//dark ou light
-				bool resultado = TemaConfig();
+				bool resultado = PegarInfos.Tema == "Dark";
 				//atribuino a negaçao do resultado a propriedade IsChecked do menuItem light
 				Light_mi.IsChecked = !resultado;
 				//atribuino o resultado a propriedade IsChecked do menuItem dark
@@ -38,10 +38,6 @@ namespace BukkitDev_System._dep
 				//caso contrario, para light
 				new PaletteHelper().SetLightDark(resultado);
 			}
-		}
-		private bool TemaConfig()
-		{
-			return PegarInfos.Tema == "Dark";
 		}
 	}
 }
