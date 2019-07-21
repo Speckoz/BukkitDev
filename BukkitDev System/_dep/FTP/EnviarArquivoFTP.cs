@@ -20,13 +20,15 @@ namespace BukkitDev_System._dep.FTP
 					{
 						try
 						{
-							return await RetornoBool(carregando_pb, info, fileStream, stream);
+							//setando valor maximo da progressBar.
+							carregando_pb.Maximum = info.Length;
+							return await RetornoBool(carregando_pb, fileStream, stream);
 						}
 						catch (Exception e)
 						{
 							MostrarExceptionMenssagem(e, "Algo deu errado ao enviar o arquivo, verifique sua conexao!");
 							//caso aconteça qualquer erro, ele excluirá o arquivo por garantia que nao sobrará restos :D
-							new DeletarArquivoFTP().DeletarAsync(tipo, ftpArquivo, conexaoFTP);
+							_ = await new DeletarArquivoFTP().DeletarAsync(tipo, ftpArquivo, conexaoFTP);
 						}
 					}
 				}
@@ -42,26 +44,13 @@ namespace BukkitDev_System._dep.FTP
 			MetodosConstantes.MostrarExceptions(e);
 			MetodosConstantes.EnviarMenssagem(msg);
 		}
-		private async Task<bool> RetornoBool(ProgressBar carregando_pb, FileInfo info, FileStream fileStream, Stream stream)
+		private async Task<bool> RetornoBool(ProgressBar carregando_pb, FileStream fileStream, Stream stream)
 		{
 			byte[] buffer = GetBuffer();
 			//guarda a quantidade de bytes enviados
 			uint bytesEnviar = 0;
-
-			//gerando uma progressbar de dinamicamente
-			//ProgressBar bar = new ProgressBar
-			//{
-			//	Width = 70,
-			//	Height = 60,
-			//	Value = 0,
-			//	Maximum = info.Length,
-			//	//setando o style da progressbar, no caso, será circular
-			//	Style = (Style)new FrameworkElement().FindResource("MaterialDesignCircularProgressBar")
-			//};
-
+			//
 			carregando_pb.IsIndeterminate = false;
-			carregando_pb.Maximum = info.Length;
-
 			/*
              * ao entrar no loop, so sairá depois que a quantidade de bytes que existem no plugin chegar a ZERO...
              * 

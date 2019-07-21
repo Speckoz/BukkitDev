@@ -19,7 +19,25 @@ namespace BukkitDev_System._dep.SQLite
 			{
 				try
 				{
-					return await AbrirConexaoAndGetValues(tipo, con, tabela);
+					await con.OpenAsync();
+
+					using (SQLiteCommand pegar = new SQLiteCommand($"select * from {tabela} where tipo = @a", con))
+					{
+						_ = pegar.Parameters.Add(new SQLiteParameter("@a", tipo));
+
+						using (SQLiteDataReader ler = (SQLiteDataReader)await pegar.ExecuteReaderAsync())
+						{
+							List<string> d = new List<string>();
+							if (await ler.ReadAsync())
+							{
+								for (byte i = 0; i < ler.FieldCount; i++)
+								{
+									d.Add(ler.GetString(i));
+								}
+							}
+							return d;
+						}
+					}
 				}
 				catch (SQLiteException e)
 				{
@@ -27,39 +45,6 @@ namespace BukkitDev_System._dep.SQLite
 					return null;
 				}
 			}
-		}
-
-		private static async Task<List<string>> AbrirConexaoAndGetValues(string tipo, SQLiteConnection con, string tabela)
-		{
-			await con.OpenAsync();
-
-			using (SQLiteCommand pegar = new SQLiteCommand($"select * from {tabela} where tipo = @a", con))
-			{
-				return await ParametroAndExecutarCmdAsync(tipo, pegar);
-			}
-		}
-
-		private static async Task<List<string>> ParametroAndExecutarCmdAsync(string tipo, SQLiteCommand pegar)
-		{
-			_ = pegar.Parameters.Add(new SQLiteParameter("@a", tipo));
-
-			using (SQLiteDataReader ler = (SQLiteDataReader)await pegar.ExecuteReaderAsync())
-			{
-				List<string> d = new List<string>();
-				return await RetornarVetorConexaoAsync(ler, d);
-			}
-		}
-
-		private static async Task<List<string>> RetornarVetorConexaoAsync(SQLiteDataReader ler, List<string> d)
-		{
-			if (await ler.ReadAsync())
-			{
-				for (byte i = 0; i < ler.FieldCount; i++)
-				{
-					d.Add(ler.GetString(i));
-				}
-			}
-			return d;
 		}
 	}
 }

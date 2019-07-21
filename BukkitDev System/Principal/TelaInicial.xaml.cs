@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Threading;
 
@@ -90,8 +91,21 @@ namespace BukkitDev_System.Principal
 				ConfigTaxaEnvioPlugin();
 				//setando valor do tamanho maximo do plugin permitido
 				ConfigTamanhoMaxPlugin();
+				//config imagem a ser usada
+				ConfigImagem();
 			}
 		}
+
+		private void ConfigImagem()
+		{
+			if (!string.IsNullOrEmpty(PegarInfos.ImagemPlugin))
+			{
+				bool re = PegarInfos.ImagemPlugin.Equals("true");
+				EscolherImagemTipo_tb.IsChecked = re;
+				EscolherImagemPadrao_st.IsEnabled = re;
+			}
+		}
+
 		private void ConfigTamanhoMaxPlugin()
 		{
 			if (!string.IsNullOrEmpty(PegarInfos.TamanhoLimitePlugin.ToString()))
@@ -436,6 +450,22 @@ namespace BukkitDev_System.Principal
 			AtivarMenssagem_mi.IsChecked = @is;
 			DesativarMenssagem_mi.IsChecked = !@is;
 			barraDeNotificacao.IsEnabled = @is;
+		}
+		// ativar/desativar congiguraçao de imagem.
+		private async void EscolherImagemTipo_tb_Click(object sender, RoutedEventArgs e)
+		{
+			if (((ToggleButton)sender).IsChecked.Equals(true))
+			{
+				new AtualizandoDadosXML().AtualizarAsync(PegarInfos.NomeArquivoXML, "ImagemPlugin", "true");
+				EscolherImagemPadrao_st.IsEnabled = true;
+			}
+			else
+			{
+				new AtualizandoDadosXML().AtualizarAsync(PegarInfos.NomeArquivoXML, "ImagemPlugin", "false");
+				EscolherImagemPadrao_st.IsEnabled = false;
+			}
+			await MetodosConstantes.LerXMLAsync();
+			MetodosConstantes.EnviarMenssagem("Configuraçao de imagem selecionada foi alterada!");
 		}
 		#endregion
 		#region Controles de Usuarios

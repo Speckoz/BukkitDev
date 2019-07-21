@@ -9,9 +9,9 @@ namespace BukkitDev_System._dep.XML
 	{
 		public async void AtualizarAsync(string nome, string itemParaAlterar, string novoValor)
 		{
-			if (!File.Exists(PegarInfos.NomeArquivoXML))
+			if (!File.Exists(nome))
 			{
-				await CriandoArquivoXML.VerificarECriarAsync(PegarInfos.NomeArquivoXML);
+				await CriandoArquivoXML.VerificarECriarAsync(nome);
 			}
 			try
 			{

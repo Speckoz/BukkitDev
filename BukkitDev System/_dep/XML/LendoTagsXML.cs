@@ -10,7 +10,7 @@ namespace BukkitDev_System._dep.XML
 		/// <summary>
 		/// Leitura do arquivo XML que contém as informaçoes de configuraçao do software.
 		/// </summary>
-		/// <param name="nome">Nome do arquivo. Default 'BukkitdevConfigs.xml'</param>
+		/// <param name="nome">Nome do arquivo, por padrao está em uma propriedade em <see cref="PegarInfos.NomeArquivoXML"/></param>
 		/// <returns></returns>
 		public async Task<List<string>> LerXml(string nome)
 		{

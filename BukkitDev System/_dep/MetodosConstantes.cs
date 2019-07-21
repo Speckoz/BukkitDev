@@ -42,6 +42,7 @@ namespace BukkitDev_System._dep
 				PegarInfos.Tema = dados[3];
 				PegarInfos.Cor = dados[4];
 				PegarInfos.TaxaTransferencia = ushort.Parse(dados[5]);
+				PegarInfos.ImagemPlugin = dados[6];
 			}
 			catch (Exception e)
 			{

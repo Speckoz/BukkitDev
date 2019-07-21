@@ -48,12 +48,15 @@
 		/// </summary>
 		public static string Tema { get; set; }
 		/// <summary>
-		/// Seta/Pega a Cor do software, veja as cores suportadas aqui
-		/// </summary>
+		/// Seta/Pega a Cor do software, veja as cores suportadas em
 		/// <see cref="https://github.com/LogikozRC/BukkitDev-System"/>
-		/// <seealso cref="Math.Divide(int, int)"/>
-
+		/// </summary>
 		public static string Cor { get; set; }
+		/// <summary>
+		/// Seta/Pega a informaçao se será usada a imagem padrao ou uma personalizada.
+		/// (true) Personalizada | (false) Padrao.
+		/// </summary>
+		public static string ImagemPlugin { get; set; }
 		//======================= Propriedades =======================
 	}
 }

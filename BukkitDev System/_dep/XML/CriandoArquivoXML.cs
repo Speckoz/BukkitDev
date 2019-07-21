@@ -64,6 +64,7 @@ namespace BukkitDev_System._dep.XML
 				await doc.WriteElementStringAsync(null, "Tema", null, "Dark");
 				await doc.WriteElementStringAsync(null, "Cor", null, "Purple");
 				await doc.WriteElementStringAsync(null, "TaxaDeTransferencia", null, "2048");
+				await doc.WriteElementStringAsync(null, "ImagemPlugin", null, "false");
 			}
 			catch (Exception e)
 			{

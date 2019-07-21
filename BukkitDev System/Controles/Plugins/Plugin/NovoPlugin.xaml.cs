@@ -188,7 +188,10 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 								}
 								catch
 								{
-									new DeletarArquivoFTP().DeletarAsync("Images", idP + Path.GetExtension(caminhoImagem), dados);
+									if (await new DeletarArquivoFTP().DeletarAsync("Images", idP + Path.GetExtension(caminhoImagem), dados))
+									{
+										MetodosConstantes.EnviarMenssagem("Algo ao adicionar arquivo do plugin no servidor!\nExcluindo restos...");
+									}
 								}
 							}
 
@@ -198,7 +201,6 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 						catch (Exception erro)
 						{
 							MetodosConstantes.MostrarExceptions(erro);
-							new DeletarArquivoFTP().DeletarAsync("Plugin", idP + Path.GetExtension(CaminhoArquivo_txt.Text), CamposDados);
 						}
 
 						//ocultando grid novamente

@@ -124,10 +124,7 @@
                         </MenuItem>
                     </MenuItem>
                     <MenuItem Header="Config">
-                        <MenuItem Header="Tema">
-                            <MenuItem.Icon>
-                                <materialDesign:PackIcon Kind="ThemeLightDark" />
-                            </MenuItem.Icon>
+                        <MenuItem Header="Tema" Icon="{materialDesign:PackIcon ThemeLightDark}">
                             <MenuItem
                                 x:Name="Light_mi"
                                 Click="MudarTema_Click"
@@ -152,10 +149,7 @@
                                 </MenuItem.ToolTip>
                             </MenuItem>
                         </MenuItem>
-                        <MenuItem Header="Cor">
-                            <MenuItem.Icon>
-                                <materialDesign:PackIcon Kind="ColorLens" />
-                            </MenuItem.Icon>
+                        <MenuItem Header="Cor" Icon="{materialDesign:PackIcon ColorLens}">
                             <MenuItem
                                 x:Name="LightBlue_mi"
                                 Click="SelecionarCorPrograma_Click"
@@ -209,10 +203,58 @@
                                 Header="Desativar"
                                 IsCheckable="True" />
                         </MenuItem>
-                        <MenuItem Header="MySQL">
-                            <MenuItem.Icon>
-                                <materialDesign:PackIcon Kind="Database" />
-                            </MenuItem.Icon>
+                        <MenuItem Header="Config Imagem" Icon="{materialDesign:PackIcon Image}">
+                            <TextBlock Text="Escolha entre Padrao ou Personalisada" TextAlignment="Center" />
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                <TextBlock Text="Padrao" ToolTipService.ShowDuration="100000">
+                                    <TextBlock.ToolTip>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="Quando está desativada a imagem que será/deve ser" TextAlignment="Center" />
+                                            <TextBlock Text="usava ficara dentro do servidor com o nome" TextAlignment="Center" />
+                                            <TextBlock Text="padrao de 'Default.png' e está dentro do mesmo diretorio" TextAlignment="Center" />
+                                            <TextBlock Text="das outras imagens." TextAlignment="Center" />
+                                        </StackPanel>
+                                    </TextBlock.ToolTip>
+                                </TextBlock>
+                                <ToggleButton
+                                    x:Name="EscolherImagemTipo_tb"
+                                    Margin="10,0,10,0"
+                                    Click="EscolherImagemTipo_tb_Click">
+                                    <materialDesign:PackIcon Foreground="Black" Kind="ImageFilterDrama" />
+                                    <materialDesign:ToggleButtonAssist.OnContent>
+                                        <materialDesign:PackIcon Foreground="White" Kind="ImageOutline" />
+                                    </materialDesign:ToggleButtonAssist.OnContent>
+                                </ToggleButton>
+                                <TextBlock Text="Personalizada" ToolTipService.ShowDuration="100000">
+                                    <TextBlock.ToolTip>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="Quando está ativado a imagem será voce voce que irá escolher" TextAlignment="Center" />
+                                            <TextBlock Text="quando estiver adicionando ou editando um plugin." TextAlignment="Center" />
+                                        </StackPanel>
+                                    </TextBlock.ToolTip>
+                                </TextBlock>
+                            </StackPanel>
+                            <StackPanel
+                                x:Name="EscolherImagemPadrao_st"
+                                HorizontalAlignment="Center"
+                                IsEnabled="False"
+                                Orientation="Horizontal">
+                                <Ellipse Width="30" Height="30">
+                                    <Ellipse.Fill>
+                                        <ImageBrush
+                                            x:Name="ImagemPadraol_img"
+                                            ImageSource="/BukkitDev System;component/favicon.ico"
+                                            Stretch="UniformToFill" />
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <Button
+                                    Margin="10,0,0,0"
+                                    BorderBrush="{DynamicResource PrimaryHueMidBrush}"
+                                    Content="Escolher imagem"
+                                    Style="{StaticResource MaterialDesignOutlinedButton}" />
+                            </StackPanel>
+                        </MenuItem>
+                        <MenuItem Header="MySQL" Icon="{materialDesign:PackIcon Database}">
                             <MenuItem
                                 x:Name="LocalSelecionadoMySQL_mi"
                                 Click="TipoMySQLLocal_Click"
@@ -234,10 +276,7 @@
                                 </MenuItem.Icon>
                             </MenuItem>
                         </MenuItem>
-                        <MenuItem Header="FTP">
-                            <MenuItem.Icon>
-                                <materialDesign:PackIcon Kind="LanConnect" />
-                            </MenuItem.Icon>
+                        <MenuItem Header="FTP" Icon="{materialDesign:PackIcon LanConnect}">
                             <MenuItem
                                 x:Name="LocalSelecionadoFTP_mi"
                                 Click="TipoFTPLocal_Click"
@@ -256,10 +295,7 @@
                                 </MenuItem.Icon>
                             </MenuItem>
                         </MenuItem>
-                        <MenuItem
-                            Header="Taxa de Transferencia"
-                            Icon="{materialDesign:PackIcon FileSend}"
-                            IsCheckable="False">
+                        <MenuItem Header="Taxa de Transferencia" Icon="{materialDesign:PackIcon FileSend}">
                             <TextBlock Text="Informe um valor em Bytes" TextAlignment="Center" />
                             <TextBlock Text="Quanto maior o numero, mais rapido *" TextAlignment="Center" />
                             <TextBlock Text="Padrao (2048)" TextAlignment="Center" />
@@ -274,10 +310,7 @@
                                 Content="Gravar"
                                 Style="{DynamicResource MaterialDesignFlatButton}" />
                         </MenuItem>
-                        <MenuItem
-                            Header="Tamanho Maximo do Arquivo"
-                            Icon="{materialDesign:PackIcon TransferRight}"
-                            IsCheckable="False">
+                        <MenuItem Header="Tamanho Maximo do Arquivo" Icon="{materialDesign:PackIcon TransferRight}">
                             <TextBlock Text="Tamanho Maximo do plugin (Em Bytes)" TextAlignment="Center" />
                             <TextBlock Text="Padrao (5120)" TextAlignment="Center" />
                             <Separator />
