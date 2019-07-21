@@ -83,7 +83,7 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 					if (imgDefPers)
 					{
 						PegarConexaoMySQL_FTP pegarConexao = new PegarConexaoMySQL_FTP();
-						List<string> con = await pegarConexao.PegarAsync(PegarInfos.NomeArquivoXML, PegarInfos.ConfigFTP, "ftp");
+						List<string> con = await pegarConexao.PegarAsync(PegarInfos.NomeArquivoSQLite, PegarInfos.ConfigFTP, "ftp");
 						_ = await new DeletarArquivoFTP().DeletarAsync("Images", $"{s.Content}.png", con);
 					}
 					//removendo Chip que foi clicado

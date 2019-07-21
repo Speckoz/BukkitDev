@@ -18,6 +18,10 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 		public NovoPlugin()
 		{
 			InitializeComponent();
+			if (PegarInfos.ImagemPlugin.Equals("false"))
+			{
+				cardImagemPlugin.Visibility = Visibility.Collapsed;
+			}
 		}
 		//tabela usada para guardar 
 		private const string Tabela = "pluginlist";
@@ -26,7 +30,6 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 		//alterar imagem e guardar o path da imagem na var {caminhoImagem} 
 		private void Image_MouseDown(object sender, MouseButtonEventArgs e)
 		{
-			//AdicionarPlugins add = new AdicionarPlugins(PegarInfos.NomeArquivoSQLite);
 			OpenFileDialog procurarImg = new OpenFileDialog
 			{
 				//por enquanto so tem suporte a .png, mas se achar melhor pode 
@@ -44,7 +47,7 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 					return;
 				}
 				//colocando imagem selecionada no campo.
-				ImagemdoPlugin_img.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(caminhoImagem));
+				ImagemPlugin_img.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(caminhoImagem));
 			}
 		}
 		//procurar plugin e guardar caminho
@@ -91,7 +94,7 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 			if (await TelaInicial.EscolhaDialogHostAsync("Voce tem certeza que deseja limpar todos os campos?"))
 			{
 				caminhoImagem = null;
-				ImagemdoPlugin_img.Source = null;
+				ImagemPlugin_img.Source = null;
 				ExcluirArquivo_bt.IsEnabled = false;
 				ProcurarArquivo_bt.IsEnabled = true;
 				CaminhoArquivo_txt.Clear();
@@ -115,12 +118,18 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 			if (!await new Utils().VerificarExisteAsync(idP.ToString(), Tabela, "id"))
 			{
 				//verificando se o cara escolheu alguma imagem
-				if (!string.IsNullOrEmpty(caminhoImagem))
+				if(PegarInfos.ImagemPlugin.Equals("true"))
 				{
-					//verificando se o cara escolheu algum plugin
-					if (!string.IsNullOrEmpty(CaminhoArquivo_txt.Text))
+					if (string.IsNullOrEmpty(caminhoImagem))
 					{
-						List<string> CamposDados = new List<string>
+						MetodosConstantes.EnviarMenssagem(mensagem: "Voce presica escolher uma imagem!");
+						return;
+					}
+				}
+				//verificando se o cara escolheu algum plugin
+				if (!string.IsNullOrEmpty(CaminhoArquivo_txt.Text))
+				{
+					List<string> CamposDados = new List<string>
 						{
 							NomeDoPlugin_txt.Text,
 							AutorDoPlugin_txt.Text,
@@ -129,92 +138,84 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 							PrecoDoPlugin_txt.Text,
 							DescricaoDoPlugin_txt.Text,
 							//bool: img padrao(0) ou personalizada(1)
-							CaminhoArquivo_txt.Text != string.Empty ? "1" : "0"
+							PegarInfos.ImagemPlugin.Equals("true") ? "1" : "0"
 						};
-						//verificando se é free ou pago, caso seja free, adicionando 0, pra nao ir como null pro banco
-						if (CamposDados[3] == "Gratuito")
+					//verificando se é free ou pago, caso seja free, adicionando 0, pra nao ir como null pro banco
+					if (CamposDados[3] == "Gratuito")
+					{
+						CamposDados[4] = "0";
+					}
+					//fazendo as demais verificaçoes de campos vazios
+					foreach (string @string in CamposDados)
+					{
+						if (string.IsNullOrEmpty(@string))
 						{
-							CamposDados[4] = "0";
+							MetodosConstantes.EnviarMenssagem(mensagem: "Voce precisa preencher todos os campos!");
+							return;
 						}
-						//fazendo as demais verificaçoes de campos vazios
-						foreach (string @string in CamposDados)
+					}
+
+					try
+					{
+						//desativando botao para evitar bugs da gambiarra
+						AgruparBtArquivo_pb.IsEnabled = false;
+
+						textoTipo_txt.Text = "Plugin";
+						//pegando as informaçoes de conexao do ftp de dentro do SQLite
+						List<string> dados = await new PegarConexaoMySQL_FTP().PegarAsync(nome: PegarInfos.NomeArquivoSQLite, tipo: PegarInfos.ConfigFTP, "ftp");
+
+						//mostrando progresso bar
+						FundoCarregando_gd.Visibility = Visibility.Visible;
+
+						if (await new EnviarArquivoFTP().EnviarAsync(
+						//tipo do envio (Plugin|Imagem) para saber em qual pasta por pelo ftp
+						"Plugin",
+						//caminho do arquivo (plugin)
+						CaminhoArquivo_txt.Text,
+						//pegando apenas o nome do plugin de dentro do path para nomear o arquivo dentro do servidor
+						idP + Path.GetExtension(CaminhoArquivo_txt.Text),
+						//conexao ftp
+						dados,
+						//esse grid é o que mostra a progressbar dentro do card
+						Progresso_pb))
 						{
-							if (string.IsNullOrEmpty(@string))
+							textoTipo_txt.Text = "Imagem";
+							try
 							{
-								MetodosConstantes.EnviarMenssagem(mensagem: "Voce precisa preencher todos os campos!");
-								return;
-							}
-						}
-
-						try
-						{
-							//desativando botao para evitar bugs da gambiarra
-							AgruparBtArquivo_pb.IsEnabled = false;
-
-							textoTipo_txt.Text = "Plugin";
-							PegarConexaoMySQL_FTP get = new PegarConexaoMySQL_FTP();
-
-							//pegando as informaçoes de conexao do ftp de dentro do SQLite
-							List<string> dados = await get.PegarAsync(nome: PegarInfos.NomeArquivoSQLite, tipo: PegarInfos.ConfigFTP, "ftp");
-
-							//mostrando progresso bar
-							FundoCarregando_gd.Visibility = Visibility.Visible;
-
-							if (await new EnviarArquivoFTP().EnviarAsync(
-							//tipo do envio (Plugin|Imagem) para saber em qual pasta por pelo ftp
-							"Plugin",
-							//caminho do arquivo (plugin)
-							CaminhoArquivo_txt.Text,
-							//pegando apenas o nome do plugin de dentro do path para nomear o arquivo dentro do servidor
-							idP + Path.GetExtension(CaminhoArquivo_txt.Text),
-							//conexao ftp
-							dados,
-							//esse grid é o que mostra a progressbar dentro do card
-							Progresso_pb))
-							{
-								textoTipo_txt.Text = "Imagem";
-								try
+								if (PegarInfos.ImagemPlugin.Equals("true"))
 								{
 									//enviando imagem para o servidor
-									if (await new EnviarArquivoFTP().EnviarAsync(tipo: "Images", caminho: caminhoImagem, ftpArquivo: idP + Path.GetExtension(caminhoImagem), conexaoFTP: dados, carregando_pb: Progresso_pb))
-									{
-										//adicionando informaçoes do plugin no banco de dados
-										if (await new AdicionarPlugins().AdicionarDadosAsync(id: idP, dados: CamposDados))
-										{
-											//enviando mensagem de sucesso
-											MetodosConstantes.EnviarMenssagem(mensagem: "Plugin Adicionado com sucesso");
-										}
-									}
+									_ = await new EnviarArquivoFTP().EnviarAsync(tipo: "Images", caminho: caminhoImagem, ftpArquivo: idP + Path.GetExtension(caminhoImagem), conexaoFTP: dados, carregando_pb: Progresso_pb);
 								}
-								catch
+								//adicionando informaçoes do plugin no banco de dados
+								_ = await new AdicionarPlugins().AdicionarDadosAsync(id: idP, dados: CamposDados);
+								//enviando mensagem de sucesso
+								MetodosConstantes.EnviarMenssagem(mensagem: "Plugin Adicionado com sucesso");
+							}
+							catch
+							{
+								if (await new DeletarArquivoFTP().DeletarAsync("Images", idP + Path.GetExtension(caminhoImagem), dados))
 								{
-									if (await new DeletarArquivoFTP().DeletarAsync("Images", idP + Path.GetExtension(caminhoImagem), dados))
-									{
-										MetodosConstantes.EnviarMenssagem("Algo ao adicionar arquivo do plugin no servidor!\nExcluindo restos...");
-									}
+									MetodosConstantes.EnviarMenssagem("Algo ao adicionar arquivo do plugin no servidor!\nExcluindo restos...");
 								}
 							}
-
-							//ativando botao novamente
-							AgruparBtArquivo_pb.IsEnabled = true;
-						}
-						catch (Exception erro)
-						{
-							MetodosConstantes.MostrarExceptions(erro);
 						}
 
-						//ocultando grid novamente
-						FundoCarregando_gd.Visibility = Visibility.Collapsed;
+						//ativando botao novamente
+						AgruparBtArquivo_pb.IsEnabled = true;
 					}
-					else
+					catch (Exception erro)
 					{
-						MetodosConstantes.EnviarMenssagem(mensagem: "Voce presica escolher o arquivo do plugin");
-						return;
+						MetodosConstantes.MostrarExceptions(erro);
 					}
+
+					//ocultando grid novamente
+					FundoCarregando_gd.Visibility = Visibility.Collapsed;
 				}
 				else
 				{
-					MetodosConstantes.EnviarMenssagem(mensagem: "Voce presica escolher uma imagem!");
+					MetodosConstantes.EnviarMenssagem(mensagem: "Voce presica escolher o arquivo do plugin");
+					return;
 				}
 			}
 			else
@@ -228,10 +229,16 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 			return await new Utils().GerarIdAsync(100000, 999999, Tabela, "id");
 		}
 
-		//adiçoes futuras...
-		private void ImagemPersonalizada_tb_Click(object sender, RoutedEventArgs e)
+		private void UserControl_MouseDown(object sender, MouseButtonEventArgs e)
 		{
-
+			if (PegarInfos.ImagemPlugin.Equals("false"))
+			{
+				cardImagemPlugin.Visibility = Visibility.Collapsed;
+			}
+			else
+			{
+				cardImagemPlugin.Visibility = Visibility.Visible;
+			}
 		}
 	}
 }
