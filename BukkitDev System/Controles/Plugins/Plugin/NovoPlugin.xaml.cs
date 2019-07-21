@@ -56,7 +56,7 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 			OpenFileDialog pluginProcurar = new OpenFileDialog
 			{
 				Title = "Procurar Plugin de Minerafiti",
-				Filter = "JAR Files (*.jar)|*.jar|RAR Files (*.rar)|*.rar"
+				Filter = "JAR Files (*.jar)|*.jar"
 			};
 			if (pluginProcurar.ShowDialog() == true)
 			{

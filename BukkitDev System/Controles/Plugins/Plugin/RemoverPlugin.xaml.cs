@@ -77,15 +77,20 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 			RemoverItem removerPlugin = new RemoverItem();
 			try
 			{
+				//apagando plugin do banco e guardando resultados em tuplas
 				(bool result, string nomePlugin, bool imgDefPers) = await removerPlugin.ApagarAsync(uint.Parse((string)s.Content));
 				if (result)
 				{
+					//pegando credenciais do FTP
+					List<string> con = await new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, PegarInfos.ConfigFTP, "ftp");
+					//verificando se o plugin existe imagem personalizada
 					if (imgDefPers)
 					{
-						PegarConexaoMySQL_FTP pegarConexao = new PegarConexaoMySQL_FTP();
-						List<string> con = await pegarConexao.PegarAsync(PegarInfos.NomeArquivoSQLite, PegarInfos.ConfigFTP, "ftp");
-						_ = await new DeletarArquivoFTP().DeletarAsync("Images", $"{s.Content}.png", con);
+						//removendo imagem do servidor
+						_ = await new DeletarArquivoFTP().DeletarAsync("Images", $"{(string)s.Content}.png", con);
 					}
+					//removendo plugin do servidor
+					_ = await new DeletarArquivoFTP().DeletarAsync("Plugin", $"{(string)s.Content}.jar", con);
 					//removendo Chip que foi clicado
 					ListChips_wp.Children.Remove(s);
 					//removendo pluginID da lista
