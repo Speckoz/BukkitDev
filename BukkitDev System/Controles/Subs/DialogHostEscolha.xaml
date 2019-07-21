@@ -22,7 +22,6 @@
                 Click="Aceitar_bt_Click"
                 Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
                 Content="Aceitar"
-                IsDefault="False"
                 Style="{DynamicResource MaterialDesignFlatButton}" />
             <Button
                 Margin="0,10,10,0"

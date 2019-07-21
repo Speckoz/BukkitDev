@@ -14,12 +14,7 @@ namespace BukkitDev_System._dep.XML
 
 		private static async Task<bool> CriarArquivo(string nome)
 		{
-			XmlWriterSettings settings = new XmlWriterSettings
-			{
-				Async = true,
-			};
-
-			using (XmlWriter doc = XmlWriter.Create(nome, settings))
+			using (XmlWriter doc = XmlWriter.Create(nome, Configuracao()))
 			{
 				try
 				{
@@ -32,6 +27,15 @@ namespace BukkitDev_System._dep.XML
 				}
 			}
 		}
+
+		private static XmlWriterSettings Configuracao()
+		{
+			return new XmlWriterSettings
+			{
+				Async = true,
+			};
+		}
+
 		private static async Task<bool> InserirDadosArquivoAsync(XmlWriter doc)
 		{
 			try

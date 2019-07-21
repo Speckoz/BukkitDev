@@ -33,7 +33,7 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 				Filter = "PNG Files (*.png)|*.png",
 				Title = "Procurar Imagem"
 			};
-			if (procurarImg.ShowDialog() == true)
+			if (procurarImg.ShowDialog().Equals(true))
 			{
 				//colocando caminho do imagem na var
 				caminhoImagem = procurarImg.FileName;
@@ -43,11 +43,6 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 					MetodosConstantes.EnviarMenssagem("Voce precisa escolher uma imagem de no max 2MiB");
 					return;
 				}
-				//if (new Bitmap(procurarImg.FileName).Width > 512 || img.Height > 512)
-				//{
-				//    MetodosConstantes.EnviarMenssagem("Voce precisa escolher uma imagem de no maximo 512x512");
-				//    return;
-				//}
 				//colocando imagem selecionada no campo.
 				ImagemdoPlugin_img.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(caminhoImagem));
 			}
@@ -115,7 +110,7 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 		//botao de adicionar o plugin
 		private async void AdicionarPlugin_bt(object sender, RoutedEventArgs e)
 		{
-			uint idP = await new Utils().GerarIdAsync(100000, 999999, Tabela, "id");
+			uint idP = await GerarCodigoPlugin();
 
 			if (!await new Utils().VerificarExisteAsync(idP.ToString(), Tabela, "id"))
 			{
@@ -193,7 +188,7 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 								}
 								catch
 								{
-									new DeletarArquivoFTP().Deletar("Images", idP + Path.GetExtension(caminhoImagem), dados);
+									new DeletarArquivoFTP().DeletarAsync("Images", idP + Path.GetExtension(caminhoImagem), dados);
 								}
 							}
 
@@ -203,7 +198,7 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 						catch (Exception erro)
 						{
 							MetodosConstantes.MostrarExceptions(erro);
-							new DeletarArquivoFTP().Deletar("Plugin", idP + Path.GetExtension(CaminhoArquivo_txt.Text), CamposDados);
+							new DeletarArquivoFTP().DeletarAsync("Plugin", idP + Path.GetExtension(CaminhoArquivo_txt.Text), CamposDados);
 						}
 
 						//ocultando grid novamente
@@ -225,6 +220,12 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 				MetodosConstantes.EnviarMenssagem(mensagem: "Codigo gerado ja existe, por favor clique no botao novamente!");
 			}
 		}
+
+		private static async System.Threading.Tasks.Task<uint> GerarCodigoPlugin()
+		{
+			return await new Utils().GerarIdAsync(100000, 999999, Tabela, "id");
+		}
+
 		//adiçoes futuras...
 		private void ImagemPersonalizada_tb_Click(object sender, RoutedEventArgs e)
 		{

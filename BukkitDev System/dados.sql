@@ -1,4 +1,5 @@
-create database bukkitdev;
+create database if not exists bukkitdev;
+drop database if exists bukkitdev;
 use bukkitdev;
 
 ##########################
@@ -14,27 +15,31 @@ select * from licencelist;
 truncate table pluginlist;
 truncate table licencelist;
 
-insert into pluginlist values (666666, "RC_Economy", "Logikoz", "1.0", "Gratuito", "0", "Plugin de economia para seu servidor", "1", "http://localhost/bukkitdev/images/666666.png");
-insert into licencelist values (76547845, 666666, "gfds5-gjvc4-hgfl6-cczx5-kkf4a", 0);
+delete from pluginlist where id = 999991; 
+select nome_plugin from pluginlist where id = 999991;
+
+insert into pluginlist values (999991, "RC_Economy", "Logikoz", "1.0.0", "Gratuito", "0", "Plugin de economia para seu servidor", true);
+insert into licencelist values (99999999, 999999, "teste-teste-teste-teste-teste", false, "2019-06-18", "06:00:00");
 
 #=====================================================================================
 
-drop table pluginlist;
+drop table if exists pluginlist;
 create table if not exists pluginlist(
-id int unsigned not null primary key,
-nome_plugin varchar(50) not null,
-autor_plugin varchar(50) not null,
-versao_plugin varchar(5) not null,
-tipo_plugin varchar(10) not null,
-preco_plugin varchar(5),
-descricao_plugin varchar(300) not null,
+id MediumInt not null primary key,
+nome_plugin tinytext not null,
+autor_plugin tinytext not null,
+versao_plugin char(5) not null,
+tipo_plugin char(10) not null,
+preco_plugin char(5),
+descricao_plugin text(1024) not null,
 imagem_padrao_personalizada boolean not null);
 
-drop table licencelist;
+drop table if exists licencelist;
 create table if not exists licenceList(
-cliente_id int(8) not null,
+cliente_id int unsigned not null,
 #cliente_nome varchar(30) not null,
-plugin_id int(8),
+plugin_id MediumInt,
 licence_key tinytext not null,
 licence_global boolean not null,
-data_criacao varchar(30) not null);
+data_criacao date not null,
+horario_criacao time not null);

@@ -207,6 +207,7 @@
     <Compile Include="_dep\MySQL\PegarConexaoMySQL.cs" />
     <Compile Include="_dep\MySQL\PegarInformacoesLicPl.cs" />
     <Compile Include="_dep\MySQL\PegarPlugins.cs" />
+    <Compile Include="_dep\MySQL\RemoverItem.cs" />
     <Compile Include="_dep\MySQL\Utils.cs" />
     <Compile Include="_dep\PegarInfos.cs" />
     <Compile Include="_dep\SQLite\AdicionandoDadosFTP.cs" />

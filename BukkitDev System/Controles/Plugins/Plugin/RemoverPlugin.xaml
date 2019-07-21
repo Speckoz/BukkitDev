@@ -61,7 +61,8 @@
                                 Margin="10,0,0,0"
                                 Click="Button_Click"
                                 Content="{materialDesign:PackIcon Add}"
-                                Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                                IsDefault="True"
+                                Style="{DynamicResource MaterialDesignFloatingActionAccentButton}"
                                 ToolTip="Adicionar" />
                         </materialDesign:Badged>
 
@@ -82,7 +83,8 @@
                     BorderThickness="1"
                     Click="Button_Click_1"
                     Foreground="{DynamicResource PrimaryHueDarkBrush}"
-                    Style="{StaticResource MaterialDesignFlatButton}">
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    Visibility="Collapsed">
                     <Button.ToolTip>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="" />

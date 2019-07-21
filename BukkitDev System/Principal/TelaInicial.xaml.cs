@@ -211,15 +211,14 @@ namespace BukkitDev_System.Principal
 				//verifico se o botao que foi clicado é o esquerdo, e se isto for verdadeiro, entra no if
 				if (e.LeftButton == MouseButtonState.Pressed)
 				{
+					//se clicar duas vezes em cima do grid, mudará para Maximizado
+					//MouseDoubleClick += TelaInicial_MouseDoubleClick;
 					//se a janela estiver maximizada, é preciso colocar no estado normal, para entao poder mover.
 					if (WindowState == WindowState.Maximized)
 					{
 						//setando o estado da jenela para o normal
 						WindowState = WindowState.Normal;
-						//colocando uma valor da janela em relaçao ao topo da tela do seu computador.
-						//lembrando que o getPositon precisa de um elemento como referencia, ou seja, o metodo irá pegar a posiçao do mouse, em relaçao a determinado elemento, no caso eu utilizei o this, pois esta classe herda Window (uma jenela).
-						//Top = e.GetPosition(this).Y;
-						//ou pode utilizar apenas isso...kkkk
+						//setando a posiçao da janela em relaçao ao topo como 0
 						Top = 0;
 						//desativando o topMost para evitar bugs
 						Topmost = false;
@@ -256,6 +255,12 @@ namespace BukkitDev_System.Principal
 				MetodosConstantes.MostrarExceptions(erro);
 			}
 		}
+
+		private void TelaInicial_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+		{
+			WindowState = WindowState.Maximized;
+		}
+
 		//sobre o software
 		private void Button_Click_3(object sender, RoutedEventArgs e)
 		{
@@ -462,7 +467,7 @@ namespace BukkitDev_System.Principal
 		}
 		private void MenuItem_Click_6(object sender, RoutedEventArgs e)
 		{
-			AdicionarNovoUserControl(new RemoverPlugin());
+			AdicionarNovoUserControl(new Controles.Plugins.Plugin.RemoverPlugin());
 		}
 		//configuraçao
 		private void MenuItem_Click_1(object sender, RoutedEventArgs e)

@@ -1,8 +1,13 @@
-﻿using BukkitDev_System._dep.MySQL;
+﻿using BukkitDev_System._dep;
+using BukkitDev_System._dep.FTP;
+using BukkitDev_System._dep.MySQL;
+using BukkitDev_System._dep.SQLite;
+using BukkitDev_System.Controles.Subs;
 using BukkitDev_System.Principal;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -66,21 +71,45 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 			}
 		}
 
-		private void NewChip_DeleteClick(object sender, RoutedEventArgs e)
+		private async void NewChip_DeleteClick(object sender, RoutedEventArgs e)
 		{
 			Chip s = (Chip)sender;
-			//removendo Chip que foi clicado
-			ListChips_wp.Children.Remove(s);
-			//removendo pluginID da lista
-			_ = plugins.Remove((string)s.Content);
-			//decrementando contador
-			byte t = Convert.ToByte(ContarPluginAdd_bg.Badge);
-			ContarPluginAdd_bg.Badge = --t;
+			RemoverItem removerPlugin = new RemoverItem();
+			try
+			{
+				(bool result, string nomePlugin, bool imgDefPers) = await removerPlugin.ApagarAsync(uint.Parse((string)s.Content));
+				if (result)
+				{
+					if (imgDefPers)
+					{
+						PegarConexaoMySQL_FTP pegarConexao = new PegarConexaoMySQL_FTP();
+						List<string> con = await pegarConexao.PegarAsync(PegarInfos.NomeArquivoXML, PegarInfos.ConfigFTP, "ftp");
+						_ = await new DeletarArquivoFTP().DeletarAsync("Images", $"{s.Content}.png", con);
+					}
+					//removendo Chip que foi clicado
+					ListChips_wp.Children.Remove(s);
+					//removendo pluginID da lista
+					_ = plugins.Remove((string)s.Content);
+					//decrementando contador
+					byte t = Convert.ToByte(ContarPluginAdd_bg.Badge);
+					ContarPluginAdd_bg.Badge = --t;
+					//enviando mensagem de sucesso
+					MetodosConstantes.EnviarMenssagem($"{nomePlugin}({s.Content}) foi removido");
+				}
+				else
+				{
+					MetodosConstantes.EnviarMenssagem("Algo de errado nao esta certo! :/");
+				}
+			}
+			catch (Exception ex)
+			{
+				MetodosConstantes.MostrarExceptions(ex);
+			}
 		}
-
+		//desnecessario por enquanto
 		private void Button_Click_1(object sender, RoutedEventArgs e)
 		{
-
+			
 		}
 	}
 }

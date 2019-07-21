@@ -93,6 +93,7 @@
                     Visibility="Collapsed" />
                 <DataGrid
                     x:Name="ListaPlugins_gd"
+                    MaxHeight="400"
                     HorizontalAlignment="Center"
                     AlternatingRowBackground="{DynamicResource MaterialDesignPaper}"
                     AlternationCount="2"

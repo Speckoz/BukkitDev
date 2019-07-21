@@ -26,7 +26,7 @@ namespace BukkitDev_System._dep.FTP
 						{
 							MostrarExceptionMenssagem(e, "Algo deu errado ao enviar o arquivo, verifique sua conexao!");
 							//caso aconteça qualquer erro, ele excluirá o arquivo por garantia que nao sobrará restos :D
-							new DeletarArquivoFTP().Deletar(tipo, ftpArquivo, conexaoFTP);
+							new DeletarArquivoFTP().DeletarAsync(tipo, ftpArquivo, conexaoFTP);
 						}
 					}
 				}

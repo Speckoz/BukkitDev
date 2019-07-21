@@ -40,7 +40,7 @@ namespace BukkitDev_System.Principal
 
 		private void Button_Click_2(object sender, RoutedEventArgs e)
 		{
-			_ = Process.Start("https://discord.gg/7UJDgBG");
+			_ = Process.Start("https://discord.gg/J3saJqq");
 		}
 
 		private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)

@@ -101,7 +101,7 @@
                             Width="135"
                             Margin="10"
                             materialDesign:HintAssist.Hint="Versao"
-                            MaxLength="3"
+                            MaxLength="5"
                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     </WrapPanel>
 
@@ -122,7 +122,7 @@
                                 Margin="10,0,0,0"
                                 materialDesign:HintAssist.Hint="Valor (R$)"
                                 IsEnabled="False"
-                                MaxLength="3"
+                                MaxLength="5"
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                         </WrapPanel>
                         <WrapPanel HorizontalAlignment="Center">
@@ -155,7 +155,10 @@
                     VerticalAlignment="Bottom"
                     Orientation="Horizontal">
                     <!--  Botao de adicionar  -->
-                    <Button Click="AdicionarPlugin_bt" Style="{StaticResource MaterialDesignFlatDarkBgButton}">
+                    <Button
+                        Click="AdicionarPlugin_bt"
+                        IsDefault="True"
+                        Style="{StaticResource MaterialDesignFlatDarkBgButton}">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon VerticalAlignment="Center" Kind="Add" />
                             <TextBlock
@@ -168,6 +171,7 @@
                     <!--  Botao de limpar  -->
                     <Button
                         Margin="10,0,0,0"
+                        BorderBrush="{DynamicResource PrimaryHueMidBrush}"
                         Click="Button_Click"
                         Style="{StaticResource MaterialDesignOutlinedButton}">
                         <StackPanel Orientation="Horizontal">
