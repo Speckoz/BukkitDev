@@ -1,7 +1,9 @@
 ﻿namespace BukkitDev_System._dep
 {
 	internal static class PegarInfos
-	{
+	{ 
+		//========================== Campos ==========================
+
 		//======================= Propriedades =======================
 		/// <summary>
 		/// Nome do programa Default 'BukkitDev'

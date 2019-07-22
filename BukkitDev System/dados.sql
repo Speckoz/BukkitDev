@@ -9,7 +9,7 @@ use bukkitdev;
 
 show tables;
 
-select * from pluginlist;# where id like '%%';
+select * from pluginlist;# where nome_plugin like '%eco%';
 select * from licencelist;
 
 truncate table pluginlist;
@@ -18,8 +18,10 @@ truncate table licencelist;
 delete from pluginlist where id = 999991; 
 select nome_plugin from pluginlist where id = 999991;
 
-insert into pluginlist values (999991, "RC_Economy", "Logikoz", "1.0.0", "Gratuito", "0", "Plugin de economia para seu servidor", true);
-insert into licencelist values (99999999, 999999, "teste-teste-teste-teste-teste", false, "2019-06-18", "06:00:00");
+update licencelist set plugin_suspenso = false where licence_key = "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx;
+
+insert into pluginlist values (999999, "RC_Economy", "Logikoz", "1.0.0", "Gratuito", "0", "Plugin de economia para seu servidor", true);
+insert into licencelist values (99999999, 999999, "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx", false, "2019-06-18", "06:00:00", false);
 
 #=====================================================================================
 
@@ -42,4 +44,5 @@ plugin_id MediumInt,
 licence_key tinytext not null,
 licence_global boolean not null,
 data_criacao date not null,
-horario_criacao time not null);
+horario_criacao time not null,
+plugin_suspenso bool);

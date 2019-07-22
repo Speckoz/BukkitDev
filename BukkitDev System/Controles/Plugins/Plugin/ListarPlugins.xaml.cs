@@ -50,16 +50,6 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 			}
 		}
 		#endregion
-		//ao clicar duas vezes em cima de uma row do dataGrid, irá abrir a imagem do plugin correspondente
-		private void ListaPlugins_gd_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-		{
-			//{ListaPlugins_gd.Items[3]} é referente a row do grid que quando vc clicar, irá te redirecionar. eu ainda nao achei uma forma de pegar a row clicada...sou burro
-			//string tipoImagem = (ListaPlugins_gd.Columns[7].GetCellContent(ListaPlugins_gd.Items[3]) as CheckBox).IsChecked == true
-			//	? (ListaPlugins_gd.Columns[0].GetCellContent(ListaPlugins_gd.Items[3]) as TextBlock).Text
-			//	: "padrao";
-			////isto apenas te redireciona para um a imagem dentro do servidor pelo protocolo ftp
-			//_ = Process.Start($"ftp://localhost/assets/images/{tipoImagem}.png");
-		}
 		//botao de limpar/restaurar campos/informaçoes
 		private void LimparRecarregar_bt_Click(object sender, RoutedEventArgs e)
 		{

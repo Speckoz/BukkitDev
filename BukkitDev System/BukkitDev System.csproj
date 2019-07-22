@@ -185,9 +185,6 @@
     <Compile Include="Principal\Sobre.xaml.cs">
       <DependentUpon>Sobre.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Principal\TelaCarregando.xaml.cs">
-      <DependentUpon>TelaCarregando.xaml</DependentUpon>
-    </Compile>
     <Compile Include="_dep\FTP\DeletarArquivoFTP.cs" />
     <Compile Include="_dep\FTP\EnviarArquivoFTP.cs" />
     <Compile Include="_dep\MetodosConstantes.cs" />
@@ -296,10 +293,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Principal\Sobre.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Principal\TelaCarregando.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

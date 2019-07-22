@@ -210,7 +210,7 @@
                                     <TextBlock.ToolTip>
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text="Quando está desativada a imagem que será/deve ser" TextAlignment="Center" />
-                                            <TextBlock Text="usava ficara dentro do servidor com o nome" TextAlignment="Center" />
+                                            <TextBlock Text="usada ficará dentro do servidor com o nome" TextAlignment="Center" />
                                             <TextBlock Text="padrao de 'Default.png' e está dentro do mesmo diretorio" TextAlignment="Center" />
                                             <TextBlock Text="das outras imagens." TextAlignment="Center" />
                                         </StackPanel>
@@ -228,7 +228,7 @@
                                 <TextBlock Text="Personalizada" ToolTipService.ShowDuration="100000">
                                     <TextBlock.ToolTip>
                                         <StackPanel Orientation="Vertical">
-                                            <TextBlock Text="Quando está ativado a imagem será voce voce que irá escolher" TextAlignment="Center" />
+                                            <TextBlock Text="Quando está ativado a imagem será voce que irá escolher" TextAlignment="Center" />
                                             <TextBlock Text="quando estiver adicionando ou editando um plugin." TextAlignment="Center" />
                                         </StackPanel>
                                     </TextBlock.ToolTip>

@@ -106,7 +106,6 @@
                     GridLinesVisibility="None"
                     HorizontalScrollBarVisibility="Auto"
                     IsReadOnly="True"
-                    MouseDoubleClick="ListaPlugins_gd_MouseDoubleClick"
                     RowBackground="{DynamicResource PrimaryHueDarkBrush}"
                     SelectionMode="Single"
                     SelectionUnit="CellOrRowHeader"

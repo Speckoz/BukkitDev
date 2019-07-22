@@ -47,6 +47,7 @@ namespace BukkitDev_System._dep.MySQL
 								_ = await mySqlData.FillAsync(dataTable);
 
 								DataTable = dataTable;
+								NomeColunas();
 
 								using (MySqlCommand num = new MySqlCommand(CmdText3, con))
 								{
@@ -82,6 +83,7 @@ namespace BukkitDev_System._dep.MySQL
 				}
 			}
 		}
+
 		public async Task<bool> InformacoesAsync(string itemProcurar)
 		{
 			using (MySqlConnection con = new MySqlConnection(await PegarConexaoMySQL.ConexaoAsync()))
@@ -102,6 +104,7 @@ namespace BukkitDev_System._dep.MySQL
 							_ = await mySqlData.FillAsync(dataTable);
 
 							DataTable = dataTable;
+							NomeColunas();
 
 							using (MySqlCommand num = new MySqlCommand(CmdText1, con))
 							{
@@ -120,6 +123,18 @@ namespace BukkitDev_System._dep.MySQL
 					return false;
 				}
 			}
+		}
+
+		private void NomeColunas()
+		{
+			DataTable.Columns[0].ColumnName = "ID";
+			DataTable.Columns[1].ColumnName = "Nome";
+			DataTable.Columns[2].ColumnName = "Autor";
+			DataTable.Columns[3].ColumnName = "Versao";
+			DataTable.Columns[4].ColumnName = "Tipo";
+			DataTable.Columns[5].ColumnName = "Preço";
+			DataTable.Columns[6].ColumnName = "Descriçao";
+			DataTable.Columns[7].ColumnName = "Imagem";
 		}
 	}
 }
