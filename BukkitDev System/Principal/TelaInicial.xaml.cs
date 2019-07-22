@@ -1,4 +1,5 @@
 ﻿using BukkitDev_System._dep;
+using BukkitDev_System._dep.FTP;
 using BukkitDev_System._dep.MySQL;
 using BukkitDev_System._dep.SQLite;
 using BukkitDev_System._dep.XML;
@@ -6,6 +7,7 @@ using BukkitDev_System.Controles.Config;
 using BukkitDev_System.Controles.Plugins.Plugin;
 using BukkitDev_System.Controles.Subs;
 using MaterialDesignThemes.Wpf;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,14 +16,17 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace BukkitDev_System.Principal
 {
 	public partial class TelaInicial : Window
 	{
-		public static Snackbar barraDeNotificacao;
-		public static DialogHost MensagemPerso;
+		//propriedades
+		public static Snackbar BarraDeNotificacao { get; set; }
+		public static DialogHost MensagemPerso { get; set; }
+		//campos
 		private readonly DispatcherTimer tema;
 		private string temaAtual;
 
@@ -36,7 +41,7 @@ namespace BukkitDev_System.Principal
 			};
 			tema.Tick += Tema_Tick;
 			//
-			barraDeNotificacao = BarraNotificacao_sb;
+			BarraDeNotificacao = BarraNotificacao_sb;
 			MensagemPerso = MensagemDialog_dh;
 		}
 		#region Botoes do topo
@@ -102,10 +107,9 @@ namespace BukkitDev_System.Principal
 			{
 				bool re = PegarInfos.ImagemPlugin.Equals("true");
 				EscolherImagemTipo_tb.IsChecked = re;
-				EscolherImagemPadrao_st.IsEnabled = re;
+				EscolherImagem_st.IsEnabled = !re;
 			}
 		}
-
 		private void ConfigTamanhoMaxPlugin()
 		{
 			if (!string.IsNullOrEmpty(PegarInfos.TamanhoLimitePlugin.ToString()))
@@ -122,7 +126,6 @@ namespace BukkitDev_System.Principal
 				TaxaInformada_txt.Text = PegarInfos.TaxaTransferencia.ToString();
 			}
 		}
-
 		[Obsolete]
 		private void ConfigCorPrograma()
 		{
@@ -269,12 +272,6 @@ namespace BukkitDev_System.Principal
 				MetodosConstantes.MostrarExceptions(erro);
 			}
 		}
-
-		private void TelaInicial_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-		{
-			WindowState = WindowState.Maximized;
-		}
-
 		//sobre o software
 		private void Button_Click_3(object sender, RoutedEventArgs e)
 		{
@@ -302,23 +299,19 @@ namespace BukkitDev_System.Principal
 		{
 			MarcarClicadoAsync("MySQL", "Local", new List<MenuItem> { ExternoSelecionadoMySQL_mi, LocalSelecionadoMySQL_mi }, LocalSelecionadoMySQL_mi);
 		}
-
 		private void TipoMySQLExterno_Click(object sender, RoutedEventArgs e)
 		{
 			MarcarClicadoAsync("MySQL", "Externo", new List<MenuItem> { ExternoSelecionadoMySQL_mi, LocalSelecionadoMySQL_mi }, ExternoSelecionadoMySQL_mi);
 		}
 
-
 		private void TipoFTPLocal_Click(object sender, RoutedEventArgs e)
 		{
 			MarcarClicadoAsync("FTP", "Local", new List<MenuItem> { ExternoSelecionadoFTP_mi, LocalSelecionadoFTP_mi }, LocalSelecionadoFTP_mi);
 		}
-
 		private void TipoFTPExterno_Click(object sender, RoutedEventArgs e)
 		{
 			MarcarClicadoAsync("FTP", "Externo", new List<MenuItem> { ExternoSelecionadoFTP_mi, LocalSelecionadoFTP_mi }, ExternoSelecionadoFTP_mi);
 		}
-
 
 		private void GravarTaxa_bt_Click(object sender, RoutedEventArgs e)
 		{
@@ -327,7 +320,6 @@ namespace BukkitDev_System.Principal
 				GravarAsync("TaxaDeTransferencia", TaxaInformada_txt.Text);
 			}
 		}
-
 		private void GravarTamanho_bt_Click(object sender, RoutedEventArgs e)
 		{
 			if (!string.IsNullOrEmpty(TamanhoInformado_txt.Text))
@@ -335,7 +327,6 @@ namespace BukkitDev_System.Principal
 				GravarAsync("TamanhoMaxPlugin", TamanhoInformado_txt.Text);
 			}
 		}
-
 		private async void GravarAsync(string nomeXml, string valor)
 		{
 			try
@@ -353,10 +344,7 @@ namespace BukkitDev_System.Principal
 				MetodosConstantes.MostrarExceptions(erro);
 			}
 		}
-
-		private readonly PaletteHelper Configs = new PaletteHelper();
-
-		//mudando a thema do programa
+		#region mudando a thema do programa
 		[Obsolete]
 		private async void MudarTema_Click(object sender, RoutedEventArgs e)
 		{
@@ -368,13 +356,12 @@ namespace BukkitDev_System.Principal
 			Light_mi.IsChecked = result;
 			Dark_mi.IsChecked = !result;
 			//setando tema, lembrando que este metodo recebe TRUE como o dark, e como a comparaçao é com o light eu neguei o result
-			Configs.SetLightDark(!result);
+			new PaletteHelper().SetLightDark(!result);
 			//atualizando
 			new AtualizandoDadosXML().AtualizarAsync(PegarInfos.NomeArquivoXML, "Tema", cor);
 			await MetodosConstantes.LerXMLAsync();
 			MetodosConstantes.EnviarMenssagem($"Tema do programa alterado para {cor}");
 		}
-
 		[Obsolete]
 		private void PadraoWindows_mi_Click(object sender, RoutedEventArgs e)
 		{
@@ -396,7 +383,6 @@ namespace BukkitDev_System.Principal
 				tema.Stop();
 			}
 		}
-
 		private void DesabilitandoMenus()
 		{
 			Light_mi.IsEnabled = false;
@@ -404,8 +390,8 @@ namespace BukkitDev_System.Principal
 			Dark_mi.IsEnabled = false;
 			Dark_mi.IsChecked = false;
 		}
-
-		//mudando cor do programa
+		#endregion
+		#region mudando cor do programa
 		[Obsolete]
 		private async void SelecionarCorPrograma_Click(object sender, RoutedEventArgs e)
 		{
@@ -435,7 +421,8 @@ namespace BukkitDev_System.Principal
 		{
 			return (select == LightBlue_mi) ? "LightBlue" : (select == Purple_mi) ? "Purple" : (select == Pink_mi) ? "Pink" : (select == Green_mi) ? "Green" : (select == Red_mi) ? "Red" : string.Empty;
 		}
-		// ativar/desativar tool
+		#endregion
+		#region ativar/desativar tool
 		private void SelecionarToolPrograma_Click(object sender, RoutedEventArgs e)
 		{
 			bool @is = ((MenuItem)sender) == AtivarTool_mi;
@@ -443,30 +430,53 @@ namespace BukkitDev_System.Principal
 			AtivarTool_mi.IsChecked = @is;
 			Tool_bt.Visibility = @is ? Visibility.Visible : Visibility.Collapsed;
 		}
-		// ativar/desativar Menssagem
+		#endregion
+		#region ativar/desativar Menssagem
 		private void MenssagemPrograma_Click(object sender, RoutedEventArgs e)
 		{
 			bool @is = ((MenuItem)sender) == AtivarMenssagem_mi;
 			AtivarMenssagem_mi.IsChecked = @is;
 			DesativarMenssagem_mi.IsChecked = !@is;
-			barraDeNotificacao.IsEnabled = @is;
+			BarraDeNotificacao.IsEnabled = @is;
 		}
-		// ativar/desativar congiguraçao de imagem.
+		#endregion
+		#region ativar/desativar congiguraçao de imagem
 		private async void EscolherImagemTipo_tb_Click(object sender, RoutedEventArgs e)
 		{
 			if (((ToggleButton)sender).IsChecked.Equals(true))
 			{
 				new AtualizandoDadosXML().AtualizarAsync(PegarInfos.NomeArquivoXML, "ImagemPlugin", "true");
-				EscolherImagemPadrao_st.IsEnabled = true;
+				EscolherImagem_st.IsEnabled = false;
 			}
 			else
 			{
 				new AtualizandoDadosXML().AtualizarAsync(PegarInfos.NomeArquivoXML, "ImagemPlugin", "false");
-				EscolherImagemPadrao_st.IsEnabled = false;
+				EscolherImagem_st.IsEnabled = true;
 			}
 			await MetodosConstantes.LerXMLAsync();
 			MetodosConstantes.EnviarMenssagem("Configuraçao de imagem selecionada foi alterada!");
 		}
+		private async void Button_Click_5(object sender, RoutedEventArgs e)
+		{
+			OpenFileDialog img = new OpenFileDialog() { Filter = "PNG Files (*.png)|*.png", Title = "Procurar imagem padrao" };
+
+			if (img.ShowDialog().Equals(true))
+			{
+				ProgressBar progressBar = new ProgressBar() { Margin = new Thickness(10, 0, 0, 0), IsIndeterminate = true, Height = 40, Width = 40, BorderThickness = new Thickness(6), Style = (Style)FindResource("MaterialDesignCircularProgressBar"), ToolTip = "Enviando imagem..." };
+				_ = MenuPrincipal_mn.Items.Add(progressBar);
+				if (await new EnviarArquivoFTP().EnviarAsync("images", img.FileName, "default.png", await CredenciaisFTP(), progressBar))
+				{
+					MenuPrincipal_mn.Items.Remove(progressBar);
+					ImagemPadraol_img.ImageSource = new BitmapImage(new Uri(img.FileName));
+					MetodosConstantes.EnviarMenssagem("Imagem padrao alterada com sucesso!");
+				}
+			}
+		}
+		private static Task<List<string>> CredenciaisFTP()
+		{
+			return new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, PegarInfos.ConfigFTP, "ftp");
+		}
+		#endregion
 		#endregion
 		#region Controles de Usuarios
 		private void AdicionarNovoUserControl(UIElement uControl)

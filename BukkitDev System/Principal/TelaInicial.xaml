@@ -80,7 +80,7 @@
         <Grid>
             <!--  Grid menu  -->
             <Grid Margin="0,32,0,0">
-                <Menu VerticalAlignment="Top">
+                <Menu x:Name="MenuPrincipal_mn" VerticalAlignment="Top">
                     <MenuItem Header="Clientes" Visibility="Collapsed">
                         <MenuItem Header="Adicionar Clientes" Icon="{materialDesign:PackIcon Accountadd}" />
                     </MenuItem>
@@ -235,9 +235,8 @@
                                 </TextBlock>
                             </StackPanel>
                             <StackPanel
-                                x:Name="EscolherImagemPadrao_st"
+                                x:Name="EscolherImagem_st"
                                 HorizontalAlignment="Center"
-                                IsEnabled="False"
                                 Orientation="Horizontal">
                                 <Ellipse Width="30" Height="30">
                                     <Ellipse.Fill>
@@ -250,6 +249,7 @@
                                 <Button
                                     Margin="10,0,0,0"
                                     BorderBrush="{DynamicResource PrimaryHueMidBrush}"
+                                    Click="Button_Click_5"
                                     Content="Escolher imagem"
                                     Style="{StaticResource MaterialDesignOutlinedButton}" />
                             </StackPanel>

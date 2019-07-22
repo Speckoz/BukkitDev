@@ -24,9 +24,9 @@ namespace BukkitDev_System._dep
 		}
 		public static void EnviarMenssagem(string mensagem)
 		{
-			if (TelaInicial.barraDeNotificacao.IsEnabled)
+			if (TelaInicial.BarraDeNotificacao.IsEnabled)
 			{
-				TelaInicial.barraDeNotificacao.MessageQueue.Enqueue(mensagem, "Ok", a => Trace.WriteLine(a), mensagem);
+				TelaInicial.BarraDeNotificacao.MessageQueue.Enqueue(mensagem, "Ok", a => Trace.WriteLine(a), mensagem);
 			}
 		}
 		#region Leitura dos dados do XML

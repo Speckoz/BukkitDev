@@ -9,7 +9,7 @@ namespace BukkitDev_System._dep.SQLite
 		/// <summary>
 		/// Pegar a conexao do FTP ou MySQL de dentro do Arquivo SQLite.
 		/// </summary>
-		/// <param name="nome">Nome do arquivo SQLite, Por padrao é uma propriedade em <see cref="PegarInfos.NomeArquivoXML"/></param>
+		/// <param name="nome">Nome do arquivo SQLite, Por padrao é uma propriedade em <see cref="PegarInfos.NomeArquivoSQLite"/></param>
 		/// <param name="tipo">Tipo de conexao (Local ou Externo), por padrao é uma propriedade em <see cref="PegarInfos.ConfigFTP"/> ou <see cref="PegarInfos.ConfigMySQL"/>.</param>
 		/// <param name="tabela">Nome da tabela dentro do arquivo SQLite (FTP ou MySQL). OBS: nao é binary!</param>
 		/// <returns>Retorna uma Lista com a conexao do tipo requisitado!</returns>

@@ -110,7 +110,7 @@
                     SelectionMode="Single"
                     SelectionUnit="CellOrRowHeader"
                     VerticalScrollBarVisibility="Hidden"
-                    Visibility="Collapsed" />
+                    Visibility="Hidden" />
             </Grid>
         </StackPanel>
     </materialDesign:Card>

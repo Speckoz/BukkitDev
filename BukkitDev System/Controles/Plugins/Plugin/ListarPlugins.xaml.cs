@@ -1,8 +1,7 @@
 ﻿using BukkitDev_System._dep.MySQL;
-using System.Diagnostics;
+using BukkitDev_System.Principal;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace BukkitDev_System.Controles.Plugins.Plugin
 {
@@ -10,7 +9,7 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 	{
 		//devido o construtor da classe fazer uma verificaçao se as duas tabelas existem, nao é nada legal colocar uma nova instancia dentro do segundo metodo {ProcurarPluginAsync}
 		//ja que o mesmo faz uma verificaçao a cada vez que o event keyDown for acionado...e isso pode prejudicar muito a sua maquina, ja que o metodo de verificaçao é assincrono, e como eu nao utilizei o Task<>.Run(), ele irá criar threads para cada verificaçao.
-		private PegarPlugins get = new PegarPlugins();
+		//private PegarPlugins get = new PegarPlugins();
 		public ListarPlugins()
 		{
 			InitializeComponent();
@@ -22,31 +21,33 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 			TextoAntesGrid_tb.Visibility = Visibility.Collapsed;
 			ListaPlugins_gd.Visibility = Visibility.Collapsed;
 		}
-		private void Ativar()
+		private void Ativar(PegarPlugins a)
 		{
-			ListaPlugins_gd.ItemsSource = get.DataTable.DefaultView;
+			ListaPlugins_gd.ItemsSource = a.DataTable.DefaultView;
 			ProcurandoPlugin_pb.Visibility = Visibility.Collapsed;
 			ListaPlugins_gd.Visibility = Visibility.Visible;
+			ListaPlugins_gd.Columns[6].MaxWidth = 250;
 		}
 		//mostrando plugins no dataGrid, assim que o userControl for carregado ou o usuario apertar o botao
 		private async void ProcurarPluginAsync()
 		{
-			get = new PegarPlugins();
+			PegarPlugins get = new PegarPlugins();
 			Desativar();
 			//pegando dados do banco, e adicionando no dataGrid
 			if (await get.InformacoesAsync(true, null))
 			{
-				Ativar();
+				Ativar(get);
 			}
 		}
 		//procurar plugin e mostrar os resultados no dataGrid em tempo real.
 		private async void ProcurarPluginAsync(string item)
 		{
+			PegarPlugins get = new PegarPlugins();
 			Desativar();
 			//pegando dados do banco, e adicionando no dataGrid
 			if (await get.InformacoesAsync(item))
 			{
-				Ativar();
+				Ativar(get);
 			}
 		}
 		#endregion
