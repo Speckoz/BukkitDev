@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace BukkitDev_System._dep.XML
+namespace Logikoz.BukkitDevSystem._dep.XML
 {
 	internal static class CriandoArquivoXML
 	{

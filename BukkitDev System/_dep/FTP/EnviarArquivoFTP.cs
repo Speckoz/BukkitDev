@@ -5,7 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace BukkitDev_System._dep.FTP
+namespace Logikoz.BukkitDevSystem._dep.FTP
 {
 	internal class EnviarArquivoFTP
 	{

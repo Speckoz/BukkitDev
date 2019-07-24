@@ -3,7 +3,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.XPath;
 
-namespace BukkitDev_System._dep.XML
+namespace Logikoz.BukkitDevSystem._dep.XML
 {
 	internal class AtualizandoDadosXML
 	{

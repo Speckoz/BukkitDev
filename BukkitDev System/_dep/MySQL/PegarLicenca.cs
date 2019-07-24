@@ -1,5 +1,5 @@
-﻿using BukkitDev_System._dep;
-using BukkitDev_System._dep.MySQL;
+﻿using Logikoz.BukkitDevSystem._dep;
+using Logikoz.BukkitDevSystem._dep.MySQL;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;

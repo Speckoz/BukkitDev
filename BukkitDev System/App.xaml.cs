@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace BukkitDev_System
+namespace Logikoz.BukkitDevSystem
 {
 	/// <summary>
 	/// Interação lógica para App.xaml

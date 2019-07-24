@@ -1,11 +1,14 @@
-﻿using BukkitDev_System._dep;
+﻿using Logikoz.BukkitDevSystem._dep;
+using MaterialDesignThemes.Wpf;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
 
-namespace BukkitDev_System.Principal
+namespace Logikoz.BukkitDevSystem.Principal
 {
 	public partial class HomeControl : UserControl
 	{

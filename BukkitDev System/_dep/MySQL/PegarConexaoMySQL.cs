@@ -1,8 +1,8 @@
-﻿using BukkitDev_System._dep.SQLite;
+﻿using Logikoz.BukkitDevSystem._dep.SQLite;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BukkitDev_System._dep.MySQL
+namespace Logikoz.BukkitDevSystem._dep.MySQL
 {
 	internal class PegarConexaoMySQL
 	{

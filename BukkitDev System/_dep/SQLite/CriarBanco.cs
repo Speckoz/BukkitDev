@@ -2,7 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 
-namespace BukkitDev_System._dep.SQLite
+namespace Logikoz.BukkitDevSystem._dep.SQLite
 {
 	internal class CriarBanco : PegarConexaoMySQL_FTP
 	{

@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace BukkitDev_System.Controles.Config
+namespace Logikoz.BukkitDevSystem.Controles.Config
 {
 	/// <summary>
 	/// Interação lógica para MySQLLocalHost.xam

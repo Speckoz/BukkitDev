@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BukkitDev_System.Properties
+namespace Logikoz.BukkitDevSystem.Properties
 {
 	using System;
 
@@ -45,7 +45,7 @@ namespace BukkitDev_System.Properties
 			{
 				if (object.ReferenceEquals(resourceMan, null))
 				{
-					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BukkitDev_System.Properties.Resources", typeof(Resources).Assembly);
+					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Logikoz.BukkitDevSystem.Properties.Resources", typeof(Resources).Assembly);
 					resourceMan = temp;
 				}
 				return resourceMan;

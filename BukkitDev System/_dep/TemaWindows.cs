@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using Reg = Microsoft.Win32.Registry;
 
-namespace BukkitDev_System._dep
+namespace Logikoz.BukkitDevSystem._dep
 {
 	internal class TemaWindows
 	{

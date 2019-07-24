@@ -10,7 +10,8 @@ use bukkitdev;
 show tables;
 
 select * from pluginlist;# where nome_plugin like '%eco%';
-select * from licencelist;
+select licence_key from licencelist;
+select count(licence_key) from licencelist;
 
 truncate table pluginlist;
 truncate table licencelist;
@@ -18,7 +19,7 @@ truncate table licencelist;
 delete from pluginlist where id = 999991; 
 select nome_plugin from pluginlist where id = 999991;
 
-update licencelist set plugin_suspenso = false where licence_key = "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx";
+update licencelist set plugin_suspenso = true where licence_key = "fkffb-jafsi-e952v-r1qtc-vb0xt";
 
 insert into pluginlist values (999999, "RC_Economy", "Logikoz", "1.0.0", "Gratuito", "0", "Plugin de economia para seu servidor", true);
 insert into licencelist values (99999999, 312909, "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx", false, "2019-06-18", "06:00:00", false);

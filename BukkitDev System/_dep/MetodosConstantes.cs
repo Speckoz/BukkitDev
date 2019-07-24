@@ -1,12 +1,12 @@
-﻿using BukkitDev_System._dep.XML;
-using BukkitDev_System.Principal;
+﻿using Logikoz.BukkitDevSystem._dep.XML;
+using Logikoz.BukkitDevSystem.Principal;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Controls;
 
-namespace BukkitDev_System._dep
+namespace Logikoz.BukkitDevSystem._dep
 {
 	internal class MetodosConstantes
 	{

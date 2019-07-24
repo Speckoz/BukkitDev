@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Threading.Tasks;
 
-namespace BukkitDev_System._dep.MySQL
+namespace Logikoz.BukkitDevSystem._dep.MySQL
 {
 	internal class AdicionarLicenca
 	{

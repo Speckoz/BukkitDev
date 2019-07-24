@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace BukkitDev_System._dep.MySQL
+namespace Logikoz.BukkitDevSystem._dep.MySQL
 {
 	class RemoverItem
 	{

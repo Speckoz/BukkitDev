@@ -1,9 +1,9 @@
-﻿using BukkitDev_System.Principal;
+﻿using Logikoz.BukkitDevSystem.Principal;
 using MySql.Data.MySqlClient;
 using System;
 using System.Threading.Tasks;
 
-namespace BukkitDev_System._dep.MySQL
+namespace Logikoz.BukkitDevSystem._dep.MySQL
 {
 	internal class CriarTabela
 	{

@@ -1,11 +1,11 @@
-﻿using BukkitDev_System._dep;
-using BukkitDev_System._dep.FTP;
-using BukkitDev_System._dep.MySQL;
-using BukkitDev_System._dep.SQLite;
-using BukkitDev_System._dep.XML;
-using BukkitDev_System.Controles.Config;
-using BukkitDev_System.Controles.Plugins.Plugin;
-using BukkitDev_System.Controles.Subs;
+﻿using Logikoz.BukkitDevSystem._dep;
+using Logikoz.BukkitDevSystem._dep.FTP;
+using Logikoz.BukkitDevSystem._dep.MySQL;
+using Logikoz.BukkitDevSystem._dep.SQLite;
+using Logikoz.BukkitDevSystem._dep.XML;
+using Logikoz.BukkitDevSystem.Controles.Config;
+using Logikoz.BukkitDevSystem.Controles.Plugins.Plugin;
+using Logikoz.BukkitDevSystem.Controles.Subs;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Win32;
 using System;
@@ -19,7 +19,7 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
-namespace BukkitDev_System.Principal
+namespace Logikoz.BukkitDevSystem.Principal
 {
 	public partial class TelaInicial : Window
 	{
@@ -27,19 +27,19 @@ namespace BukkitDev_System.Principal
 		public static Snackbar BarraDeNotificacao { get; set; }
 		public static DialogHost MensagemPerso { get; set; }
 		//campos
-		private readonly DispatcherTimer tema;
-		private string temaAtual;
+		private readonly DispatcherTimer _tema;
+		private string _temaAtual;
 
 		[Obsolete]
 		public TelaInicial()
 		{
 			InitializeComponent();
 			//criando timer na inicializaçao programa
-			tema = new DispatcherTimer
+			_tema = new DispatcherTimer
 			{
 				Interval = TimeSpan.FromSeconds(3)
 			};
-			tema.Tick += Tema_Tick;
+			_tema.Tick += Tema_Tick;
 			//
 			BarraDeNotificacao = BarraNotificacao_sb;
 			MensagemPerso = MensagemDialog_dh;
@@ -212,11 +212,11 @@ namespace BukkitDev_System.Principal
 		private void Tema_Tick(object sender, EventArgs e)
 		{
 			TemaWindows temaConfig = new TemaWindows();
-			if (temaConfig.TemaClaroHabilitado().@string != temaAtual)
+			if (temaConfig.TemaClaroHabilitado().@string != _temaAtual)
 			{
 				new PaletteHelper().SetLightDark(!temaConfig.TemaClaroHabilitado().@bool);
 				//MetodosConstantes.EnviarMenssagem("foi mudado");
-				temaAtual = temaConfig.TemaClaroHabilitado().@string;
+				_temaAtual = temaConfig.TemaClaroHabilitado().@string;
 			}
 		}
 		//mover a tela
@@ -368,8 +368,8 @@ namespace BukkitDev_System.Principal
 			if (PadraoWindows_mi.IsChecked)
 			{
 				DesabilitandoMenus();
-				temaAtual = null;
-				tema.Start();
+				_temaAtual = null;
+				_tema.Start();
 			}
 			else
 			{
@@ -379,8 +379,8 @@ namespace BukkitDev_System.Principal
 				Light_mi.IsChecked = !isDark;
 				Dark_mi.IsChecked = isDark;
 				new PaletteHelper().SetLightDark(isDark);
-				temaAtual = null;
-				tema.Stop();
+				_temaAtual = null;
+				_tema.Stop();
 			}
 		}
 		private void DesabilitandoMenus()

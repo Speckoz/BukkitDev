@@ -3,7 +3,7 @@ using System.Data.SQLite;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace BukkitDev_System._dep.SQLite
+namespace Logikoz.BukkitDevSystem._dep.SQLite
 {
 	internal class AdicionarBanco
 	{

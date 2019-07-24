@@ -1,12 +1,12 @@
-﻿using BukkitDev_System._dep;
-using BukkitDev_System._dep.SQLite;
+﻿using Logikoz.BukkitDevSystem._dep;
+using Logikoz.BukkitDevSystem._dep.SQLite;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace BukkitDev_System.Controles.Config
+namespace Logikoz.BukkitDevSystem.Controles.Config
 {
 	internal class ConfiguracaoCamposFTP
 	{

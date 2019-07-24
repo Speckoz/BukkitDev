@@ -1,9 +1,9 @@
-﻿using BukkitDev_System._dep.XML;
+﻿using Logikoz.BukkitDevSystem._dep.XML;
 using MaterialDesignThemes.Wpf;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace BukkitDev_System._dep
+namespace Logikoz.BukkitDevSystem._dep
 {
 	internal class MudarCor
 	{

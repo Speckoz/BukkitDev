@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace BukkitDev_System._dep.FTP
+namespace Logikoz.BukkitDevSystem._dep.FTP
 {
 	internal class DeletarArquivoFTP
 	{

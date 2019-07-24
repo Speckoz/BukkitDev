@@ -1,4 +1,4 @@
-﻿namespace BukkitDev_System._dep
+﻿namespace Logikoz.BukkitDevSystem._dep
 {
 	internal static class PegarInfos
 	{ 

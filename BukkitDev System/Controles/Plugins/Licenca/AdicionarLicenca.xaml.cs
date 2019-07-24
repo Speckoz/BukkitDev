@@ -1,15 +1,15 @@
-﻿using BukkitDev_System._dep;
-using BukkitDev_System._dep.MySQL;
-using BukkitDev_System.Principal;
+﻿using Logikoz.BukkitDevSystem._dep;
+using Logikoz.BukkitDevSystem._dep.MySQL;
+using Logikoz.BukkitDevSystem.Principal;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using add = BukkitDev_System._dep.MySQL;
+using add = Logikoz.BukkitDevSystem._dep.MySQL;
 
-namespace BukkitDev_System.Controles.Plugins.Licenca
+namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 {
 	public partial class AdicionarLicenca : UserControl
 	{

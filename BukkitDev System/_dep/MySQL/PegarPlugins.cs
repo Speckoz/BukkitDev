@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 //como o tipo byte representa apenas valores de 0-255, pode ocorrer de ter mais de 255 plugin na busca kkkk entao basta trocar o tipo da variavel aqui
 using @var = System.Byte;
 
-namespace BukkitDev_System._dep.MySQL
+namespace Logikoz.BukkitDevSystem._dep.MySQL
 {
 	internal class PegarPlugins
 	{

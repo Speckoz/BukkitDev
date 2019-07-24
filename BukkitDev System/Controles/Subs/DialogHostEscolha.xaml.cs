@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace BukkitDev_System.Controles.Subs
+namespace Logikoz.BukkitDevSystem.Controles.Subs
 {
 	/// <summary>
 	/// Interação lógica para DialogHostEscolha.xam
