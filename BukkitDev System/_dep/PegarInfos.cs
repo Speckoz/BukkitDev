@@ -59,6 +59,5 @@
 		/// (true) Personalizada | (false) Padrao.
 		/// </summary>
 		public static string ImagemPlugin { get; set; }
-		//======================= Propriedades =======================
 	}
 }

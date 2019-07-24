@@ -9,6 +9,15 @@ namespace BukkitDev_System._dep.FTP
 {
 	internal class EnviarArquivoFTP
 	{
+		/// <summary>
+		/// Envia arquivo para o servidor pelo protocolo FTP.
+		/// </summary>
+		/// <param name="tipo">tipo do arquivo (Plugin ou Images), exatamente essas palavras com exceçao do PascalCase!</param>
+		/// <param name="caminho">Caminho (path) do arquivo que será enviado. Ex: C:\User\teste\SimplesClans.jar.</param>
+		/// <param name="ftpArquivo">Nome do arquivo a ser que ficará no servidor incluindo a extensao. Ex: 000000.jar | 000000.png.</param>
+		/// <param name="conexaoFTP">Credenciais para conexao com FTP (host, porta, login, senha) respectivamente.</param>
+		/// <param name="carregando_pb">ProgressBar que mostrará o processo de envio.</param>
+		/// <returns>Retorna um <see cref="bool"/> informando se foi enviado com sucesso ou nao!</returns>
 		public async Task<bool> EnviarAsync(string tipo, string caminho, string ftpArquivo, List<string> conexaoFTP, ProgressBar carregando_pb)
 		{
 			try

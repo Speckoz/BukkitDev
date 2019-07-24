@@ -7,10 +7,12 @@ namespace BukkitDev_System._dep.MySQL
 {
 	internal class CriarTabela
 	{
-		private const string CmdText =
-			@"create table if not exists pluginlist(id int unsigned not null primary key,nome_plugin varchar(50) not null,autor_plugin varchar(50) not null,versao_plugin varchar(5) not null,tipo_plugin varchar(10) not null,preco_plugin varchar(5),descricao_plugin varchar(300) not null,imagem_padrao_personalizada boolean not null); 
-			create table if not exists licenceList(cliente_id int(8) primary key,plugin_id int(8) not null,licence_key tinytext,licence_global boolean);";
-
+		private const string query = @"create table if not exists pluginlist(id MediumInt not null primary key,nome_plugin tinytext not null,autor_plugin tinytext not null,versao_plugin char(5) not null,tipo_plugin char(10) not null,preco_plugin char(5),descricao_plugin text(1024) not null,imagem_padrao_personalizada boolean not null);
+			create table if not exists licenceList(cliente_id int unsigned not null,plugin_id MediumInt,licence_key tinytext not null,licence_global boolean not null,data_criacao date not null,horario_criacao time not null,plugin_suspenso bool);";
+		/// <summary>
+		/// Cria as tabelas no banco de dados caso elas nao existam. (PluginList e LicenceList).
+		/// </summary>
+		/// <returns>Retorna a conclusao da tarefa</returns>
 		public async Task CriarAsync()
 		{
 			using (MySqlConnection con = new MySqlConnection(await PegarConexaoMySQL.ConexaoAsync()))
@@ -19,7 +21,7 @@ namespace BukkitDev_System._dep.MySQL
 				{
 					await con.OpenAsync();
 
-					using (MySqlCommand createTable = new MySqlCommand(CmdText, con))
+					using (MySqlCommand createTable = new MySqlCommand(query, con))
 					{
 						_ = await createTable.ExecuteNonQueryAsync();
 					}

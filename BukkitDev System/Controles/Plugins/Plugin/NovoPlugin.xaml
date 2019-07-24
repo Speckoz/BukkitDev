@@ -10,14 +10,17 @@
     mc:Ignorable="d">
     <Grid>
         <!--  Campos  -->
-        <materialDesign:Card HorizontalAlignment="Center" materialDesign:ShadowAssist.ShadowDepth="Depth3">
-            <WrapPanel HorizontalAlignment="Center" Orientation="Vertical">
+        <GroupBox
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Style="{DynamicResource MaterialDesignCardGroupBox}">
+            <GroupBox.Header>
                 <TextBlock
-                    Margin="0,20,0,20"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
-                    FontSize="18"
-                    Text="Adicionar novo Plugin" />
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    Text="Adicionar Plugin" />
+            </GroupBox.Header>
+            <WrapPanel Orientation="Vertical">
                 <WrapPanel HorizontalAlignment="Center" Orientation="Vertical">
                     <WrapPanel
                         Margin="0,10,0,0"
@@ -142,9 +145,8 @@
                         TextWrapping="Wrap"
                         VerticalScrollBarVisibility="Auto" />
                 </WrapPanel>
-
                 <StackPanel
-                    Margin="5,10,5,20"
+                    Margin="5,10,5,10"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Orientation="Horizontal">
@@ -177,9 +179,8 @@
                         </StackPanel>
                     </Button>
                 </StackPanel>
-
             </WrapPanel>
-        </materialDesign:Card>
+        </GroupBox>
 
         <Grid
             x:Name="FundoCarregando_gd"

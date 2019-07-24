@@ -58,6 +58,7 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 							i++;
 						}
 						ContarPluginAdd_bg.Badge = i;
+						PluginID_txt.Clear();
 					}
 					else
 					{

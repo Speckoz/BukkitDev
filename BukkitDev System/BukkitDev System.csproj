@@ -53,6 +53,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <LangVersion>default</LangVersion>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -194,6 +195,7 @@
     <Compile Include="_dep\MySQL\CriarTabela.cs" />
     <Compile Include="_dep\MySQL\PegarConexaoMySQL.cs" />
     <Compile Include="_dep\MySQL\PegarInformacoesLicPl.cs" />
+    <Compile Include="_dep\MySQL\PegarLicenca.cs" />
     <Compile Include="_dep\MySQL\PegarPlugins.cs" />
     <Compile Include="_dep\MySQL\RemoverItem.cs" />
     <Compile Include="_dep\MySQL\Utils.cs" />

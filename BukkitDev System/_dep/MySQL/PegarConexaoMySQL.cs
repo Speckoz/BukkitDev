@@ -6,6 +6,10 @@ namespace BukkitDev_System._dep.MySQL
 {
 	internal class PegarConexaoMySQL
 	{
+		/// <summary>
+		/// Pegar informaçoes dentro do SQLite referente a conexao com o banco MySQL.
+		/// </summary>
+		/// <returns>Retorna a tarefa contendo a string pronta para fazer a conexao com o banco.</returns>
 		public static async Task<string> ConexaoAsync()
 		{
 			//pegando dados de conexao do MySQL de dentro SQLite

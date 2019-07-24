@@ -7,10 +7,10 @@ namespace BukkitDev_System._dep.MySQL
 	class RemoverItem
 	{
 		/// <summary>
-		/// Remover plugin do banco de dados
+		/// Remover plugin do banco de dados.
 		/// </summary>
-		/// <param name="pluginID"></param>
-		/// <returns></returns>
+		/// <param name="pluginID">Codigo do plugin que dejesa apagar.</param>
+		/// <returns>Retorna a tarefa contendo um tupla com os retornos da consulta.</returns>
 		public async Task<(bool @bool, string nomePlugin, bool img)> ApagarAsync(uint pluginID)
 		{
 			try
@@ -43,6 +43,11 @@ namespace BukkitDev_System._dep.MySQL
 				return (false, null, false);
 			}
 		}
+		/// <summary>
+		/// Remover uma licença do banco de dados.
+		/// </summary>
+		/// <param name="lic">A key da licença que deseja remover.</param>
+		/// <returns>Retorna o resultado da tarefa em bool.</returns>
 		public async Task<bool> ApagarAsync(string lic)
 		{
 			try

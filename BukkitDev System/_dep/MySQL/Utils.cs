@@ -36,7 +36,14 @@ namespace BukkitDev_System._dep.MySQL
 				}
 			}
 		}
-
+		/// <summary>
+		/// Gera um numero aleatorio para ser adicionado no banco como algum tipo de Index.
+		/// </summary>
+		/// <param name="min">Valor minimo a ser gerado.</param>
+		/// <param name="max">Valor maximo a ser gerado.</param>
+		/// <param name="tabela">Nome da tabela que será consultada.</param>
+		/// <param name="coluna">Nome da coluna dentro da tabela para verificar se ja existe um index com esse codigo.</param>
+		/// <returns></returns>
 		public async Task<uint> GerarIdAsync(int min, int max, string tabela, string coluna)
 		{
 			uint idGerado;

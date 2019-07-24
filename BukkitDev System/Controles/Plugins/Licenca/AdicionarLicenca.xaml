@@ -8,10 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     VerticalAlignment="Top"
     mc:Ignorable="d">
-    <GroupBox
-        Margin="30"
-        HorizontalAlignment="Center"
-        Style="{DynamicResource MaterialDesignCardGroupBox}">
+    <GroupBox HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignCardGroupBox}">
         <GroupBox.Header>
             <Grid>
                 <TextBlock

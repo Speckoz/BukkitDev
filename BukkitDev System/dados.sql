@@ -18,10 +18,10 @@ truncate table licencelist;
 delete from pluginlist where id = 999991; 
 select nome_plugin from pluginlist where id = 999991;
 
-update licencelist set plugin_suspenso = false where licence_key = "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx;
+update licencelist set plugin_suspenso = false where licence_key = "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx";
 
 insert into pluginlist values (999999, "RC_Economy", "Logikoz", "1.0.0", "Gratuito", "0", "Plugin de economia para seu servidor", true);
-insert into licencelist values (99999999, 999999, "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx", false, "2019-06-18", "06:00:00", false);
+insert into licencelist values (99999999, 312909, "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx", false, "2019-06-18", "06:00:00", false);
 
 #=====================================================================================
 
@@ -40,7 +40,7 @@ drop table if exists licencelist;
 create table if not exists licenceList(
 cliente_id int unsigned not null,
 #cliente_nome varchar(30) not null,
-plugin_id MediumInt,
+plugin_id MediumInt not null,
 licence_key tinytext not null,
 licence_global boolean not null,
 data_criacao date not null,

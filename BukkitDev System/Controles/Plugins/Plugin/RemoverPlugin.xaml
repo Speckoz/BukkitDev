@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Grid>
-        <materialDesign:Card HorizontalAlignment="Center">
+        <materialDesign:Card HorizontalAlignment="Center" materialDesign:ShadowAssist.ShadowDepth="Depth1">
             <StackPanel Orientation="Vertical">
                 <GroupBox
                     Width="173"
@@ -35,9 +35,9 @@
                                         <TextBlock Text="voce pode passar o mouse em cima do plugin adicionado" TextAlignment="Center" />
                                         <TextBlock Text="para ver informaçoes sobre o mesmo!" TextAlignment="Center" />
                                         <TextBlock />
-                                        <TextBlock Text="Caso tenha colocado um plugin por engano" TextAlignment="Center" />
+                                        <TextBlock Text="Se tiver certeza que quer excluir o plugin" TextAlignment="Center" />
                                         <TextBlock Text="Voce pode clicar no 'x' do plugin desejado" TextAlignment="Center" />
-                                        <TextBlock Text="e o mesmo será removido da lista!" TextAlignment="Center" />
+                                        <TextBlock Text="e o mesmo será removido!" TextAlignment="Center" />
                                     </StackPanel>
                                 </materialDesign:PackIcon.ToolTip>
                             </materialDesign:PackIcon>

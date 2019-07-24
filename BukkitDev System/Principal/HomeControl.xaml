@@ -41,7 +41,7 @@
                     Text="Sobre" />
             </StackPanel>
         </Button>
-        <WrapPanel Margin="0,50,0,0" HorizontalAlignment="Center">
+        <WrapPanel Margin="0,30,0,0" HorizontalAlignment="Center">
             <md:Card
                 Width="300"
                 Margin="10"

@@ -7,15 +7,14 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="TelaInicial"
-    Width="350"
-    Height="500"
+    Width="830"
+    Height="550"
     MinWidth="350"
     MinHeight="550"
     materialDesign:TransitionAssist.DisableTransitions="true"
     AllowDrop="True"
     AllowsTransparency="True"
     Background="{DynamicResource MaterialDesignPaper}"
-    BorderThickness="0"
     FontFamily="{DynamicResource MaterialDesignFont}"
     Loaded="Window_Loaded"
     ResizeMode="CanResizeWithGrip"
@@ -112,7 +111,7 @@
                                 <materialDesign:PackIcon Kind="KeyPlus" />
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Click="MenuItem_Click_5" Header="Listar Licenças (Em Breve)">
+                        <MenuItem Click="MenuItem_Click_5" Header="Listar Licenças">
                             <MenuItem.Icon>
                                 <materialDesign:PackIcon Kind="KeyChange" />
                             </MenuItem.Icon>
@@ -240,10 +239,7 @@
                                 Orientation="Horizontal">
                                 <Ellipse Width="30" Height="30">
                                     <Ellipse.Fill>
-                                        <ImageBrush
-                                            x:Name="ImagemPadraol_img"
-                                            ImageSource="/BukkitDev System;component/favicon.ico"
-                                            Stretch="UniformToFill" />
+                                        <ImageBrush x:Name="ImagemPadraol_img" Stretch="UniformToFill" />
                                     </Ellipse.Fill>
                                 </Ellipse>
                                 <Button
@@ -311,7 +307,7 @@
                                 Style="{DynamicResource MaterialDesignFlatButton}" />
                         </MenuItem>
                         <MenuItem Header="Tamanho Maximo do Arquivo" Icon="{materialDesign:PackIcon TransferRight}">
-                            <TextBlock Text="Tamanho Maximo do plugin (Em Bytes)" TextAlignment="Center" />
+                            <TextBlock Text="Tamanho Maximo do plugin (Em KibiBytes)" TextAlignment="Center" />
                             <TextBlock Text="Padrao (5120)" TextAlignment="Center" />
                             <Separator />
                             <TextBox
@@ -331,7 +327,7 @@
             <!--  ScrollViewer usersControls  -->
             <ScrollViewer
                 x:Name="ControlesDeTela_sv"
-                Margin="0,80,0,15"
+                Margin="0,100,0,15"
                 VerticalScrollBarVisibility="Hidden">
                 <local:HomeControl />
             </ScrollViewer>

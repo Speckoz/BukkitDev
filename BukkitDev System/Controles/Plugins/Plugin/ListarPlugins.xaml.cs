@@ -7,9 +7,6 @@ namespace BukkitDev_System.Controles.Plugins.Plugin
 {
 	public partial class ListarPlugins : UserControl
 	{
-		//devido o construtor da classe fazer uma verificaçao se as duas tabelas existem, nao é nada legal colocar uma nova instancia dentro do segundo metodo {ProcurarPluginAsync}
-		//ja que o mesmo faz uma verificaçao a cada vez que o event keyDown for acionado...e isso pode prejudicar muito a sua maquina, ja que o metodo de verificaçao é assincrono, e como eu nao utilizei o Task<>.Run(), ele irá criar threads para cada verificaçao.
-		//private PegarPlugins get = new PegarPlugins();
 		public ListarPlugins()
 		{
 			InitializeComponent();

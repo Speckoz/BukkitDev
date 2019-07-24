@@ -8,9 +8,6 @@ using @var = System.Byte;
 
 namespace BukkitDev_System._dep.MySQL
 {
-	/// <summary>
-	/// Pegar informaçoes
-	/// </summary>
 	internal class PegarPlugins
 	{
 		//queries
@@ -25,8 +22,11 @@ namespace BukkitDev_System._dep.MySQL
 		public List<string> TooltipInfo { get; set; }
 
 		/// <summary>
-		/// Pegar informaçoes e adicionar no Grid.
+		/// Pega informaçoes dos plugins.
 		/// </summary>
+		/// <param name="dataGrid">se true, adiciona tabela na propriedade <see cref="DataTable"/>. senao, adiciona informaçoes de um determinado plugin na propriedade <see cref="TooltipInfo"/>.</param>
+		/// <param name="itemProcurarID">se dataGrid for false, deve informar o codigo do plugin para ser informado. senao, <see cref="Nullable"/></param>
+		/// <returns>Retorna o resultado da tarefa em bool.</returns>
 		public async Task<bool> InformacoesAsync(bool dataGrid, string itemProcurarID)
 		{
 			using (MySqlConnection con = new MySqlConnection(await PegarConexaoMySQL.ConexaoAsync()))

@@ -16,7 +16,7 @@ namespace BukkitDev_System._dep
 			}
 			catch
 			{
-				MessageBox.Show("Erro ao alterar a cor!", string.Empty, MessageBoxButton.OK, MessageBoxImage.Error);
+				MetodosConstantes.EnviarMenssagem("Erro ao alterar a cor!");
 			}
 		}
 
