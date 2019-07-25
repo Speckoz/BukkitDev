@@ -19,8 +19,7 @@ truncate table licencalist;
 delete from pluginlist where id = 999991; 
 select nome_plugin from pluginlist where id = 999991;
 
-update licencalist set licenca_suspenso = true where licenca_key = "fkffb-jafsi-e952v-r1qtc-vb0xt";
-update licencalist set licenca_suspenso = true where binary licenca_key = 'xxxxx-xxxxx-xxxxx-xxxxx-xxxxx';select count(licenca_suspenso) from licencalist where binary licenca_key = 'xxxxx-xxxxx-xxxxx-xxxxx-xxxxx';
+select * from licencalist where (licenca_key = @a || cliente_id = 99687671) && data_criacao = '2019-07-25';
 
 insert into pluginlist values (999999, "RC_Economy", "Logikoz", "1.0.0", "Gratuito", "0", "Plugin de economia para seu servidor", true);
 insert into licencalist values (99999999, 312909, "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx", false, "2019-06-18", "06:00:00", false);

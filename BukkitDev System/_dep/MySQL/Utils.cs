@@ -26,7 +26,38 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 
 						byte valid = byte.Parse((await ver.ExecuteScalarAsync()).ToString());
 
-						return valid == 1;
+						return valid >= 1;
+					}
+				}
+				catch (Exception e)
+				{
+					MetodosConstantes.MostrarExceptions(e);
+					return false;
+				}
+			}
+		}
+		/// <summary>
+		/// Procurar por um determinado item dentro do banco de dados
+		/// </summary>
+		/// <param name="itemProcurado">array contendo os valores dos itens a ser procurados</param>
+		/// <param name="tabela">Nome da tabela no banco na qual será feito a busca.</param>
+		/// <param name="coluna">Indexs para a busca.</param>
+		public async Task<bool> VerificarExisteAsync(string[] itemProcurado, string tabela, string[] coluna)
+		{
+			using (MySqlConnection con = new MySqlConnection(await PegarConexaoMySQL.ConexaoAsync()))
+			{
+				try
+				{
+					await con.OpenAsync();
+
+					using (MySqlCommand ver = new MySqlCommand($"select count(*) from {tabela} where {coluna[0]} = @a && {coluna[1]} = @b", con))
+					{
+						_ = ver.Parameters.Add(new MySqlParameter("@a", itemProcurado[0]));
+						_ = ver.Parameters.Add(new MySqlParameter("@b", itemProcurado[1]));
+
+						byte valid = byte.Parse((await ver.ExecuteScalarAsync()).ToString());
+
+						return valid >= 1;
 					}
 				}
 				catch (Exception e)

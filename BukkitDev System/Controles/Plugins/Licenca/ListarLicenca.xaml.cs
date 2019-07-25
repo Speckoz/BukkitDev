@@ -21,6 +21,20 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 
 		private async void ProcurarLicenca_bt_Click(object sender, RoutedEventArgs e)
 		{
+			string dataPronta = string.Empty;
+			if (UsarData_cb.IsChecked.Value)
+			{
+				if (!string.IsNullOrEmpty(Data_dp.Text))
+				{
+					string[] t = Data_dp.Text.Split('/');
+					dataPronta = $"{t[2]}-{t[1]}-{t[0]}";
+				}
+				else
+				{
+					MetodosConstantes.EnviarMenssagem("Voce precisa selecionar uma data.");
+					return;
+				}
+			}
 			try
 			{
 				PegarLicenca pegarLicenca = new PegarLicenca();
@@ -28,16 +42,33 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 				{
 					ListaLicencas_sp.Children.Clear();
 					List<string> resultado = await pegarLicenca.PegarAsync();
+					byte count = 0;
 					foreach (string i in resultado)
 					{
-						DesenhandoInformaçoes(await pegarLicenca.PegarAsync(i));
+						if (!await new Utils().VerificarExisteAsync(new string[] { dataPronta, i }, "licencalist", new string[] { "data_criacao", "licenca_key" }) && UsarData_cb.IsChecked.Value)
+						{
+							count++;
+							continue;
+						}
+						DesenhandoInformaçoes(await pegarLicenca.PegarAsync(i, UsarData_cb.IsChecked.Value ? dataPronta : null));
+					}
+					if (count == resultado.Count && UsarData_cb.IsChecked.Value)
+					{
+						MetodosConstantes.EnviarMenssagem("Nao existe nenhuma licença criada nessa data");
 					}
 				}
 				else
 				{
 					if (!string.IsNullOrEmpty(ProcurarLicencaCodUsuario_txt.Text))
 					{
-						DesenhandoInformaçoes(await pegarLicenca.PegarAsync(ProcurarLicencaCodUsuario_txt.Text));
+						if (await new Utils().VerificarExisteAsync(ProcurarLicencaCodUsuario_txt.Text, "licencalist", "data_criacao"))
+						{
+							DesenhandoInformaçoes(await pegarLicenca.PegarAsync(ProcurarLicencaCodUsuario_txt.Text));
+						}
+						else
+						{
+							MetodosConstantes.EnviarMenssagem("Licença informada nao existe!");
+						}
 					}
 					else
 					{

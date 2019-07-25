@@ -51,14 +51,14 @@
                                 x:Name="UsarData_cb"
                                 HorizontalAlignment="Center"
                                 Content="Usar data"
-                                IsChecked="True" />
+                                IsChecked="False" />
                             <DatePicker
                                 x:Name="Data_dp"
                                 Width="100"
                                 Margin="5"
                                 HorizontalAlignment="Center"
                                 IsEnabled="{Binding IsChecked, ElementName=UsarData_cb}"
-                                Text="{Binding Date, StringFormat={}{0:yyyy-MM-dd}}" />
+                                Text="{Binding Text, StringFormat={}{0:yyyy-MM-dd}}" />
                         </StackPanel>
                     </WrapPanel>
                 </Expander>

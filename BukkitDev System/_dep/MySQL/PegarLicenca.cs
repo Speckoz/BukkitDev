@@ -11,7 +11,19 @@ namespace BukkitDev.System._dep.MySQL
 {
 	internal class PegarLicenca
 	{
-		public async Task<List<string>> PegarAsync(string @ref)
+		public async Task<List<string>> PegarAsync()
+		{
+			return await PegarVazio();
+		}
+		public async Task<List<string>> PegarAsync(string lic)
+		{
+			return await PegarParam(lic, null);
+		}
+		public async Task<List<string>> PegarAsync(string @ref, string data)
+		{
+			return await PegarParam(@ref, data);
+		}
+		private async Task<List<string>> PegarParam(string @ref, string dataPesquisar)
 		{
 			try
 			{
@@ -19,10 +31,14 @@ namespace BukkitDev.System._dep.MySQL
 				{
 					await con.OpenAsync();
 
-					using (MySqlCommand get = new MySqlCommand("select * from licencalist where licenca_key = @a || cliente_id = @a", con))
+					using (MySqlCommand get = new MySqlCommand($"select * from licencalist where (licenca_key = @a || cliente_id = @a) {(dataPesquisar != null ? "&& data_criacao = @b" : string.Empty)}", con))
 					{
 						_ = get.Parameters.Add(new MySqlParameter("@a", @ref));
-
+						//
+						if (dataPesquisar != null)
+						{
+							_ = get.Parameters.Add(new MySqlParameter("@b", dataPesquisar));
+						}
 						using (MySqlDataReader dataReader = await get.ExecuteReaderAsync())
 						{
 							List<string> dados = new List<string>();
@@ -46,7 +62,7 @@ namespace BukkitDev.System._dep.MySQL
 				return null;
 			}
 		}
-		public async Task<List<string>> PegarAsync()
+		private async Task<List<string>> PegarVazio()
 		{
 			try
 			{
@@ -56,7 +72,7 @@ namespace BukkitDev.System._dep.MySQL
 
 					using (MySqlCommand get = new MySqlCommand("select licenca_key from licencalist", con))
 					{
-						using(MySqlDataReader reader = await get.ExecuteReaderAsync())
+						using (MySqlDataReader reader = await get.ExecuteReaderAsync())
 						{
 							List<string> dados = new List<string>();
 							DataTable data = new DataTable();

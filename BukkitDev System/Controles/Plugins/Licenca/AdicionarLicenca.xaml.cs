@@ -106,14 +106,14 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 
 		private async Task GerarIDAndAdicionarLicencaAsync(bool keyGlobal, uint pluginID)
 		{
-			uint userID = await new Utils().GerarIdAsync(10000000, 99999999, "licencelist", "cliente_id");
+			uint userID = await new Utils().GerarIdAsync(10000000, 99999999, "licencalist", "cliente_id");
 
 			await AdicioarLicAsync(keyGlobal, pluginID, userID);
 		}
 
 		private async Task<bool> LicencaExisteAsync()
 		{
-			return await new Utils().VerificarExisteAsync(LicencaGerada_txt.Text, "licencelist", "licence_key");
+			return await new Utils().VerificarExisteAsync(LicencaGerada_txt.Text, "licencalist", "licenca_key");
 		}
 
 		private async Task<bool> CodigoExisteAsync()

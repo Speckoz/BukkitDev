@@ -5,7 +5,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 {
 	internal class AdicionarLicenca
 	{
-		private const string CmdText = "insert into licencelist values (@a, @b, @c, @d, @e, @f, @g);";
+		private const string CmdText = "insert into licencalist values (@a, @b, @c, @d, @e, @f, @g);";
 		/// <summary>
 		/// Adiciona uma nova licença ao Banco de Dados.
 		/// </summary>
