@@ -60,6 +60,8 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 					{
 						_ = rem.Parameters.Add(new MySqlParameter("@a", lic));
 
+						_ = await rem.ExecuteNonQueryAsync();
+
 						return (true);
 					}
 				}

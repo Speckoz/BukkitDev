@@ -22,7 +22,7 @@ namespace Logikoz.BukkitDevSystem._dep
 		}
 
 		[System.Obsolete]
-		public void ConfigTemaPrograma(ref MenuItem Light_mi, ref MenuItem Dark_mi, ref MenuItem padrao)
+		public void ConfigTemaPrograma(MenuItem Light_mi, MenuItem Dark_mi)
 		{
 			if (!string.IsNullOrEmpty(PegarInfos.Tema))
 			{

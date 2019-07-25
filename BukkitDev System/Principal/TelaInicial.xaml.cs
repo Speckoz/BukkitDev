@@ -89,7 +89,7 @@ namespace Logikoz.BukkitDevSystem.Principal
 				//setando seleçoes das configs mysql/ftp
 				ConfiguMysqlFtp();
 				//setando tema da config
-				new TemaWindows().ConfigTemaPrograma(ref Light_mi, ref Dark_mi, ref PadraoWindows_mi);
+				new TemaWindows().ConfigTemaPrograma(Light_mi, Dark_mi);
 				//setando cor da config
 				ConfigCorPrograma();
 				//setando valor da taxa na config
