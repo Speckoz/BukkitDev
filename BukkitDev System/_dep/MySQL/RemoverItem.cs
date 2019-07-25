@@ -56,7 +56,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 				{
 					await con.OpenAsync();
 
-					using (MySqlCommand rem = new MySqlCommand("delete from licencelist where binary licence_key = @a;", con))
+					using (MySqlCommand rem = new MySqlCommand("delete from licencalist where binary licenca_key = @a;", con))
 					{
 						_ = rem.Parameters.Add(new MySqlParameter("@a", lic));
 

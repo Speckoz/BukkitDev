@@ -116,7 +116,7 @@
                                 <materialDesign:PackIcon Kind="KeyChange" />
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Remover Licença (Em Breve)">
+                        <MenuItem Click="MenuItem_Click_7" Header="Suspençao de Licença">
                             <MenuItem.Icon>
                                 <materialDesign:PackIcon Kind="KeyRemove" />
                             </MenuItem.Icon>

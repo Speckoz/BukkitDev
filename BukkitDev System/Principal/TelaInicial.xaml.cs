@@ -488,7 +488,7 @@ namespace Logikoz.BukkitDevSystem.Principal
 			//ControlesDeTela_gd.Children.Add(uControl);
 		}
 
-		//itens
+		//plugin
 		private void MenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			AdicionarNovoUserControl(new NovoPlugin());
@@ -497,6 +497,11 @@ namespace Logikoz.BukkitDevSystem.Principal
 		{
 			AdicionarNovoUserControl(new ListarPlugins());
 		}
+		private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+		{
+			AdicionarNovoUserControl(new RemoverPlugin());
+		}
+		//licenças
 		private void MenuItem_Click_4(object sender, RoutedEventArgs e)
 		{
 			AdicionarNovoUserControl(new Controles.Plugins.Licenca.AdicionarLicenca());
@@ -505,9 +510,9 @@ namespace Logikoz.BukkitDevSystem.Principal
 		{
 			AdicionarNovoUserControl(new Controles.Plugins.Licenca.ListarLicenca());
 		}
-		private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+		private void MenuItem_Click_7(object sender, RoutedEventArgs e)
 		{
-			AdicionarNovoUserControl(new Controles.Plugins.Plugin.RemoverPlugin());
+			AdicionarNovoUserControl(new Controles.Plugins.Licenca.SuspenderLicenca());
 		}
 		//configuraçao
 		private void MenuItem_Click_1(object sender, RoutedEventArgs e)

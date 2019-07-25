@@ -79,7 +79,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 			//adicionando data e hora
 			_ = st2.Children.Add(new TextBlock() { Text = $"Data criaçao: {resultado[4].Substring(0, 10)} as {resultado[5]}", Margin = new Thickness(5) });
 			//adicionando suspensao!.
-			_ = st2.Children.Add(new TextBlock() { Text = $"Suspenso: {Convert.ToBoolean(resultado[6])}", Margin = new Thickness(5) });
+			_ = st2.Children.Add(new TextBlock() { Text = $"Suspensa: {(Convert.ToBoolean(resultado[6]) ? "Sim" : "Nao")}", Margin = new Thickness(5) });
 			//adicionando {st1} e {st2} dentro de um wrap para o texto ficar responsivo.
 			WrapPanel geralWrap = new WrapPanel();
 			_ = geralWrap.Children.Add(st1);

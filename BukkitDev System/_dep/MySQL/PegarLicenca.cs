@@ -19,7 +19,7 @@ namespace BukkitDev.System._dep.MySQL
 				{
 					await con.OpenAsync();
 
-					using (MySqlCommand get = new MySqlCommand("select * from licencelist where licence_key = @a || cliente_id = @a", con))
+					using (MySqlCommand get = new MySqlCommand("select * from licencalist where licenca_key = @a || cliente_id = @a", con))
 					{
 						_ = get.Parameters.Add(new MySqlParameter("@a", @ref));
 
@@ -54,7 +54,7 @@ namespace BukkitDev.System._dep.MySQL
 				{
 					await con.OpenAsync();
 
-					using (MySqlCommand get = new MySqlCommand("select licence_key from licencelist", con))
+					using (MySqlCommand get = new MySqlCommand("select licenca_key from licencalist", con))
 					{
 						using(MySqlDataReader reader = await get.ExecuteReaderAsync())
 						{
@@ -63,7 +63,7 @@ namespace BukkitDev.System._dep.MySQL
 							data.Load(reader);
 							foreach (DataRow row in data.Rows)
 							{
-								dados.Add(row["licence_key"].ToString());
+								dados.Add(row["licenca_key"].ToString());
 							}
 							return dados;
 						}

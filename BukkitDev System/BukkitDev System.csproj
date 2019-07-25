@@ -165,6 +165,9 @@
     <Compile Include="Controles\Plugins\Licenca\ListarLicenca.xaml.cs">
       <DependentUpon>ListarLicenca.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controles\Plugins\Licenca\SuspenderLicenca.xaml.cs">
+      <DependentUpon>SuspenderLicenca.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controles\Plugins\Plugin\ListarPlugins.xaml.cs">
       <DependentUpon>ListarPlugins.xaml</DependentUpon>
     </Compile>
@@ -194,10 +197,10 @@
     <Compile Include="_dep\MySQL\AdicionarPlugins.cs" />
     <Compile Include="_dep\MySQL\CriarTabela.cs" />
     <Compile Include="_dep\MySQL\PegarConexaoMySQL.cs" />
-    <Compile Include="_dep\MySQL\PegarInformacoesLicPl.cs" />
     <Compile Include="_dep\MySQL\PegarLicenca.cs" />
     <Compile Include="_dep\MySQL\PegarPlugins.cs" />
     <Compile Include="_dep\MySQL\RemoverItem.cs" />
+    <Compile Include="_dep\MySQL\SuspencaoLicenca.cs" />
     <Compile Include="_dep\MySQL\Utils.cs" />
     <Compile Include="_dep\PegarInfos.cs" />
     <Compile Include="_dep\SQLite\AdicionandoDadosFTP.cs" />
@@ -267,6 +270,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controles\Plugins\Licenca\ListarLicenca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\Plugins\Licenca\SuspenderLicenca.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
