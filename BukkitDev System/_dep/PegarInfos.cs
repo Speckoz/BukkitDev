@@ -1,14 +1,13 @@
 ﻿namespace Logikoz.BukkitDevSystem._dep
 {
 	internal static class PegarInfos
-	{ 
-		//========================== Campos ==========================
-
+	{
 		//======================= Propriedades =======================
 		/// <summary>
 		/// Nome do programa Default 'BukkitDev'
 		/// </summary>
 		public static string Nome { get; } = "BukkitDev";
+
 		/// <summary>
 		/// Segundo nome, o default é apenas um um aplido de 'System'
 		/// </summary>
@@ -28,7 +27,7 @@
 		/// <summary>
 		/// Link da Source original do GitHub
 		/// </summary>
-		public static string GitHubSourceLink { get; } = "https://github.com/LogikozRC/BukkitDev-System";
+		public static string GitHubSourceLink { get; } = "https://github.com/Logikoz/BukkitDev-System";
 		/// <summary>
 		/// Tamanho maximo do plugin em Bytes.
 		/// </summary>

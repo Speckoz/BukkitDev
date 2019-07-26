@@ -1,4 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Windows.Controls;
 using Reg = Microsoft.Win32.Registry;
 
@@ -8,13 +9,21 @@ namespace Logikoz.BukkitDevSystem._dep
 	{
 		public (bool @bool, string @string) TemaClaroHabilitado()
 		{
-			//verificando se o tema do windows está no claro ou escuro (light or dark)
-			//retorna 0 se estiver no modo escuro
-			//retorna 1 se estiver no modo claro
-			//no caso eu coloquei no terceiro parametro que o falor default seria 1, ou seja, eu quero verificar se o tema do windows está como light
-			//se voce mudar para 0, o metodo retornará o falor com base no dark, e nao mais no light
-			object resultado = Reg.GetValue(Registro(), "AppsUseLightTheme", 1);
-			return (resultado.ToString() == "1", resultado.ToString());
+			try
+			{
+				//verificando se o tema do windows está no claro ou escuro (light or dark)
+				//retorna 0 se estiver no modo escuro
+				//retorna 1 se estiver no modo claro
+				//no caso eu coloquei no terceiro parametro que o falor default seria 1, ou seja, eu quero verificar se o tema do windows está como light
+				//se voce mudar para 0, o metodo retornará o falor com base no dark, e nao mais no light
+				object resultado = Reg.GetValue(Registro(), "AppsUseLightTheme", 1);
+				return (resultado.ToString() == "1", resultado.ToString());
+			}
+			catch (Exception e)
+			{
+				MetodosConstantes.MostrarExceptions(e);
+				return (false, null);
+			}
 		}
 		private static string Registro()
 		{

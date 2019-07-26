@@ -1,7 +1,6 @@
 ﻿using Logikoz.BukkitDevSystem._dep.XML;
 using MaterialDesignThemes.Wpf;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace Logikoz.BukkitDevSystem._dep
 {

@@ -138,22 +138,9 @@ namespace Logikoz.BukkitDevSystem.Principal
 				//por enquanto a cor secundaria pega é a mesma da primaria...
 				palette.ReplaceAccentColor(PegarInfos.Cor);
 
-				List<MenuItem> menus = new List<MenuItem>
-					{
-						LightBlue_mi,
-						Purple_mi,
-						Pink_mi,
-						Green_mi,
-						Red_mi
-					};
-				MenuItem cor = (PegarInfos.Cor == "LightBlue") ? menus[0] :
-						 (PegarInfos.Cor == "Purple") ? menus[1] :
-						 (PegarInfos.Cor == "Pink") ? menus[2] :
-						 (PegarInfos.Cor == "Green") ? menus[3] :
-						 (PegarInfos.Cor == "Red") ? menus[4] : null;
-				foreach (MenuItem item in menus)
+				foreach (MenuItem i in Cores_mi.Items)
 				{
-					item.IsChecked = item == cor;
+					i.IsChecked = (string)i.Header == PegarInfos.Cor;
 				}
 			}
 		}
@@ -397,29 +384,12 @@ namespace Logikoz.BukkitDevSystem.Principal
 		{
 			MenuItem select = (MenuItem)sender;
 
-			List<MenuItem> menus = new List<MenuItem>
+			foreach (MenuItem i in Cores_mi.Items)
 			{
-				LightBlue_mi,
-				Purple_mi,
-				Pink_mi,
-				Green_mi,
-				Red_mi
-			};
-
-			//MenuItem i = e.Source as MenuItem;
-			//MetodosConstantes.EnviarMenssagem(i.Header.ToString());
-
-			foreach (MenuItem item in menus)
-			{
-				item.IsChecked = item == select;
+				i.IsChecked = i == select;
 			}
-
 			//altera a cor
-			await MudarCor.MudarAsync(CorRetornada(select));
-		}
-		private string CorRetornada(MenuItem select)
-		{
-			return (select == LightBlue_mi) ? "LightBlue" : (select == Purple_mi) ? "Purple" : (select == Pink_mi) ? "Pink" : (select == Green_mi) ? "Green" : (select == Red_mi) ? "Red" : string.Empty;
+			await MudarCor.MudarAsync((string)select.Header);
 		}
 		#endregion
 		#region ativar/desativar tool

@@ -148,32 +148,35 @@
                                 </MenuItem.ToolTip>
                             </MenuItem>
                         </MenuItem>
-                        <MenuItem Header="Cor" Icon="{materialDesign:PackIcon ColorLens}">
+                        <MenuItem
+                            x:Name="Cores_mi"
+                            Header="Cor"
+                            Icon="{materialDesign:PackIcon ColorLens}">
                             <MenuItem
                                 x:Name="LightBlue_mi"
                                 Click="SelecionarCorPrograma_Click"
-                                Header="Azul"
+                                Header="Lightblue"
                                 IsCheckable="True"
                                 IsChecked="True" />
                             <MenuItem
                                 x:Name="Purple_mi"
                                 Click="SelecionarCorPrograma_Click"
-                                Header="Roxo"
+                                Header="Purple"
                                 IsCheckable="True" />
                             <MenuItem
                                 x:Name="Pink_mi"
                                 Click="SelecionarCorPrograma_Click"
-                                Header="Rosa"
+                                Header="Pink"
                                 IsCheckable="True" />
                             <MenuItem
                                 x:Name="Green_mi"
                                 Click="SelecionarCorPrograma_Click"
-                                Header="Verde"
+                                Header="Green"
                                 IsCheckable="True" />
                             <MenuItem
-                                x:Name="Red_mi"
+                                x:Name="Yellow_mi"
                                 Click="SelecionarCorPrograma_Click"
-                                Header="Vermelho"
+                                Header="Yellow"
                                 IsCheckable="True" />
                         </MenuItem>
                         <MenuItem Header="Tool" Icon="{materialDesign:PackIcon TooltipOutlinePlus}">
