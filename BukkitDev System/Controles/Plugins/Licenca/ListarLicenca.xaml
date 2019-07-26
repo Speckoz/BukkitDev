@@ -35,11 +35,13 @@
                             <TextBlock Text="Resultado" TextAlignment="Center" />
                             <RadioButton
                                 x:Name="BuscarTodos_rb"
+                                Click="LimparLista_Click"
                                 Content="Todos"
                                 IsChecked="True"
                                 ToolTip="Mostrará todos as licenças." />
                             <RadioButton
                                 x:Name="BuscarInformado_rb"
+                                Click="LimparLista_Click"
                                 Content="Informado"
                                 ToolTip="Mostrará apenas as informaçoes da licença informada." />
                         </StackPanel>
@@ -51,7 +53,7 @@
                                 x:Name="UsarData_cb"
                                 HorizontalAlignment="Center"
                                 Content="Usar data"
-                                IsChecked="False" />
+                                IsEnabled="{Binding IsChecked, ElementName=BuscarTodos_rb}" />
                             <DatePicker
                                 x:Name="Data_dp"
                                 Width="100"
@@ -65,10 +67,9 @@
 
                 <Button
                     x:Name="ProcurarLicenca_bt"
-                    Margin="10"
                     Click="ProcurarLicenca_bt_Click"
                     Content="Procurar"
-                    Style="{DynamicResource MaterialDesignFlatButton}" />
+                    Style="{StaticResource MaterialDesignFlatButton}" />
             </StackPanel>
         </GroupBox>
         <WrapPanel x:Name="ListaLicencas_sp" Margin="10" />

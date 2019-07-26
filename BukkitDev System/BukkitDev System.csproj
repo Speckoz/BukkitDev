@@ -168,6 +168,9 @@
     <Compile Include="Controles\Plugins\Licenca\SuspenderLicenca.xaml.cs">
       <DependentUpon>SuspenderLicenca.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controles\Plugins\Plugin\EditarPlugin.xaml.cs">
+      <DependentUpon>EditarPlugin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controles\Plugins\Plugin\ListarPlugins.xaml.cs">
       <DependentUpon>ListarPlugins.xaml</DependentUpon>
     </Compile>
@@ -274,6 +277,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controles\Plugins\Licenca\SuspenderLicenca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\Plugins\Plugin\EditarPlugin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

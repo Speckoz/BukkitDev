@@ -11,11 +11,15 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
@@ -98,6 +102,43 @@ namespace Logikoz.BukkitDevSystem.Principal
 				ConfigTamanhoMaxPlugin();
 				//config imagem a ser usada
 				ConfigImagem();
+				//baixando imagem padrao
+				BaixarImagem();
+			}
+		}
+
+		private async void BaixarImagem()
+		{
+			if(PegarInfos.ImagemPlugin.Equals("true"))
+			{
+				return;
+			}
+			try
+			{
+				//http://localhost/bukkitdev/assets/Images/default.png
+				List<string> a = await new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, PegarInfos.ConfigFTP, "ftp");
+
+				HttpWebRequest w = (HttpWebRequest)WebRequest.Create($"http://{a[0]}/bukkitdev/assets/Images/default.png");
+				w.AllowWriteStreamBuffering = true;
+				w.Timeout = 30000;
+
+				WebResponse webResponse = await w.GetResponseAsync();
+				Stream stream = webResponse.GetResponseStream();
+				BitmapImage img = new BitmapImage();
+
+				img.BeginInit();
+				img.StreamSource = stream;
+				img.CacheOption = BitmapCacheOption.OnLoad;
+				img.EndInit();
+				ImagemPadraol_img.ImageSource = img;
+			}
+			catch(ArgumentOutOfRangeException)
+			{
+				MetodosConstantes.EnviarMenssagem("TimeOut: Nao foi possivel baixar a imagem padrao!");
+			}
+			catch (Exception e)
+			{
+				MetodosConstantes.MostrarExceptions(e);
 			}
 		}
 
@@ -269,6 +310,11 @@ namespace Logikoz.BukkitDevSystem.Principal
 		{
 			_ = Process.Start(PegarInfos.GitHubSourceLink);
 		}
+		//volta para a tela inicial do programa.
+		private void Button_Click_6(object sender, RoutedEventArgs e)
+		{
+			AdicionarNovoUserControl(new HomeControl());
+		}
 		#endregion
 		#region CONFIGURAÇOES
 		private async void MarcarClicadoAsync(string tipoEnvio, string tipoBanco, List<MenuItem> items, object sender)
@@ -422,6 +468,7 @@ namespace Logikoz.BukkitDevSystem.Principal
 			{
 				new AtualizandoDadosXML().AtualizarAsync(PegarInfos.NomeArquivoXML, "ImagemPlugin", "false");
 				EscolherImagem_st.IsEnabled = true;
+				BaixarImagem();
 			}
 			await MetodosConstantes.LerXMLAsync();
 			MetodosConstantes.EnviarMenssagem("Configuraçao de imagem selecionada foi alterada!");

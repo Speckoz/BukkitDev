@@ -60,19 +60,18 @@
                 Margin="10,0,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
-                Orientation="Horizontal">
+                Orientation="Horizontal"
+                TextBlock.Foreground="White">
                 <materialDesign:PackIcon
                     Width="26"
                     Height="26"
                     VerticalAlignment="Center"
-                    Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                     Kind="LanguageJava" />
                 <TextBlock
                     x:Name="TituloPrograma_txt"
                     Margin="10,0,0,0"
                     VerticalAlignment="Center"
                     FontWeight="Bold"
-                    Foreground="White"
                     Text="nome" />
             </StackPanel>
         </Grid>
@@ -213,7 +212,7 @@
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text="Quando está desativada a imagem que será/deve ser" TextAlignment="Center" />
                                             <TextBlock Text="usada ficará dentro do servidor com o nome" TextAlignment="Center" />
-                                            <TextBlock Text="padrao de 'Default.png' e está dentro do mesmo diretorio" TextAlignment="Center" />
+                                            <TextBlock Text="padrao de 'default.png' e está dentro do mesmo diretorio" TextAlignment="Center" />
                                             <TextBlock Text="das outras imagens." TextAlignment="Center" />
                                         </StackPanel>
                                     </TextBlock.ToolTip>
@@ -359,8 +358,19 @@
                         Width="30"
                         Height="30"
                         Margin="0,0,0,10"
+                        Click="Button_Click_6"
+                        Content="{materialDesign:PackIcon Home}"
+                        Foreground="White"
+                        Style="{DynamicResource MaterialDesignFloatingActionMiniDarkButton}"
+                        ToolTip="Tela Inicial"
+                        ToolTipService.Placement="Left" />
+                    <Button
+                        Width="30"
+                        Height="30"
+                        Margin="0,0,0,10"
                         Click="Button_Click_4"
                         Content="{materialDesign:PackIcon StarRate}"
+                        Foreground="Black"
                         Style="{DynamicResource MaterialDesignFloatingActionMiniLightButton}"
                         ToolTip="Avaliar"
                         ToolTipService.Placement="Left" />
@@ -370,7 +380,8 @@
                         Margin="0,0,0,10"
                         Click="Button_Click_3"
                         Content="{materialDesign:PackIcon InformationVariant}"
-                        Style="{DynamicResource MaterialDesignFloatingActionMiniDarkButton}"
+                        Foreground="Black"
+                        Style="{DynamicResource MaterialDesignFloatingActionMiniLightButton}"
                         ToolTip="Sobre"
                         ToolTipService.Placement="Left" />
                 </StackPanel>

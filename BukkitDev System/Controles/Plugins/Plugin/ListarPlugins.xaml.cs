@@ -42,7 +42,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 			PegarPlugins get = new PegarPlugins();
 			Desativar();
 			//pegando dados do banco, e adicionando no dataGrid
-			if (await get.InformacoesAsync(item))
+			if (await get.InformacoesAsync(item, true))
 			{
 				Ativar(get);
 			}

@@ -14,9 +14,11 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 {
 	public partial class ListarLicenca : UserControl
 	{
+		private List<string> licsAdd;
 		public ListarLicenca()
 		{
 			InitializeComponent();
+			licsAdd = new List<string>();
 		}
 
 		private async void ProcurarLicenca_bt_Click(object sender, RoutedEventArgs e)
@@ -61,7 +63,16 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 				{
 					if (!string.IsNullOrEmpty(ProcurarLicencaCodUsuario_txt.Text))
 					{
-						if (await new Utils().VerificarExisteAsync(ProcurarLicencaCodUsuario_txt.Text, "licencalist", "data_criacao"))
+						if (!licsAdd.Contains(ProcurarLicencaCodUsuario_txt.Text))
+						{
+							licsAdd.Add(ProcurarLicencaCodUsuario_txt.Text);
+						}
+						else
+						{
+							MetodosConstantes.EnviarMenssagem("Está licença ja esta na lista.");
+							return;
+						}
+						if (await new Utils().VerificarExisteAsync(ProcurarLicencaCodUsuario_txt.Text, "licencalist", "licenca_key"))
 						{
 							DesenhandoInformaçoes(await pegarLicenca.PegarAsync(ProcurarLicencaCodUsuario_txt.Text));
 						}
@@ -93,6 +104,17 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 			_ = hed.Children.Add(icon);
 			//adicionando key da lic no stack
 			_ = hed.Children.Add(new TextBlock { Text = resultado[2], VerticalAlignment = VerticalAlignment.Center });
+			//icone de copiar
+			PackIcon ic = new PackIcon() { Kind = PackIconKind.ContentCopy, Height = 15, Width = 15, ToolTip = resultado[2] };
+			ToolTipService.SetIsEnabled(ic, false);
+			//criando botao que copiará a licença.
+			Button copy = new Button { Margin = new Thickness(10, 0, 0, 0), Width = 20, Height = 20, ToolTip = "Copiar", VerticalAlignment = VerticalAlignment.Center, Content = ic };
+			//adicioando style Icon no botao
+			copy.SetResourceReference(StyleProperty, "MaterialDesignIconButton");
+			//evento de click do botao
+			copy.Click += Copy_Click;
+			//adicionando botao de copiar no stack
+			_ = hed.Children.Add(copy);
 			//criando o Expander que conterá as informaçoes da licença
 			Expander ex = new Expander() { IsExpanded = true, Margin = new Thickness(5), Background = null, FontFamily = new FontFamily("Consolas"), FontSize = 12 };
 			//adicionando o stack na proriedade Header (titulo, cabeçario) do expander.
@@ -127,6 +149,11 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 			_ = ListaLicencas_sp.Children.Add(card);
 		}
 
+		private void Copy_Click(object sender, RoutedEventArgs e)
+		{
+			Clipboard.SetText((string)(((Button)sender).Content as PackIcon).ToolTip);
+		}
+
 		private async void Card_MouseDown(object sender, MouseButtonEventArgs e)
 		{
 			//pegando a key da licenda dentro header do expander.
@@ -143,6 +170,12 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 					MetodosConstantes.EnviarMenssagem($"{lic} foi removida!");
 				}
 			}
+		}
+
+		private void LimparLista_Click(object sender, RoutedEventArgs e)
+		{
+			licsAdd.Clear();
+			ListaLicencas_sp.Children.Clear();
 		}
 	}
 }

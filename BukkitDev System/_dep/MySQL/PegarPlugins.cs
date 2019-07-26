@@ -84,7 +84,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 			}
 		}
 
-		public async Task<bool> InformacoesAsync(string itemProcurar)
+		public async Task<bool> InformacoesAsync(string itemProcurar, bool messageReturn)
 		{
 			using (MySqlConnection con = new MySqlConnection(await PegarConexaoMySQL.ConexaoAsync()))
 			{
@@ -106,11 +106,14 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 							DataTable = dataTable;
 							NomeColunas();
 
-							using (MySqlCommand num = new MySqlCommand(CmdText1, con))
+							if (messageReturn)
 							{
-								_ = num.Parameters.Add(new MySqlParameter("@a", "%" + itemProcurar + "%"));
+								using (MySqlCommand num = new MySqlCommand(CmdText1, con))
+								{
+									_ = num.Parameters.Add(new MySqlParameter("@a", "%" + itemProcurar + "%"));
 
-								MetodosConstantes.EnviarMenssagem(@var.Parse((await num.ExecuteScalarAsync()).ToString()) + " Plugins encontrados!");
+									MetodosConstantes.EnviarMenssagem(@var.Parse((await num.ExecuteScalarAsync()).ToString()) + " Plugins encontrados!");
+								}
 							}
 
 							return true;
