@@ -1,4 +1,5 @@
-﻿using Logikoz.BukkitDevSystem._dep;
+﻿using BukkitDev.System.Controles.Plugins.Plugin;
+using Logikoz.BukkitDevSystem._dep;
 using Logikoz.BukkitDevSystem._dep.FTP;
 using Logikoz.BukkitDevSystem._dep.MySQL;
 using Logikoz.BukkitDevSystem._dep.SQLite;
@@ -10,6 +11,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 {
@@ -23,58 +25,28 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 				cardImagemPlugin.Visibility = Visibility.Collapsed;
 			}
 		}
-		//tabela usada para guardar 
-		private const string Tabela = "pluginlist";
 		//guarda o caminho da imagem selecionada
-		private string caminhoImagem = null;
-		//alterar imagem e guardar o path da imagem na var {caminhoImagem} 
+		private string _caminhoImagem = null;
+		//alterar imagem e guardar o path da imagem no campo {_caminhoImagem}
 		private void Image_MouseDown(object sender, MouseButtonEventArgs e)
 		{
-			OpenFileDialog procurarImg = new OpenFileDialog
-			{
-				//por enquanto so tem suporte a .png, mas se achar melhor pode 
-				Filter = "PNG Files (*.png)|*.png",
-				Title = "Procurar Imagem"
-			};
-			if (procurarImg.ShowDialog().Equals(true))
-			{
-				//colocando caminho do imagem na var
-				caminhoImagem = procurarImg.FileName;
-				//
-				if (new FileInfo(caminhoImagem).Length / 1024 > 2048)
-				{
-					MetodosConstantes.EnviarMenssagem("Voce precisa escolher uma imagem de no max 2MiB");
-					return;
-				}
-				//colocando imagem selecionada no campo.
-				ImagemPlugin_img.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(caminhoImagem));
-			}
+			(string cam, BitmapImage img) = new InformacoesAddPlugins().ProcurarImagem();
+			_caminhoImagem = cam;
+			ImagemPlugin_img.Source = img;
 		}
 		//procurar plugin e guardar caminho
 		private void ProcurarArquivo_bt_Click(object sender, RoutedEventArgs e)
 		{
-			OpenFileDialog pluginProcurar = new OpenFileDialog
-			{
-				Title = "Procurar Plugin de Minerafiti",
-				Filter = "JAR Files (*.jar)|*.jar"
-			};
-			if (pluginProcurar.ShowDialog() == true)
-			{
-				if (new FileInfo(pluginProcurar.FileName).Length / 1024 > PegarInfos.TamanhoLimitePlugin)
-				{
-					MetodosConstantes.EnviarMenssagem($"Seu plugin possui mais que o tamanho permitido ({PegarInfos.TamanhoLimitePlugin}MiB)");
-					return;
-				}
-				ProcurarArquivo_bt.IsEnabled = false;
-				ExcluirArquivo_bt.IsEnabled = true;
-				CaminhoArquivo_txt.Text = pluginProcurar.FileName;
-				NomeDoPlugin_txt.Text = Path.GetFileNameWithoutExtension(pluginProcurar.FileName);
-			}
+			(string cam, string sPath) = new InformacoesAddPlugins().ProcurarPlugin();
+			CaminhoArquivo_txt.Text = cam;
+			NomeDoPlugin_txt.Text = sPath;
+			ExcluirArquivo_bt.IsEnabled = true;
+			ProcurarArquivo_bt.IsEnabled = false;
 		}
 		//excluir arquivo selecionado para poder procurar outro
 		private void ExcluirArquivo_bt_Click(object sender, RoutedEventArgs e)
 		{
-			if (!ProcurarArquivo_bt.IsEnabled)
+			if (!string.IsNullOrEmpty(CaminhoArquivo_txt.Text))
 			{
 				ExcluirArquivo_bt.IsEnabled = false;
 				ProcurarArquivo_bt.IsEnabled = true;
@@ -85,7 +57,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 		#region Mudança preço/free && botao limpar
 		private void TipoDoPlugin_gb_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			PrecoDoPlugin_txt.IsEnabled = TipoDoPlugin_gb.SelectedIndex == 1 ? true : false;
+			PrecoDoPlugin_txt.IsEnabled = ((ComboBox)sender).SelectedIndex == 1 ? true : false;
 			PrecoDoPlugin_txt.Clear();
 		}
 
@@ -93,7 +65,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 		{
 			if (await TelaInicial.EscolhaDialogHostAsync("Voce tem certeza que deseja limpar todos os campos?"))
 			{
-				caminhoImagem = null;
+				_caminhoImagem = null;
 				ImagemPlugin_img.Source = null;
 				ExcluirArquivo_bt.IsEnabled = false;
 				ProcurarArquivo_bt.IsEnabled = true;
@@ -115,12 +87,12 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 		{
 			uint idP = await GerarCodigoPlugin();
 
-			if (!await new Utils().VerificarExisteAsync(idP.ToString(), Tabela, "id"))
+			if (!await new Utils().VerificarExisteAsync(idP.ToString(), "pluginlist", "id"))
 			{
 				//verificando se o cara escolheu alguma imagem
-				if(PegarInfos.ImagemPlugin.Equals("true"))
+				if (PegarInfos.ImagemPlugin.Equals("true"))
 				{
-					if (string.IsNullOrEmpty(caminhoImagem))
+					if (string.IsNullOrEmpty(_caminhoImagem))
 					{
 						MetodosConstantes.EnviarMenssagem(mensagem: "Voce presica escolher uma imagem!");
 						return;
@@ -185,16 +157,16 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 								if (PegarInfos.ImagemPlugin.Equals("true"))
 								{
 									//enviando imagem para o servidor
-									_ = await new EnviarArquivoFTP().EnviarAsync(tipo: "Images", caminho: caminhoImagem, ftpArquivo: idP + Path.GetExtension(caminhoImagem), conexaoFTP: dados, carregando_pb: Progresso_pb);
+									_ = await new EnviarArquivoFTP().EnviarAsync(tipo: "Images", caminho: _caminhoImagem, ftpArquivo: idP + Path.GetExtension(_caminhoImagem), conexaoFTP: dados, carregando_pb: Progresso_pb);
 								}
 								//adicionando informaçoes do plugin no banco de dados
-								_ = await new AdicionarPlugins().AdicionarDadosAsync(id: idP, dados: CamposDados);
+								_ = await new PluginInfo().AdicionarDadosAsync(id: idP, dados: CamposDados);
 								//enviando mensagem de sucesso
 								MetodosConstantes.EnviarMenssagem(mensagem: "Plugin Adicionado com sucesso");
 							}
 							catch
 							{
-								if (await new DeletarArquivoFTP().DeletarAsync("Images", idP + Path.GetExtension(caminhoImagem), dados))
+								if (await new DeletarArquivoFTP().DeletarAsync("Images", idP + Path.GetExtension(_caminhoImagem), dados))
 								{
 									MetodosConstantes.EnviarMenssagem("Algo ao adicionar arquivo do plugin no servidor!\nExcluindo restos...");
 								}
@@ -226,7 +198,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 
 		private static async System.Threading.Tasks.Task<uint> GerarCodigoPlugin()
 		{
-			return await new Utils().GerarIdAsync(100000, 999999, Tabela, "id");
+			return await new Utils().GerarIdAsync(100000, 999999, "pluginlist", "id");
 		}
 
 		private void UserControl_MouseDown(object sender, MouseButtonEventArgs e)

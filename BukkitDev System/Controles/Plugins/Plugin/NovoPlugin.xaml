@@ -44,6 +44,7 @@
                                 Width="200"
                                 VerticalAlignment="Center"
                                 materialDesign:HintAssist.Hint="Caminho"
+                                Foreground="{DynamicResource MaterialDesignBody}"
                                 IsReadOnly="True"
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                             <materialDesign:PopupBox
@@ -91,6 +92,7 @@
                             Width="200"
                             Margin="10"
                             materialDesign:HintAssist.Hint="Nome"
+                            Foreground="{DynamicResource MaterialDesignBody}"
                             MaxLength="50"
                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                         <TextBox
@@ -98,6 +100,7 @@
                             Width="135"
                             Margin="10"
                             materialDesign:HintAssist.Hint="Versao"
+                            Foreground="{DynamicResource MaterialDesignBody}"
                             MaxLength="5"
                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     </WrapPanel>
@@ -108,6 +111,7 @@
                                 x:Name="TipoDoPlugin_gb"
                                 Width="110"
                                 materialDesign:HintAssist.Hint="Tipo"
+                                Foreground="{DynamicResource MaterialDesignBody}"
                                 SelectionChanged="TipoDoPlugin_gb_SelectionChanged"
                                 Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                                 <ComboBoxItem Content="Gratuito" />
@@ -118,6 +122,7 @@
                                 Width="80"
                                 Margin="10,0,0,0"
                                 materialDesign:HintAssist.Hint="Valor (R$)"
+                                Foreground="{DynamicResource MaterialDesignBody}"
                                 IsEnabled="False"
                                 MaxLength="5"
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
@@ -128,6 +133,7 @@
                                 Width="135"
                                 Margin="10"
                                 materialDesign:HintAssist.Hint="Autor"
+                                Foreground="{DynamicResource MaterialDesignBody}"
                                 MaxLength="50"
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                         </WrapPanel>
@@ -140,6 +146,7 @@
                         Width="200"
                         Margin="10"
                         materialDesign:HintAssist.Hint="Descriçao"
+                        Foreground="{DynamicResource MaterialDesignBody}"
                         MaxLength="300"
                         Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                         TextWrapping="Wrap"

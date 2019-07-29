@@ -18,7 +18,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 			TextoAntesGrid_tb.Visibility = Visibility.Collapsed;
 			ListaPlugins_gd.Visibility = Visibility.Collapsed;
 		}
-		private void Ativar(PegarPlugins a)
+		private void Ativar(PluginInfo a)
 		{
 			ListaPlugins_gd.ItemsSource = a.DataTable.DefaultView;
 			ProcurandoPlugin_pb.Visibility = Visibility.Collapsed;
@@ -28,7 +28,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 		//mostrando plugins no dataGrid, assim que o userControl for carregado ou o usuario apertar o botao
 		private async void ProcurarPluginAsync()
 		{
-			PegarPlugins get = new PegarPlugins();
+			PluginInfo get = new PluginInfo();
 			Desativar();
 			//pegando dados do banco, e adicionando no dataGrid
 			if (await get.InformacoesAsync(true, null))
@@ -39,7 +39,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 		//procurar plugin e mostrar os resultados no dataGrid em tempo real.
 		private async void ProcurarPluginAsync(string item)
 		{
-			PegarPlugins get = new PegarPlugins();
+			PluginInfo get = new PluginInfo();
 			Desativar();
 			//pegando dados do banco, e adicionando no dataGrid
 			if (await get.InformacoesAsync(item, true))

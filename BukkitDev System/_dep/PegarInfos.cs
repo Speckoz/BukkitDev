@@ -1,4 +1,6 @@
-﻿namespace Logikoz.BukkitDevSystem._dep
+﻿using System;
+
+namespace Logikoz.BukkitDevSystem._dep
 {
 	internal static class PegarInfos
 	{
@@ -29,9 +31,9 @@
 		/// </summary>
 		public static string GitHubSourceLink { get; } = "https://github.com/Logikoz/BukkitDev-System";
 		/// <summary>
-		/// Tamanho maximo do plugin em Bytes.
+		/// Tamanho maximo do plugin e Imagem em KibiBytes.
 		/// </summary>
-		public static ushort TamanhoLimitePlugin { get; set; }
+		public static ushort TamanhoLimitePluginImg { get; set; }
 		/// <summary>
 		/// Seta/Pega a velocidade da transferencia FTP em Bytes;
 		/// </summary>

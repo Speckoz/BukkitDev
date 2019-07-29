@@ -88,7 +88,7 @@
                                 <materialDesign:PackIcon Kind="AddCircle" />
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Editar Plugin (Em Breve)">
+                        <MenuItem Click="MenuItem_Click_8" Header="Editar Plugin">
                             <MenuItem.Icon>
                                 <materialDesign:PackIcon Kind="CircleEditOutline" />
                             </MenuItem.Icon>
@@ -306,6 +306,7 @@
                                 x:Name="GravarTaxa_bt"
                                 Click="GravarTaxa_bt_Click"
                                 Content="Gravar"
+                                IsDefault="True"
                                 Style="{DynamicResource MaterialDesignFlatButton}" />
                         </MenuItem>
                         <MenuItem Header="Tamanho Maximo do Arquivo" Icon="{materialDesign:PackIcon TransferRight}">
@@ -320,6 +321,7 @@
                                 x:Name="GravarTamanho_bt"
                                 Click="GravarTamanho_bt_Click"
                                 Content="Gravar"
+                                IsDefault="True"
                                 Style="{DynamicResource MaterialDesignFlatButton}" />
                         </MenuItem>
                     </MenuItem>

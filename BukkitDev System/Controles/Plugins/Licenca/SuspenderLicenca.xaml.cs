@@ -1,5 +1,4 @@
-﻿using BukkitDev.System._dep.MySQL;
-using Logikoz.BukkitDevSystem._dep;
+﻿using Logikoz.BukkitDevSystem._dep;
 using Logikoz.BukkitDevSystem._dep.MySQL;
 using System;
 using System.Collections.Generic;
@@ -37,7 +36,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 				if (ret == true)
 				{
 					BotoesAcao_sp.IsEnabled = true;
-					TrocarStyle(await new SuspencaoLicenca().SuspensoAsync(false, KeyLicencaProcurar_txt.Text, false));
+					TrocarStyle(await new LicencaInfo().SuspensoAsync(false, KeyLicencaProcurar_txt.Text, false));
 				}
 				else
 				{
@@ -52,7 +51,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 			bool ret = ((Button)sender) == SuspenderLicenca_bt;
 
 			TrocarStyle(ret);
-			_ = await new SuspencaoLicenca().SuspensoAsync(true, KeyLicencaProcurar_txt.Text, ret);
+			_ = await new LicencaInfo().SuspensoAsync(true, KeyLicencaProcurar_txt.Text, ret);
 			MetodosConstantes.EnviarMenssagem($"A licença ({KeyLicencaProcurar_txt.Text}) foi {(ret ? "suspensa" : "realocada")}.");
 		}
 

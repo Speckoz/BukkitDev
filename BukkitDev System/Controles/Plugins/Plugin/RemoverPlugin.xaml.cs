@@ -34,7 +34,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 					if (await new Utils().VerificarExisteAsync(PluginID_txt.Text, "pluginlist", "id"))
 					{
 						//criando Chip dinamicamente
-						PegarPlugins p = new PegarPlugins();
+						PluginInfo p = new PluginInfo();
 						_ = await p.InformacoesAsync(false, PluginID_txt.Text);
 						StackPanel st = new StackPanel { Orientation = Orientation.Vertical };
 						foreach (string item in p.TooltipInfo)
@@ -75,7 +75,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 		private async void NewChip_DeleteClick(object sender, RoutedEventArgs e)
 		{
 			Chip s = (Chip)sender;
-			RemoverItem removerPlugin = new RemoverItem();
+			PluginInfo removerPlugin = new PluginInfo();
 			try
 			{
 				//apagando plugin do banco e guardando resultados em tuplas

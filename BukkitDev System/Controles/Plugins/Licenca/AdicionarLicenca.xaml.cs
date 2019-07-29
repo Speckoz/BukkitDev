@@ -130,7 +130,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 		{
 			if (await MessageBoxResult(keyGlobal, pluginID, userID))
 			{
-				if (await new add.AdicionarLicenca().AdicionarAsync(userID, pluginID, LicencaGerada_txt.Text, keyGlobal))
+				if (await new add.LicencaInfo().AdicionarAsync(userID, pluginID, LicencaGerada_txt.Text, keyGlobal))
 				{
 					MetodosConstantes.EnviarMenssagem("Licença adicionada com sucesso!");
 				}

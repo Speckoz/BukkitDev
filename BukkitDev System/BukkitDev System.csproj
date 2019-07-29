@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A317D6A1-A6DF-4209-A17D-A5F9130F7704}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BukkitDev.System</RootNamespace>
+    <RootNamespace>Logikoz.BukkitDevSystem</RootNamespace>
     <AssemblyName>BukkitDev System</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -171,6 +171,7 @@
     <Compile Include="Controles\Plugins\Plugin\EditarPlugin.xaml.cs">
       <DependentUpon>EditarPlugin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controles\Plugins\Plugin\InformacoesAddPlugins.cs" />
     <Compile Include="Controles\Plugins\Plugin\ListarPlugins.xaml.cs">
       <DependentUpon>ListarPlugins.xaml</DependentUpon>
     </Compile>
@@ -192,18 +193,15 @@
     <Compile Include="Principal\Sobre.xaml.cs">
       <DependentUpon>Sobre.xaml</DependentUpon>
     </Compile>
+    <Compile Include="_dep\BaixarImagem.cs" />
     <Compile Include="_dep\FTP\DeletarArquivoFTP.cs" />
     <Compile Include="_dep\FTP\EnviarArquivoFTP.cs" />
     <Compile Include="_dep\MetodosConstantes.cs" />
     <Compile Include="_dep\MudarCor.cs" />
-    <Compile Include="_dep\MySQL\AdicionarLicenca.cs" />
-    <Compile Include="_dep\MySQL\AdicionarPlugins.cs" />
     <Compile Include="_dep\MySQL\CriarTabela.cs" />
+    <Compile Include="_dep\MySQL\LicencaInfo.cs" />
     <Compile Include="_dep\MySQL\PegarConexaoMySQL.cs" />
-    <Compile Include="_dep\MySQL\PegarLicenca.cs" />
-    <Compile Include="_dep\MySQL\PegarPlugins.cs" />
-    <Compile Include="_dep\MySQL\RemoverItem.cs" />
-    <Compile Include="_dep\MySQL\SuspencaoLicenca.cs" />
+    <Compile Include="_dep\MySQL\PluginInfo.cs" />
     <Compile Include="_dep\MySQL\Utils.cs" />
     <Compile Include="_dep\PegarInfos.cs" />
     <Compile Include="_dep\SQLite\AdicionandoDadosFTP.cs" />

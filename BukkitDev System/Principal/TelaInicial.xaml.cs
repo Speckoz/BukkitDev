@@ -1,4 +1,5 @@
-﻿using Logikoz.BukkitDevSystem._dep;
+﻿using BukkitDev.System._dep;
+using Logikoz.BukkitDevSystem._dep;
 using Logikoz.BukkitDevSystem._dep.FTP;
 using Logikoz.BukkitDevSystem._dep.MySQL;
 using Logikoz.BukkitDevSystem._dep.SQLite;
@@ -103,42 +104,15 @@ namespace Logikoz.BukkitDevSystem.Principal
 				//config imagem a ser usada
 				ConfigImagem();
 				//baixando imagem padrao
-				BaixarImagem();
+				await BaixarImagemAsync();
 			}
 		}
 
-		private async void BaixarImagem()
+		private async Task BaixarImagemAsync()
 		{
-			if(PegarInfos.ImagemPlugin.Equals("true"))
+			if (PegarInfos.ImagemPlugin.Equals("false"))
 			{
-				return;
-			}
-			try
-			{
-				//http://localhost/bukkitdev/assets/Images/default.png
-				List<string> a = await new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, PegarInfos.ConfigFTP, "ftp");
-
-				HttpWebRequest w = (HttpWebRequest)WebRequest.Create($"http://{a[0]}/bukkitdev/assets/Images/default.png");
-				w.AllowWriteStreamBuffering = true;
-				w.Timeout = 30000;
-
-				WebResponse webResponse = await w.GetResponseAsync();
-				Stream stream = webResponse.GetResponseStream();
-				BitmapImage img = new BitmapImage();
-
-				img.BeginInit();
-				img.StreamSource = stream;
-				img.CacheOption = BitmapCacheOption.OnLoad;
-				img.EndInit();
-				ImagemPadraol_img.ImageSource = img;
-			}
-			catch(ArgumentOutOfRangeException)
-			{
-				MetodosConstantes.EnviarMenssagem("TimeOut: Nao foi possivel baixar a imagem padrao!");
-			}
-			catch (Exception e)
-			{
-				MetodosConstantes.MostrarExceptions(e);
+				ImagemPadraol_img.ImageSource = await new BaixarImagem().BaixarAsync("default");
 			}
 		}
 
@@ -153,10 +127,10 @@ namespace Logikoz.BukkitDevSystem.Principal
 		}
 		private void ConfigTamanhoMaxPlugin()
 		{
-			if (!string.IsNullOrEmpty(PegarInfos.TamanhoLimitePlugin.ToString()))
+			if (!string.IsNullOrEmpty(PegarInfos.TamanhoLimitePluginImg.ToString()))
 			{
 				//alocando valor
-				TamanhoInformado_txt.Text = PegarInfos.TamanhoLimitePlugin.ToString();
+				TamanhoInformado_txt.Text = PegarInfos.TamanhoLimitePluginImg.ToString();
 			}
 		}
 		private void ConfigTaxaEnvioPlugin()
@@ -468,7 +442,7 @@ namespace Logikoz.BukkitDevSystem.Principal
 			{
 				new AtualizandoDadosXML().AtualizarAsync(PegarInfos.NomeArquivoXML, "ImagemPlugin", "false");
 				EscolherImagem_st.IsEnabled = true;
-				BaixarImagem();
+				await BaixarImagemAsync();
 			}
 			await MetodosConstantes.LerXMLAsync();
 			MetodosConstantes.EnviarMenssagem("Configuraçao de imagem selecionada foi alterada!");
@@ -509,6 +483,10 @@ namespace Logikoz.BukkitDevSystem.Principal
 		private void MenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			AdicionarNovoUserControl(new NovoPlugin());
+		}
+		private void MenuItem_Click_8(object sender, RoutedEventArgs e)
+		{
+			AdicionarNovoUserControl(new EditarPlugin());
 		}
 		private void MenuItem_Click_3(object sender, RoutedEventArgs e)
 		{

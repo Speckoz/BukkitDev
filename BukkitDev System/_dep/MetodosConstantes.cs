@@ -38,7 +38,7 @@ namespace Logikoz.BukkitDevSystem._dep
 			{
 				PegarInfos.ConfigMySQL = dados[0];
 				PegarInfos.ConfigFTP = dados[1];
-				PegarInfos.TamanhoLimitePlugin = ushort.Parse(dados[2]);
+				PegarInfos.TamanhoLimitePluginImg = ushort.Parse(dados[2]);
 				PegarInfos.Tema = dados[3];
 				PegarInfos.Cor = dados[4];
 				PegarInfos.TaxaTransferencia = ushort.Parse(dados[5]);

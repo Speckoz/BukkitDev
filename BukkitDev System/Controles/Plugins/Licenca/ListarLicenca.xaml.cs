@@ -1,5 +1,4 @@
-﻿using BukkitDev.System._dep.MySQL;
-using Logikoz.BukkitDevSystem._dep;
+﻿using Logikoz.BukkitDevSystem._dep;
 using Logikoz.BukkitDevSystem._dep.MySQL;
 using Logikoz.BukkitDevSystem.Principal;
 using MaterialDesignThemes.Wpf;
@@ -39,7 +38,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 			}
 			try
 			{
-				PegarLicenca pegarLicenca = new PegarLicenca();
+				LicencaInfo pegarLicenca = new LicencaInfo();
 				if (BuscarTodos_rb.IsChecked.Equals(true))
 				{
 					ListaLicencas_sp.Children.Clear();
@@ -162,7 +161,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 			if (await TelaInicial.EscolhaDialogHostAsync($"Realmente quer excluir essa licença?\n{lic}"))
 			{
 				//excluindo a licença do banco, e verificando o retorno da tarefa
-				if (await new RemoverItem().ApagarAsync(lic))
+				if (await new LicencaInfo().ApagarAsync(lic))
 				{
 					//removendo o card da tela
 					ListaLicencas_sp.Children.Remove((Card)sender);
