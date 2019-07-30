@@ -1,5 +1,4 @@
-﻿using BukkitDev.System._dep;
-using Logikoz.BukkitDevSystem._dep;
+﻿using Logikoz.BukkitDevSystem._dep;
 using Logikoz.BukkitDevSystem._dep.FTP;
 using Logikoz.BukkitDevSystem._dep.MySQL;
 using Logikoz.BukkitDevSystem._dep.SQLite;
@@ -12,15 +11,11 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Net;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
@@ -31,6 +26,7 @@ namespace Logikoz.BukkitDevSystem.Principal
 		//propriedades
 		public static Snackbar BarraDeNotificacao { get; set; }
 		public static DialogHost MensagemPerso { get; set; }
+		public static Menu MenuPrincipal { get; set; }
 		//campos
 		private readonly DispatcherTimer _tema;
 		private string _temaAtual;
@@ -48,6 +44,7 @@ namespace Logikoz.BukkitDevSystem.Principal
 			//
 			BarraDeNotificacao = BarraNotificacao_sb;
 			MensagemPerso = MensagemDialog_dh;
+			MenuPrincipal = MenuPrincipal_mn;
 		}
 		#region Botoes do topo
 		//minimiza a tela
@@ -433,17 +430,19 @@ namespace Logikoz.BukkitDevSystem.Principal
 		#region ativar/desativar congiguraçao de imagem
 		private async void EscolherImagemTipo_tb_Click(object sender, RoutedEventArgs e)
 		{
-			if (((ToggleButton)sender).IsChecked.Equals(true))
+			string met;
+			if (((ToggleButton)sender).IsChecked.Value)
 			{
-				new AtualizandoDadosXML().AtualizarAsync(PegarInfos.NomeArquivoXML, "ImagemPlugin", "true");
+				met = "true";
 				EscolherImagem_st.IsEnabled = false;
 			}
 			else
 			{
-				new AtualizandoDadosXML().AtualizarAsync(PegarInfos.NomeArquivoXML, "ImagemPlugin", "false");
+				met = "false";
 				EscolherImagem_st.IsEnabled = true;
 				await BaixarImagemAsync();
 			}
+			new AtualizandoDadosXML().AtualizarAsync(PegarInfos.NomeArquivoXML, "ImagemPlugin", met);
 			await MetodosConstantes.LerXMLAsync();
 			MetodosConstantes.EnviarMenssagem("Configuraçao de imagem selecionada foi alterada!");
 		}

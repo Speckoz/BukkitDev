@@ -21,7 +21,7 @@ select nome_plugin from pluginlist where id = 999991;
 
 select * from licencalist where (licenca_key = @a || cliente_id = 99687671) && data_criacao = '2019-07-25';
 
-insert into pluginlist values (999999, "RC_Economy", "Logikoz", "1.0.0", "Gratuito", "0", "Plugin de economia para seu servidor", true);
+insert into pluginlist values (999999, "RC_Economy", "Logikoz", "1.0.0", "Gratuito", "0", "Plugin de economia para seu servidor", false);
 insert into licencalist values (99999999, 312909, "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx", false, "2019-06-18", "06:00:00", false);
 
 #=====================================================================================

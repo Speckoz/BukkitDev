@@ -179,7 +179,13 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 				return false;
 			}
 		}
-
+		/// <summary>
+		/// Da suporte a suspensao da licença no banco.
+		/// </summary>
+		/// <param name="suspender">true para suspender a licença.</param>
+		/// <param name="lic">A key da licença que deseja suspender.</param>
+		/// <param name="valor"></param>
+		/// <returns></returns>
 		public async Task<bool> SuspensoAsync(bool suspender, string lic, bool valor)
 		{
 			try

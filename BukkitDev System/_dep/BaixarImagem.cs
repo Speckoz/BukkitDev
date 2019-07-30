@@ -1,15 +1,12 @@
-﻿using Logikoz.BukkitDevSystem._dep;
-using Logikoz.BukkitDevSystem._dep.SQLite;
+﻿using Logikoz.BukkitDevSystem._dep.SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace BukkitDev.System._dep
+namespace Logikoz.BukkitDevSystem._dep
 {
 	class BaixarImagem
 	{

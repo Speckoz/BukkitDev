@@ -1,10 +1,8 @@
-﻿using BukkitDev.System.Controles.Plugins.Plugin;
-using Logikoz.BukkitDevSystem._dep;
+﻿using Logikoz.BukkitDevSystem._dep;
 using Logikoz.BukkitDevSystem._dep.FTP;
 using Logikoz.BukkitDevSystem._dep.MySQL;
 using Logikoz.BukkitDevSystem._dep.SQLite;
 using Logikoz.BukkitDevSystem.Principal;
-using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;

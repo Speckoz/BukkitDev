@@ -20,7 +20,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 		private const string CmdText = "select * from pluginlist where id like @a or nome_plugin like @a";
 		private const string CmdText1 = "select count(*) from pluginlist where id like @a or nome_plugin like @a";
 		//query de atualizaçao
-		private const string Atualizar = "uptade pluginlist set nome_plugin = @a, autor_plugin = @b, versao_plugin = @c, tipo_plugin = @d, preco_plugin = @e, descricao_plugin = @f, imagem_padrao_personalizada = @g where id = @id";
+		private const string Atualizar = "update pluginlist set nome_plugin = @a, autor_plugin = @b, versao_plugin = @c, tipo_plugin = @d, preco_plugin = @e, descricao_plugin = @f, imagem_padrao_personalizada = @g where id = @id";
 		#endregion
 		//guarda a DataTable com informaçoes do plugin.
 		public DataTable DataTable { get; set; }
@@ -152,13 +152,17 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 							DataTable = dataTable;
 							NomeColunas();
 
-							if (messageReturn)
+							using (MySqlCommand num = new MySqlCommand(CmdText1, con))
 							{
-								using (MySqlCommand num = new MySqlCommand(CmdText1, con))
+								_ = num.Parameters.Add(new MySqlParameter("@a", "%" + itemProcurar + "%"));
+								string qtd = (await num.ExecuteScalarAsync()).ToString();
+								if(qtd == "0")
 								{
-									_ = num.Parameters.Add(new MySqlParameter("@a", "%" + itemProcurar + "%"));
-
-									MetodosConstantes.EnviarMenssagem(@var.Parse((await num.ExecuteScalarAsync()).ToString()) + " Plugins encontrados!");
+									return false;
+								}
+								if (messageReturn)
+								{
+									MetodosConstantes.EnviarMenssagem(@var.Parse(qtd) + " Plugins encontrados!");
 								}
 							}
 
@@ -191,7 +195,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 		/// <param name="pluginID">Identificador do plugin que deseja atualizar</param>
 		/// <param name="dados"><see cref="string[]"/> contendo informaçoes do plugin (nome, autor, versao, tipo, preço, descriçao e configImagem) respectivamente.</param>
 		/// <returns>Retorna a tarefa informando se foi concluido ou nao (true, false).</returns>
-		public async Task<bool> AtualizarAsync(string pluginID, string[] dados)
+		public async Task<bool> AtualizarAsync(string pluginID, List<string> dados)
 		{
 			try
 			{
@@ -203,12 +207,12 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 					{
 						_ = att.Parameters.Add(new MySqlParameter("@id", pluginID));
 						_ = att.Parameters.Add(new MySqlParameter("@a", dados[0]));
-						_ = att.Parameters.Add(new MySqlParameter("@b", dados[0]));
-						_ = att.Parameters.Add(new MySqlParameter("@c", dados[0]));
-						_ = att.Parameters.Add(new MySqlParameter("@d", dados[0]));
-						_ = att.Parameters.Add(new MySqlParameter("@e", dados[0]));
-						_ = att.Parameters.Add(new MySqlParameter("@f", dados[0]));
-						_ = att.Parameters.Add(new MySqlParameter("@g", dados[0]));
+						_ = att.Parameters.Add(new MySqlParameter("@b", dados[1]));
+						_ = att.Parameters.Add(new MySqlParameter("@c", dados[2]));
+						_ = att.Parameters.Add(new MySqlParameter("@d", dados[3]));
+						_ = att.Parameters.Add(new MySqlParameter("@e", dados[4]));
+						_ = att.Parameters.Add(new MySqlParameter("@f", dados[5]));
+						_ = att.Parameters.Add(new MySqlParameter("@g", dados[6]));
 
 						_ = await att.ExecuteNonQueryAsync();
 						return true;
