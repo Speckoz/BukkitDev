@@ -36,7 +36,7 @@
             MouseDown="Grid_MouseDown">
             <Grid.ToolTip>
                 <StackPanel Orientation="Vertical">
-                    <materialDesign:PackIcon HorizontalAlignment="Center" Kind="ArrowBottomRight" />
+                    <materialDesign:PackIcon HorizontalAlignment="Center" Kind="PageLayoutSidebarRight" />
                     <TextBlock Text="Clique com direito para fixar/desfixar tela!" TextAlignment="Center" />
                 </StackPanel>
             </Grid.ToolTip>

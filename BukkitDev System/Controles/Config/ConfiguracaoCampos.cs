@@ -9,11 +9,11 @@ using System.Windows.Controls;
 namespace Logikoz.BukkitDevSystem.Controles.Config
 {
 	/// <summary>
-	/// Crian uma nova instancia de <see cref="ConfiguracaoCamposFTP"/>.
+	/// Crian uma nova instancia de <see cref="ConfiguracaoCampos"/>.
 	/// </summary>
-	internal class ConfiguracaoCamposFTP
+	internal class ConfiguracaoCampos
 	{
-		public async void BotaoAsync(string[] dados, string tipo)
+		public async void BotaoAsync(string[] dados, string conexao, string tipoConexao, object nomeClass)
 		{
 			foreach (string v in dados)
 			{
@@ -24,57 +24,21 @@ namespace Logikoz.BukkitDevSystem.Controles.Config
 				}
 			}
 
-			if (await new AtualizarDadosFTP().AtualizarAsync(PegarInfos.NomeArquivoSQLite, dados, tipo))
+			if (tipoConexao == "mysql")
 			{
-				MetodosConstantes.EnviarMenssagem("Dados Gravados com sucesso!");
+				await ((AtualizarDadosMySQL)nomeClass).AtualizarAsync(PegarInfos.NomeArquivoSQLite, dados, conexao);
 			}
+			else
+			{
+				await ((AtualizarDadosFTP)nomeClass).AtualizarAsync(PegarInfos.NomeArquivoSQLite, dados, conexao);
+			}
+			MetodosConstantes.EnviarMenssagem("Dados Gravados com sucesso!");
 		}
-
-		public async Task<List<string>> CamposCarregadosAsync(string tipo, UserControl uS)
+		public async Task<List<string>> CamposCarregadosAsync(UserControl uS, string conexao, string tipoConexao)
 		{
 			if (uS.IsLoaded)
 			{
-				return await new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, tipo, "ftp");
-			}
-			return null;
-		}
-	}
-	/// <summary>
-	/// Cria uma nova instancia de <see cref="ConfiguracaoCamposMySQL"/>.
-	/// </summary>
-	internal class ConfiguracaoCamposMySQL
-	{
-		public async void BotaoAsync(string[] dados, string tipo)
-		{
-			foreach (string v in dados)
-			{
-				if (string.IsNullOrEmpty(v))
-				{
-					MessageBox.Show("Voce precisa preencher todos os campos");
-					return;
-				}
-			}
-			try
-			{
-				AtualizarDadosMySQL add = new AtualizarDadosMySQL();
-				if (await add.EnviarDadosAsync(PegarInfos.NomeArquivoSQLite, dados, tipo))
-				{
-					MetodosConstantes.EnviarMenssagem("Dados Gravados com sucesso!");
-				}
-			}
-			catch (Exception e)
-			{
-				MetodosConstantes.MostrarExceptions(e);
-			}
-		}
-
-		public async Task<List<string>> CamposCarregadosAsync(string tipo, UserControl uS)
-		{
-			if (uS.IsLoaded)
-			{
-				PegarConexaoMySQL_FTP get = new PegarConexaoMySQL_FTP();
-
-				return await get.PegarAsync(PegarInfos.NomeArquivoSQLite, tipo, "mysql");
+				return await new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, conexao, tipoConexao);
 			}
 			return null;
 		}

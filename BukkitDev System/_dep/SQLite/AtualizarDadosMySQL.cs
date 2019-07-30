@@ -18,7 +18,7 @@ namespace Logikoz.BukkitDevSystem._dep.SQLite
 		/// <param name="dados">Array contendo os novos dados.</param>
 		/// <param name="tipo">Tipo de conexao (Local ou Externa). OBS: É binary.</param>
 		/// <returns>Retorna a tarefa com um bool informando se a operaçao foi um sucesso.</returns>
-		public async Task<bool> EnviarDadosAsync(string nome, string[] dados, string tipo)
+		public async Task<bool> AtualizarAsync(string nome, string[] dados, string tipo)
 		{
 			using (SQLiteConnection con = new SQLiteConnection($"Data Source={nome};Version=3;"))
 			{

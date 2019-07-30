@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Logikoz.BukkitDevSystem._dep.SQLite;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -23,13 +24,12 @@ namespace Logikoz.BukkitDevSystem.Controles.Config
 			d[3] = PortaDoMySQL_txt.Text;
 			d[4] = BancoDoMySQL_txt.Text;
 
-			new ConfiguracaoCamposMySQL().BotaoAsync(d, "Externo");
+			new ConfiguracaoCampos().BotaoAsync(d, "Externo", "mysql", new AtualizarDadosMySQL());
 		}
 
 		private async void UserControl_Loaded(object sender, RoutedEventArgs e)
 		{
-			ConfiguracaoCamposMySQL config = new ConfiguracaoCamposMySQL();
-			List<string> d = await config.CamposCarregadosAsync("Externo", this);
+			List<string> d = await new ConfiguracaoCampos().CamposCarregadosAsync(this, "Externo", "mysql");
 
 			ServidorDoMySQL_txt.Text = d[0];
 			UsuarioDoMySQL_txt.Text = d[1];

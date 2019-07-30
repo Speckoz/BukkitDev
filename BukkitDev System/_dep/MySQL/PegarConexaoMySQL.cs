@@ -16,7 +16,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 		public static async Task<string> ConexaoAsync()
 		{
 			//pegando dados de conexao do MySQL de dentro SQLite
-			List<string> db = await new CriarBanco().PegarAsync(PegarInfos.NomeArquivoSQLite, PegarInfos.ConfigMySQL, "mysql");
+			List<string> db = await new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, PegarInfos.ConfigMySQL, "mysql");
 
 			return $"server={db[0]};user={db[1]};password={db[2]};port={db[3]};database={db[4]}";
 		}

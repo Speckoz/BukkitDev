@@ -134,7 +134,7 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Kind="Information"
-                ToolTip="Aprimeira impressao é a que fica!"
+                ToolTip="O que o olhos nao veem, o Garbage Collector resolve!"
                 ToolTipService.Placement="Left" />
             <!--  Fechar janela  -->
             <Button

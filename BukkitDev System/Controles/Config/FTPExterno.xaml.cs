@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Logikoz.BukkitDevSystem._dep.SQLite;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -22,14 +23,12 @@ namespace Logikoz.BukkitDevSystem.Controles.Config
 			d[2] = SenhaDoFTP_txt.Password;
 			d[3] = PortaDoFTP_txt.Text;
 
-			ConfiguracaoCamposFTP config = new ConfiguracaoCamposFTP();
-			config.BotaoAsync(d, "Externo");
+			new ConfiguracaoCampos().BotaoAsync(d, "Externo", "ftp", new AtualizarDadosFTP());
 		}
 
 		private async void UserControl_Loaded(object sender, RoutedEventArgs e)
 		{
-			ConfiguracaoCamposFTP config = new ConfiguracaoCamposFTP();
-			List<string> d = await config.CamposCarregadosAsync("Externo", this);
+			List<string> d = await new ConfiguracaoCampos().CamposCarregadosAsync(this, "Externo", "ftp");
 
 			HostDoFTP_txt.Text = d[0];
 			UsuarioDoFTP_txt.Text = d[1];
