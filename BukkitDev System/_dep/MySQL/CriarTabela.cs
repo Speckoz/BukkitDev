@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace Logikoz.BukkitDevSystem._dep.MySQL
 {
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="CriarTabela"/>.
+	/// </summary>
 	internal class CriarTabela
 	{
 		private const string query = @"create table if not exists pluginlist(id MediumInt not null primary key,nome_plugin tinytext not null,autor_plugin tinytext not null,versao_plugin char(5) not null,tipo_plugin char(10) not null,preco_plugin char(5),descricao_plugin text(1024) not null,imagem_padrao_personalizada boolean not null);

@@ -204,8 +204,8 @@
     <Compile Include="_dep\MySQL\PluginInfo.cs" />
     <Compile Include="_dep\MySQL\Utils.cs" />
     <Compile Include="_dep\PegarInfos.cs" />
-    <Compile Include="_dep\SQLite\AdicionandoDadosFTP.cs" />
-    <Compile Include="_dep\SQLite\AdicionarBanco.cs" />
+    <Compile Include="_dep\SQLite\AtualizarDadosFTP.cs" />
+    <Compile Include="_dep\SQLite\AtualizarDadosMySQL.cs" />
     <Compile Include="_dep\SQLite\CriarBanco.cs" />
     <Compile Include="_dep\TemaWindows.cs" />
     <Compile Include="_dep\XML\AtualizandoDadosXML.cs" />

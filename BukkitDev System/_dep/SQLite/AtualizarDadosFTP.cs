@@ -4,15 +4,22 @@ using System.Threading.Tasks;
 
 namespace Logikoz.BukkitDevSystem._dep.SQLite
 {
-	internal class AdicionandoDadosFTP
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="AtualizarDadosFTP"/>.
+	/// </summary>
+	internal class AtualizarDadosFTP
 	{
 		private const string CommandText = "update ftp set host = @a, usuario = @b, senha = @c, porta = @d where tipo = @e";
-		private const string V = "data source = ";
-		private const string V1 = "; Version = 3;";
-
+		/// <summary>
+		/// Atualiza os dados de conexao do ftp.
+		/// </summary>
+		/// <param name="nome">Nome do arquivo SQLite, por padrao é uma propriedade em <see cref="PegarInfos.NomeArquivoSQLite"/>.</param>
+		/// <param name="dados">Array contendo novos dados.</param>
+		/// <param name="tipo">Tipo de conexao (Local ou Externa) OBS: É binary</param>
+		/// <returns>Retorna a tarefa com um bool informando se a operaçao foi um sucesso.</returns>
 		public async Task<bool> AtualizarAsync(string nome, string[] dados, string tipo)
 		{
-			using (SQLiteConnection con = new SQLiteConnection(V + nome + V1))
+			using (SQLiteConnection con = new SQLiteConnection($"data source = {nome}; Version = 3;"))
 			{
 				try
 				{

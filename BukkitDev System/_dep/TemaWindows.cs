@@ -5,8 +5,15 @@ using Reg = Microsoft.Win32.Registry;
 
 namespace Logikoz.BukkitDevSystem._dep
 {
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="TemaWindows"/>.
+	/// </summary>
 	internal class TemaWindows
 	{
+		/// <summary>
+		/// Faz uma verificaçao dentro do registro do windows para saber se o tema claro/dark está ativado.
+		/// </summary>
+		/// <returns>Retorna uma tupla informando se o tema claro está ativo e o proprio valor que está no registro.</returns>
 		public (bool @bool, string @string) TemaClaroHabilitado()
 		{
 			try

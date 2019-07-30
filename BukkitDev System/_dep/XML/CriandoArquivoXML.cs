@@ -5,14 +5,21 @@ using System.Xml;
 
 namespace Logikoz.BukkitDevSystem._dep.XML
 {
-	internal static class CriandoArquivoXML
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="CriandoArquivoXML"/>.
+	/// </summary>
+	internal class CriandoArquivoXML
 	{
-		public static async Task<bool> VerificarECriarAsync(string nome)
+		/// <summary>
+		/// Verifica se o arquivo XML que guarda as configuraçoes do softare existe, caso contrario cria um novo.
+		/// </summary>
+		/// <param name="nome">Nome do arquivo XML, por padrao é uma propriedade em <see cref="PegarInfos.NomeArquivoXML"/>.</param>
+		/// <returns>Retorna a tarefa com bool informando se o arquivo existe, ou se a operaçao foi um sucesso.</returns>
+		public async Task<bool> VerificarECriarAsync(string nome)
 		{
 			return !File.Exists(nome) ? await CriarArquivo(nome) : true;
 		}
-
-		private static async Task<bool> CriarArquivo(string nome)
+		private async Task<bool> CriarArquivo(string nome)
 		{
 			using (XmlWriter doc = XmlWriter.Create(nome, Configuracao()))
 			{
@@ -27,16 +34,14 @@ namespace Logikoz.BukkitDevSystem._dep.XML
 				}
 			}
 		}
-
-		private static XmlWriterSettings Configuracao()
+		private XmlWriterSettings Configuracao()
 		{
 			return new XmlWriterSettings
 			{
 				Async = true,
 			};
 		}
-
-		private static async Task<bool> InserirDadosArquivoAsync(XmlWriter doc)
+		private async Task<bool> InserirDadosArquivoAsync(XmlWriter doc)
 		{
 			try
 			{
@@ -54,7 +59,7 @@ namespace Logikoz.BukkitDevSystem._dep.XML
 				return false;
 			}
 		}
-		private static async Task SubTagsAsync(XmlWriter doc)
+		private async Task SubTagsAsync(XmlWriter doc)
 		{
 			try
 			{

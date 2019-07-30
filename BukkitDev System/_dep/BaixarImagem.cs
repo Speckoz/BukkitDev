@@ -8,8 +8,16 @@ using System.Windows.Media.Imaging;
 
 namespace Logikoz.BukkitDevSystem._dep
 {
-	class BaixarImagem
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="BaixarImagem"/>.
+	/// </summary>
+	internal class BaixarImagem
 	{
+		/// <summary>
+		/// Baixa uma determinada imagem do servidor e armazena em um <see cref="BitmapImage"/>.
+		/// </summary>
+		/// <param name="nomeImg">Nome da imagem a ser baixada, normalmente é um codigo de plugin (999999) ou 'default', sem o uso de extensao.</param>
+		/// <returns>Retorna a tarefa com uma <see cref="BitmapImage"/> contendo a imagem desejada.</returns>
 		public async Task<BitmapImage> BaixarAsync(string nomeImg)
 		{
 			try

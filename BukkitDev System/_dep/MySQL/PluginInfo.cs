@@ -1,6 +1,4 @@
-﻿using Logikoz.BukkitDevSystem._dep;
-using Logikoz.BukkitDevSystem._dep.MySQL;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,6 +8,9 @@ using @var = System.Byte;
 
 namespace Logikoz.BukkitDevSystem._dep.MySQL
 {
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="PluginInfo"/>.
+	/// </summary>
 	internal class PluginInfo
 	{
 		#region queries
@@ -156,7 +157,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 							{
 								_ = num.Parameters.Add(new MySqlParameter("@a", "%" + itemProcurar + "%"));
 								string qtd = (await num.ExecuteScalarAsync()).ToString();
-								if(qtd == "0")
+								if (qtd == "0")
 								{
 									return false;
 								}

@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace Logikoz.BukkitDevSystem._dep.MySQL
 {
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="Utils"/>.
+	/// </summary>
 	internal class Utils
 	{
 		/// <summary>
@@ -74,7 +77,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 		/// <param name="max">Valor maximo a ser gerado.</param>
 		/// <param name="tabela">Nome da tabela que será consultada.</param>
 		/// <param name="coluna">Nome da coluna dentro da tabela para verificar se ja existe um index com esse codigo.</param>
-		/// <returns></returns>
+		/// <returns>Retorna o numero gerado com o tamanho informado</returns>
 		public async Task<uint> GerarIdAsync(int min, int max, string tabela, string coluna)
 		{
 			uint idGerado;

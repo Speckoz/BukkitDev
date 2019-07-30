@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace Logikoz.BukkitDevSystem._dep.MySQL
 {
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="PegarConexaoMySQL"/>.
+	/// </summary>
 	internal class PegarConexaoMySQL
 	{
 		/// <summary>

@@ -11,7 +11,7 @@ namespace Logikoz.BukkitDevSystem._dep.XML
 		/// Leitura do arquivo XML que contém as informaçoes de configuraçao do software.
 		/// </summary>
 		/// <param name="nome">Nome do arquivo, por padrao está em uma propriedade em <see cref="PegarInfos.NomeArquivoXML"/></param>
-		/// <returns></returns>
+		/// <returns>Retorna a tarefa com uma lista contendo as informaçoes de dentro do arquivo XML.</returns>
 		public async Task<List<string>> LerXml(string nome)
 		{
 			List<string> infos = new List<string>();

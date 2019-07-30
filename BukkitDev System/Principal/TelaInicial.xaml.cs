@@ -200,7 +200,7 @@ namespace Logikoz.BukkitDevSystem.Principal
 		}
 		private static async Task CriarLerXmlAsync()
 		{
-			if (await CriandoArquivoXML.VerificarECriarAsync(PegarInfos.NomeArquivoXML))
+			if (await new CriandoArquivoXML().VerificarECriarAsync(PegarInfos.NomeArquivoXML))
 			{
 				//lendo dados do xml e guardando nas variaveis estaticas
 				await MetodosConstantes.LerXMLAsync();

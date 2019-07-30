@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Logikoz.BukkitDevSystem._dep.MySQL
 {
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="LicencaInfo"/>.
+	/// </summary>
 	internal class LicencaInfo
 	{
 		#region queries
@@ -154,7 +157,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 		/// Remover uma licença do banco de dados.
 		/// </summary>
 		/// <param name="lic">A key da licença que deseja remover.</param>
-		/// <returns>Retorna o resultado da tarefa em bool.</returns>
+		/// <returns>Retorna a tarefa com bool informando se ouve ou nao sucesso na operaçao.</returns>
 		public async Task<bool> ApagarAsync(string lic)
 		{
 			try
@@ -182,10 +185,10 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 		/// <summary>
 		/// Da suporte a suspensao da licença no banco.
 		/// </summary>
-		/// <param name="suspender">true para suspender a licença.</param>
+		/// <param name="suspender">true para suspender a licença, false para apenas fazer a checagem no banco.</param>
 		/// <param name="lic">A key da licença que deseja suspender.</param>
-		/// <param name="valor"></param>
-		/// <returns></returns>
+		/// <param name="valor">true para suspender a licença, false para realoca-la</param>
+		/// <returns>Retorna a tarefa com bool informando se ouve ou nao sucesso na operaçao.</returns>
 		public async Task<bool> SuspensoAsync(bool suspender, string lic, bool valor)
 		{
 			try

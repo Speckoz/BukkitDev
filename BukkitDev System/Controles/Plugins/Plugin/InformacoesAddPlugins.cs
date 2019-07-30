@@ -6,12 +6,15 @@ using System.Windows.Media.Imaging;
 
 namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 {
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="InformacoesAddPlugins"/>.
+	/// </summary>
 	internal class InformacoesAddPlugins
 	{
 		/// <summary>
-		/// 
+		/// Abre um explorer para procurar uma imagem.
 		/// </summary>
-		/// <returns></returns>
+		/// <returns>Retorna uma tupla contento o path da imagem selecionada e um <see cref="BitmapImage"/> com a propria imagem.</returns>
 		public (string, BitmapImage) ProcurarImagem()
 		{
 			OpenFileDialog procurarImg = new OpenFileDialog
@@ -36,6 +39,10 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 			return (null, null);
 		}
 
+		/// <summary>
+		/// Abre um explorer para procurar um plugin.
+		/// </summary>
+		/// <returns>Retorna uma tupla contento o path do plugin selecionadioe e o nome do proprio plugin.</returns>
 		public (string, string) ProcurarPlugin()
 		{
 			OpenFileDialog pluginProcurar = new OpenFileDialog

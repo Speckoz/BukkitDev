@@ -2,6 +2,9 @@
 
 namespace Logikoz.BukkitDevSystem._dep
 {
+	/// <summary>
+	/// Contem informaçoes de configuraçao do software.
+	/// </summary>
 	internal static class PegarInfos
 	{
 		//======================= Propriedades =======================

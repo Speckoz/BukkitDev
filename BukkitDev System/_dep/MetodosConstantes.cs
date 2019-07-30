@@ -1,15 +1,18 @@
 ﻿using Logikoz.BukkitDevSystem._dep.XML;
 using Logikoz.BukkitDevSystem.Principal;
-using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Windows.Controls;
+using System.Threading.Tasks;
 
 namespace Logikoz.BukkitDevSystem._dep
 {
-	internal class MetodosConstantes
+	internal static class MetodosConstantes
 	{
+		/// <summary>
+		/// Mostra as informaçoes da exception disparada.
+		/// </summary>
+		/// <param name="e">A exception</param>
 		public static void MostrarExceptions(Exception e)
 		{
 			//Tipo: qual exception que foi disparada, lembrando que 'FullName' pega a namespace tbm
@@ -22,6 +25,10 @@ namespace Logikoz.BukkitDevSystem._dep
 			//enviando mensagem com o erro
 			TelaInicial.EnviarMensagemDialogHostAsync(MensagemErro);
 		}
+		/// <summary>
+		/// Envia uma mensagem no canto da tela que pode ser desativada nas configuraçoes.
+		/// </summary>
+		/// <param name="mensagem">A mensagem desejada.</param>
 		public static void EnviarMenssagem(string mensagem)
 		{
 			if (TelaInicial.BarraDeNotificacao.IsEnabled)
@@ -29,8 +36,11 @@ namespace Logikoz.BukkitDevSystem._dep
 				TelaInicial.BarraDeNotificacao.MessageQueue.Enqueue(mensagem, "Ok", a => Trace.WriteLine(a), mensagem);
 			}
 		}
-		#region Leitura dos dados do XML
-		public static async System.Threading.Tasks.Task LerXMLAsync()
+		/// <summary>
+		/// Le os dados de dentro do arquivo XML e os armazena nas propriedades em <see cref="PegarInfos"/>.
+		/// </summary>
+		/// <returns>Retorna a tarefa.</returns>
+		public static async Task LerXMLAsync()
 		{
 			List<string> dados = await new LendoTagsXML().LerXml(PegarInfos.NomeArquivoXML);
 
@@ -49,6 +59,5 @@ namespace Logikoz.BukkitDevSystem._dep
 				MostrarExceptions(e);
 			}
 		}
-		#endregion
 	}
 }

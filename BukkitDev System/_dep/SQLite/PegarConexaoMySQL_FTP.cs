@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace Logikoz.BukkitDevSystem._dep.SQLite
 {
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="PegarConexaoMySQL_FTP"/>.
+	/// </summary>
 	internal class PegarConexaoMySQL_FTP
 	{
 		/// <summary>

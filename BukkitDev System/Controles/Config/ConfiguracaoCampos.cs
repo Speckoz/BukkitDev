@@ -8,6 +8,9 @@ using System.Windows.Controls;
 
 namespace Logikoz.BukkitDevSystem.Controles.Config
 {
+	/// <summary>
+	/// Crian uma nova instancia de <see cref="ConfiguracaoCamposFTP"/>.
+	/// </summary>
 	internal class ConfiguracaoCamposFTP
 	{
 		public async void BotaoAsync(string[] dados, string tipo)
@@ -21,8 +24,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Config
 				}
 			}
 
-			AdicionandoDadosFTP add = new AdicionandoDadosFTP();
-			if (await add.AtualizarAsync(PegarInfos.NomeArquivoSQLite, dados, tipo))
+			if (await new AtualizarDadosFTP().AtualizarAsync(PegarInfos.NomeArquivoSQLite, dados, tipo))
 			{
 				MetodosConstantes.EnviarMenssagem("Dados Gravados com sucesso!");
 			}
@@ -32,16 +34,14 @@ namespace Logikoz.BukkitDevSystem.Controles.Config
 		{
 			if (uS.IsLoaded)
 			{
-				PegarConexaoMySQL_FTP get = new PegarConexaoMySQL_FTP();
-
-				List<string> d = await get.PegarAsync(PegarInfos.NomeArquivoSQLite, tipo, "ftp");
-
-				return d;
+				return await new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, tipo, "ftp");
 			}
 			return null;
 		}
 	}
-
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="ConfiguracaoCamposMySQL"/>.
+	/// </summary>
 	internal class ConfiguracaoCamposMySQL
 	{
 		public async void BotaoAsync(string[] dados, string tipo)
@@ -56,7 +56,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Config
 			}
 			try
 			{
-				AdicionarBanco add = new AdicionarBanco();
+				AtualizarDadosMySQL add = new AtualizarDadosMySQL();
 				if (await add.EnviarDadosAsync(PegarInfos.NomeArquivoSQLite, dados, tipo))
 				{
 					MetodosConstantes.EnviarMenssagem("Dados Gravados com sucesso!");

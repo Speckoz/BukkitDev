@@ -5,10 +5,19 @@ using System.Windows;
 
 namespace Logikoz.BukkitDevSystem._dep.SQLite
 {
-	internal class AdicionarBanco
+	/// <summary>
+	/// Cria uma nova instancia de <see cref="AtualizarDadosMySQL"/>.
+	/// </summary>
+	internal class AtualizarDadosMySQL
 	{
-		private const string CommandText = "update mysql set servidor = @a, usuario = @b, senha = @c, porta = @d, banco = @e where tipo = @f";
-
+		private const string Query = "update mysql set servidor = @a, usuario = @b, senha = @c, porta = @d, banco = @e where tipo = @f";
+		/// <summary>
+		/// Atualiza os dados referente a conexao com o banco mysql.
+		/// </summary>
+		/// <param name="nome">Nome do arquivo SQLite, por padrao é uma propriedade em <see cref="PegarInfos.NomeArquivoSQLite"/>.</param>
+		/// <param name="dados">Array contendo os novos dados.</param>
+		/// <param name="tipo">Tipo de conexao (Local ou Externa). OBS: É binary.</param>
+		/// <returns>Retorna a tarefa com um bool informando se a operaçao foi um sucesso.</returns>
 		public async Task<bool> EnviarDadosAsync(string nome, string[] dados, string tipo)
 		{
 			using (SQLiteConnection con = new SQLiteConnection($"Data Source={nome};Version=3;"))
@@ -29,7 +38,7 @@ namespace Logikoz.BukkitDevSystem._dep.SQLite
 		{
 			await con.OpenAsync();
 
-			using (SQLiteCommand adicionarDados = new SQLiteCommand(CommandText, con))
+			using (SQLiteCommand adicionarDados = new SQLiteCommand(Query, con))
 			{
 				return await RetornarBoolResult(dados, tipo, adicionarDados);
 			}
