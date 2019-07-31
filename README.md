@@ -33,7 +33,7 @@ Onde ambos funcionam de forma igual, em que o usuário altera entre *Local* e *E
 Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as credenciais de conexão, com isso o usuário pode fazer testes em um servidor *Local* e quando quiser fazer um alteração global basta apenas um click e alterar para a conexão *Externa*.
 <br>
 <br>
-Outra configuração interessante é o suporte de imagem para os plugins, ou seja, você pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
+- Outra configuração interessante é o suporte de imagem para os plugins, ou seja, você pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
 
 ## desenvolvedores
 - [@Logikoz](https://github.com/Logikoz) - Software
