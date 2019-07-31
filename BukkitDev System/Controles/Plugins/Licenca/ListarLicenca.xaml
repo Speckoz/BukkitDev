@@ -6,7 +6,10 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+    <StackPanel
+        Margin="20,0,20,0"
+        HorizontalAlignment="Center"
+        Orientation="Vertical">
         <GroupBox HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignCardGroupBox}">
             <GroupBox.Header>
                 <TextBlock

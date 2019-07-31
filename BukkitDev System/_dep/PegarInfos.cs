@@ -28,11 +28,7 @@ namespace Logikoz.BukkitDevSystem._dep
 		/// <summary>
 		/// Nome do DB SQLite que guarda a conexao local e externa do FTP e MySQL
 		/// </summary>
-		public static string NomeArquivoSQLite { get; } = "bukkitdev.db";
-		/// <summary>
-		/// Link da Source original do GitHub
-		/// </summary>
-		public static string GitHubSourceLink { get; } = "https://github.com/Logikoz/BukkitDev-System";
+		public static string NomeArquivoSQLite { get; } = "BukkitDev.db";
 		/// <summary>
 		/// Tamanho maximo do plugin e Imagem em KibiBytes.
 		/// </summary>

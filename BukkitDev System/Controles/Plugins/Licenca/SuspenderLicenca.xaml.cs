@@ -31,7 +31,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 		{
 			if (!string.IsNullOrEmpty(KeyLicencaProcurar_txt.Text))
 			{
-				bool ret = await new Utils().VerificarExisteAsync(KeyLicencaProcurar_txt.Text, "licencalist", "licenca_key");
+				bool ret = await new Utils().VerificarExisteAsync(KeyLicencaProcurar_txt.Text, "LicencaList", "LicencaKey");
 
 				if (ret == true)
 				{

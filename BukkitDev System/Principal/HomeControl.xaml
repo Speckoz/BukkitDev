@@ -81,8 +81,11 @@
                             BorderBrush="{x:Null}"
                             Click="Button_Click_1"
                             Foreground="{DynamicResource MaterialDesignBody}"
-                            Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}">
-                            <md:PackIcon Kind="Web" />
+                            Style="{StaticResource MaterialDesignIconButton}">
+                            <md:PackIcon
+                                Width="20"
+                                Height="20"
+                                Kind="Web" />
                         </Button>
                         <Button
                             Width="30"
@@ -92,8 +95,11 @@
                             BorderBrush="{x:Null}"
                             Click="Button_Click_2"
                             Foreground="{DynamicResource MaterialDesignBody}"
-                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
-                            <md:PackIcon Kind="Discord" />
+                            Style="{StaticResource MaterialDesignIconButton}">
+                            <md:PackIcon
+                                Width="20"
+                                Height="20"
+                                Kind="Discord" />
                         </Button>
                     </StackPanel>
                 </StackPanel>

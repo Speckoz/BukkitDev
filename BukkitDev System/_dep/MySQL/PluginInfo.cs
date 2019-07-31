@@ -15,13 +15,13 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 	{
 		#region queries
 		//referente ao primeiro metodo de Read
-		private const string CmdText2 = "select * from pluginlist";
-		private const string CmdText3 = "select count(*) from pluginlist";
+		private const string CmdText2 = "select * from PluginList";
+		private const string CmdText3 = "select count(*) from PluginList";
 		//referente ao segundo metodo de Read
-		private const string CmdText = "select * from pluginlist where id like @a or nome_plugin like @a";
-		private const string CmdText1 = "select count(*) from pluginlist where id like @a or nome_plugin like @a";
+		private const string CmdText = "select * from PluginList where ID like @a or NomePlugin like @a";
+		private const string CmdText1 = "select count(*) from PluginList where ID like @a or NomePlugin like @a";
 		//query de atualizaçao
-		private const string Atualizar = "update pluginlist set nome_plugin = @a, autor_plugin = @b, versao_plugin = @c, tipo_plugin = @d, preco_plugin = @e, descricao_plugin = @f, imagem_padrao_personalizada = @g where id = @id";
+		private const string Atualizar = "update PluginList set NomePlugin = @a, AutorPlugin = @b, VersaoPlugin = @c, TipoPlugin = @d, preco_plugin = @e, DescricaoPlugin = @f, ImagemPadraoPersonalizada = @g where ID = @ID";
 		#endregion
 		//guarda a DataTable com informaçoes do plugin.
 		public DataTable DataTable { get; set; }
@@ -30,10 +30,10 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 		/// <summary>
 		/// Adiciona um novo plugin ao banco
 		/// </summary>
-		/// <param name="id">Codigo do plugin</param>
+		/// <param name="ID">Codigo do plugin</param>
 		/// <param name="dados">Lista contendo informaçoes a serem adicionadas (Nome, Autor, Versao, Tipo, Preço, Descriçao, Imagem(0, 1)) respectivamente.</param>
 		/// <returns></returns>
-		public async Task<bool> AdicionarDadosAsync(uint id, List<string> dados)
+		public async Task<bool> AdicionarDadosAsync(uint ID, List<string> dados)
 		{
 			using (MySqlConnection con = new MySqlConnection(await PegarConexaoMySQL.ConexaoAsync()))
 			{
@@ -41,9 +41,9 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 				{
 					await con.OpenAsync();
 
-					using (MySqlCommand add = new MySqlCommand("insert into pluginlist values (@a, @b, @c, @d, @f, @g, @h, @i)", con))
+					using (MySqlCommand add = new MySqlCommand("insert into PluginList values (@a, @b, @c, @d, @f, @g, @h, @i)", con))
 					{
-						_ = add.Parameters.Add(new MySqlParameter("@a", id));
+						_ = add.Parameters.Add(new MySqlParameter("@a", ID));
 						_ = add.Parameters.Add(new MySqlParameter("@b", dados[0]));
 						_ = add.Parameters.Add(new MySqlParameter("@c", dados[1]));
 						_ = add.Parameters.Add(new MySqlParameter("@d", dados[2]));
@@ -102,8 +102,8 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 						else
 						{
 							TooltipInfo = new List<string>();
-							get.CommandText = $"{CmdText2} where id = @id";
-							_ = get.Parameters.Add(new MySqlParameter("@id", itemProcurarID));
+							get.CommandText = $"{CmdText2} where ID = @ID";
+							_ = get.Parameters.Add(new MySqlParameter("@ID", itemProcurarID));
 							using (MySqlDataReader a = await get.ExecuteReaderAsync())
 							{
 								if (await a.ReadAsync())
@@ -206,7 +206,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 
 					using (MySqlCommand att = new MySqlCommand(Atualizar, con))
 					{
-						_ = att.Parameters.Add(new MySqlParameter("@id", pluginID));
+						_ = att.Parameters.Add(new MySqlParameter("@ID", pluginID));
 						_ = att.Parameters.Add(new MySqlParameter("@a", dados[0]));
 						_ = att.Parameters.Add(new MySqlParameter("@b", dados[1]));
 						_ = att.Parameters.Add(new MySqlParameter("@c", dados[2]));
@@ -239,7 +239,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 				{
 					await con.OpenAsync();
 
-					using (MySqlCommand rem = new MySqlCommand("select nome_plugin, imagem_padrao_personalizada from pluginlist where id = @a; delete from pluginlist where id = @a;", con))
+					using (MySqlCommand rem = new MySqlCommand("select NomePlugin, ImagemPadraoPersonalizada from PluginList where ID = @a; delete from PluginList where ID = @a;", con))
 					{
 						_ = rem.Parameters.Add(new MySqlParameter("@a", pluginID));
 

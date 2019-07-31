@@ -279,7 +279,7 @@ namespace Logikoz.BukkitDevSystem.Principal
 		//avaliar software
 		private void Button_Click_4(object sender, RoutedEventArgs e)
 		{
-			_ = Process.Start(PegarInfos.GitHubSourceLink);
+			_ = Process.Start("https://forms.gle/x9jJCCy1HAzfJCXw5");
 		}
 		//volta para a tela inicial do programa.
 		private void Button_Click_6(object sender, RoutedEventArgs e)

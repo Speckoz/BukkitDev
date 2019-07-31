@@ -14,8 +14,8 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 	internal class LicencaInfo
 	{
 		#region queries
-		private const string QueryChecar = "select licenca_suspenso from licencalist where binary licenca_key = @a";
-		private const string QuerySuspender = "update licencalist set licenca_suspenso = @b where binary licenca_key = @a; " + QueryChecar;
+		private const string QueryChecar = "select LicencaSuspensa from LicencaList where binary LicencaKey = @a";
+		private const string QuerySuspender = "update LicencaList set LicencaSuspensa = @b where binary LicencaKey = @a; " + QueryChecar;
 		#endregion
 
 		/// <summary>
@@ -34,7 +34,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 				{
 					await con.OpenAsync();
 
-					using (MySqlCommand add = new MySqlCommand("insert into licencalist values (@a, @b, @c, @d, @e, @f, @g)", con))
+					using (MySqlCommand add = new MySqlCommand("insert into LicencaList values (@a, @b, @c, @d, @e, @f, @g)", con))
 					{
 						_ = add.Parameters.Add(new MySqlParameter("@a", user));
 						_ = add.Parameters.Add(new MySqlParameter("@b", global ? 0 : pluginCod));
@@ -91,7 +91,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 				{
 					await con.OpenAsync();
 
-					using (MySqlCommand get = new MySqlCommand($"select * from licencalist where (licenca_key = @a || cliente_id = @a) {(dataPesquisar != null ? "&& data_criacao = @b" : string.Empty)}", con))
+					using (MySqlCommand get = new MySqlCommand($"select * from LicencaList where (LicencaKey = @a || ClienteID = @a) {(dataPesquisar != null ? "&& DataCriacao = @b" : string.Empty)}", con))
 					{
 						_ = get.Parameters.Add(new MySqlParameter("@a", @ref));
 						//
@@ -130,7 +130,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 				{
 					await con.OpenAsync();
 
-					using (MySqlCommand get = new MySqlCommand("select licenca_key from licencalist", con))
+					using (MySqlCommand get = new MySqlCommand("select LicencaKey from LicencaList", con))
 					{
 						using (MySqlDataReader reader = await get.ExecuteReaderAsync())
 						{
@@ -140,7 +140,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 							data.Load(reader);
 							foreach (DataRow row in data.Rows)
 							{
-								dados.Add(row["licenca_key"].ToString());
+								dados.Add(row["LicencaKey"].ToString());
 							}
 							return dados;
 						}
@@ -166,7 +166,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 				{
 					await con.OpenAsync();
 
-					using (MySqlCommand rem = new MySqlCommand("delete from licencalist where binary licenca_key = @a;", con))
+					using (MySqlCommand rem = new MySqlCommand("delete from LicencaList where binary LicencaKey = @a;", con))
 					{
 						_ = rem.Parameters.Add(new MySqlParameter("@a", lic));
 

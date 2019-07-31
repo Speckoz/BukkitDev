@@ -24,7 +24,7 @@ namespace Logikoz.BukkitDevSystem._dep
 			{
 				List<string> credenciaisFTP = await new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, PegarInfos.ConfigFTP, "ftp");
 
-				HttpWebRequest w = (HttpWebRequest)WebRequest.Create($"http://{credenciaisFTP[0]}/bukkitdev/assets/Images/{nomeImg}.png");
+				HttpWebRequest w = (HttpWebRequest)WebRequest.Create($"http://{credenciaisFTP[0]}/BukkitDev/assets/Images/{nomeImg}.png");
 				w.AllowWriteStreamBuffering = true;
 				w.Timeout = 30000;
 

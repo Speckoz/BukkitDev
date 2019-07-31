@@ -31,7 +31,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 			{
 				if (!plugins.Contains(PluginID_txt.Text))
 				{
-					if (await new Utils().VerificarExisteAsync(PluginID_txt.Text, "pluginlist", "id"))
+					if (await new Utils().VerificarExisteAsync(PluginID_txt.Text, "PluginList", "ID"))
 					{
 						//criando Chip dinamicamente
 						PluginInfo p = new PluginInfo();
@@ -48,7 +48,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 						newChip.DeleteClick += NewChip_DeleteClick;
 						//adicionando o chip  no WrapPanel
 						_ = ListChips_wp.Children.Add(newChip);
-						//adicionando id do plugin em uma List<> para poder saber quais plugins ja foram adicionados!
+						//adicionando ID do plugin em uma List<> para poder saber quais plugins ja foram adicionados!
 						plugins.Add(PluginID_txt.Text);
 						//variavel contadora de plugins adicionados
 						byte i = 1;

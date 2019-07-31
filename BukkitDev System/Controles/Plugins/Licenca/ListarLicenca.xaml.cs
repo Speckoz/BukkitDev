@@ -46,7 +46,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 					byte count = 0;
 					foreach (string i in resultado)
 					{
-						if (!await new Utils().VerificarExisteAsync(new string[] { dataPronta, i }, "licencalist", new string[] { "data_criacao", "licenca_key" }) && UsarData_cb.IsChecked.Value)
+						if (!await new Utils().VerificarExisteAsync(new string[] { dataPronta, i }, "LicencaList", new string[] { "DataCriacao", "LicencaKey" }) && UsarData_cb.IsChecked.Value)
 						{
 							count++;
 							continue;
@@ -71,7 +71,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Licenca
 							MetodosConstantes.EnviarMenssagem("Está licença ja esta na lista.");
 							return;
 						}
-						if (await new Utils().VerificarExisteAsync(ProcurarLicencaCodUsuario_txt.Text, "licencalist", "licenca_key"))
+						if (await new Utils().VerificarExisteAsync(ProcurarLicencaCodUsuario_txt.Text, "LicencaList", "LicencaKey"))
 						{
 							DesenhandoInformaçoes(await pegarLicenca.PegarAsync(ProcurarLicencaCodUsuario_txt.Text));
 						}

@@ -53,7 +53,7 @@ namespace Logikoz.BukkitDevSystem.Principal
 
 		private void Button_Click_3(object sender, RoutedEventArgs e)
 		{
-			_ = Process.Start(PegarInfos.GitHubSourceLink);
+			_ = Process.Start("https://github.com/Logikoz/BukkitDev-System");
 		}
 	}
 }

@@ -85,7 +85,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 		{
 			uint idP = await GerarCodigoPlugin();
 
-			if (!await new Utils().VerificarExisteAsync(idP.ToString(), "pluginlist", "id"))
+			if (!await new Utils().VerificarExisteAsync(idP.ToString(), "PluginList", "ID"))
 			{
 				//verificando se o cara escolheu alguma imagem
 				if (PegarInfos.ImagemPlugin.Equals("true"))
@@ -158,7 +158,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 									_ = await new EnviarArquivoFTP().EnviarAsync(tipo: "Images", caminho: _caminhoImagem, ftpArquivo: idP + Path.GetExtension(_caminhoImagem), conexaoFTP: dados, carregando_pb: Progresso_pb);
 								}
 								//adicionando informaçoes do plugin no banco de dados
-								_ = await new PluginInfo().AdicionarDadosAsync(id: idP, dados: CamposDados);
+								_ = await new PluginInfo().AdicionarDadosAsync(ID: idP, dados: CamposDados);
 								//enviando mensagem de sucesso
 								MetodosConstantes.EnviarMenssagem(mensagem: "Plugin Adicionado com sucesso");
 							}
@@ -196,7 +196,7 @@ namespace Logikoz.BukkitDevSystem.Controles.Plugins.Plugin
 
 		private static async System.Threading.Tasks.Task<uint> GerarCodigoPlugin()
 		{
-			return await new Utils().GerarIdAsync(100000, 999999, "pluginlist", "id");
+			return await new Utils().GerarIdAsync(100000, 999999, "PluginList", "ID");
 		}
 
 		private void UserControl_MouseDown(object sender, MouseButtonEventArgs e)
