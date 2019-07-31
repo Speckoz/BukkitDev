@@ -46,7 +46,7 @@ Somos membros da comunidade He4rt Developers, que tem como objetivo disponibiliz
 <img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/></a>
 </h3>
 
-## Licença [MIT](https://github.com/Logikoz/BukkitDev-System/blob/Licen%C3%A7a-Add/LICENSE)
+## Licença [MIT](https://github.com/Logikoz/BukkitDev-System/blob/master/LICENSE)
 O programa é gratuito e pode ser editado, compartilhado, e pode ser usado de forma comercial apenas para o uso do próprio desenvolvedor.
 Não pode ser vendido de forma alguma, caso haja alguma pessoa fazendo isso, deve nos contatar.
 <br>
