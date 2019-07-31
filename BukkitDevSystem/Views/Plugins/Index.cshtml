@@ -88,107 +88,30 @@
             <h2 class="text-center">PLUGINS</h2>
             <div class="subtitulo"><h6>Listagem de plugins</h6></div>
             <hr style="width: 300px;">
-            <!--Primeiro Deck-->
-            <div class="card-deck">
-                <!--Card-->
-                <div class="card">
-                    <img src="~/img/default.jpg" class="card-img-top" alt="thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome do plugin</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum qui perferendis placeat aliquam voluptas veritatis amet sed earum atque.</p>
-                        <p>[Java SE 8] [Spigot 1.8] [Maven 2]</p>
-                        <a href="" class="btn btn-primary">Download</a>
-                    </div>
+            <div class="container">
+                @{
+                    if(Model.Count() == 0)
+                    {
+                        <div class="text-center"><h3 class="text-danger">Nenhum Plugin</h3></div>
+                    }
+                }
+                <div class="row">
+                    @{
+                        foreach (var plugin in Model)
+                        {
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <img src="~/img/default.jpg" class="card-img-top" alt="thumbnail">
+                                <div class="card-body">
+                                    <h5 class="card-title">@plugin.NomePlugin</h5>
+                                    <p class="card-text">@plugin.DescricaoPlugin</p>
+                                    <a href="" class="btn btn-primary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    }
                 </div>
-                <!--Card-->
-                <div class="card">
-                    <img src="~/img/default.jpg" class="card-img-top" alt="thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome do plugin</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum qui perferendis placeat aliquam voluptas veritatis amet sed earum atque.</p>
-                        <p>[Java SE 8] [Spigot 1.8] [Maven 2]</p>
-                        <a href="" class="btn btn-primary">Download</a>
-                    </div>
-                </div>
-                <!--Card-->
-                <div class="card">
-                    <img src="~/img/default.jpg" class="card-img-top" alt="thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome do plugin</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum qui perferendis placeat aliquam voluptas veritatis amet sed earum atque.</p>
-                        <p>[Java SE 8] [Spigot 1.8] [Maven 2]</p>
-                        <a href="" class="btn btn-primary">Download</a>
-                    </div>
-                </div>
-            </div>
-            <!--Segundo deck-->
-            <div class="card-deck second-deck">
-                <!--Card-->
-                <div class="card">
-                    <img src="~/img/default.jpg" class="card-img-top" alt="thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome do plugin</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum qui perferendis placeat aliquam voluptas veritatis amet sed earum atque.</p>
-                        <p>[Java SE 8] [Spigot 1.8] [Maven 2]</p>
-                        <a href="" class="btn btn-primary">Download</a>
-                    </div>
-                </div>
-                <!--Card-->
-                <div class="card">
-                    <img src="~/img/default.jpg" class="card-img-top" alt="thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome do plugin</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum qui perferendis placeat aliquam voluptas veritatis amet sed earum atque.</p>
-                        <p>[Java SE 8] [Spigot 1.8] [Maven 2]</p>
-                        <a href="" class="btn btn-primary">Download</a>
-                    </div>
-                </div>
-                <!--Card-->
-                <div class="card">
-                    <img src="~/img/default.jpg" class="card-img-top" alt="thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome do plugin</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum qui perferendis placeat aliquam voluptas veritatis amet sed earum atque.</p>
-                        <p>[Java SE 8] [Spigot 1.8] [Maven 2]</p>
-                        <a href="" class="btn btn-primary">Download</a>
-                    </div>
-                </div>
-            </div>
-            <!--Terceiro Deck-->
-            <div class="card-deck second-deck ver-mais-deck">
-                <!--Card-->
-                <div class="card">
-                    <img src="~/img/default.jpg" class="card-img-top" alt="thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome do plugin</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum qui perferendis placeat aliquam voluptas veritatis amet sed earum atque.</p>
-                        <p>[Java SE 8] [Spigot 1.8] [Maven 2]</p>
-                        <a href="" class="btn btn-primary">Download</a>
-                    </div>
-                </div>
-                <!--Card-->
-                <div class="card">
-                    <img src="~/img/default.jpg" class="card-img-top" alt="thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome do plugin</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum qui perferendis placeat aliquam voluptas veritatis amet sed earum atque.</p>
-                        <p>[Java SE 8] [Spigot 1.8] [Maven 2]</p>
-                        <a href="" class="btn btn-primary">Download</a>
-                    </div>
-                </div>
-                <!--Card-->
-                <div class="card">
-                    <img src="~/img/default.jpg" class="card-img-top" alt="thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome do plugin</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum qui perferendis placeat aliquam voluptas veritatis amet sed earum atque.</p>
-                        <p>[Java SE 8] [Spigot 1.8] [Maven 2]</p>
-                        <a href="" class="btn btn-primary">Download</a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center ver-mais">
-                <button id="btn-ver-mais" class="btn btn-primary">Ver Mais</button>
             </div>
 
         </section>
