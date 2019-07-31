@@ -10,7 +10,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 	/// </summary>
 	internal class CriarTabela
 	{
-		private const string query = @"create table if not exists PluginList(ID MediumInt not null primary key,NomePlugin tinytext not null,AutorPlugin tinytext not null,VersaoPlugin char(5) not null,TipoPlugin char(10) not null,preco_plugin char(5),DescricaoPlugin text(1024) not null,ImagemPadraoPersonalizada boolean not null);
+		private const string query = @"create table if not exists PluginList(ID MediumInt not null primary key,NomePlugin tinytext not null,AutorPlugin tinytext not null,VersaoPlugin char(5) not null,TipoPlugin char(10) not null,PrecoPlugin char(5),DescricaoPlugin text(1024) not null,ImagemPadraoPersonalizada boolean not null);
 			create table if not exists LicencaList(ClienteID int unsigned not null,PluginID MediumInt,LicencaKey tinytext not null,LicencaGlobal boolean not null,DataCriacao date not null,HorarioCriacao time not null,LicencaSuspensa bool);";
 		/// <summary>
 		/// Cria as tabelas no banco de dados caso elas nao existam. (PluginList e LicenceList).

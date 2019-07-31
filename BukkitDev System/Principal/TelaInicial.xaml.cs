@@ -440,10 +440,10 @@ namespace Logikoz.BukkitDevSystem.Principal
 			{
 				met = "false";
 				EscolherImagem_st.IsEnabled = true;
-				await BaixarImagemAsync();
 			}
 			new AtualizandoDadosXML().AtualizarAsync(PegarInfos.NomeArquivoXML, "ImagemPlugin", met);
 			await MetodosConstantes.LerXMLAsync();
+			await BaixarImagemAsync();
 			MetodosConstantes.EnviarMenssagem("Configuraçao de imagem selecionada foi alterada!");
 		}
 		private async void Button_Click_5(object sender, RoutedEventArgs e)

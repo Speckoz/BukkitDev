@@ -21,7 +21,7 @@ namespace Logikoz.BukkitDevSystem._dep.MySQL
 		private const string CmdText = "select * from PluginList where ID like @a or NomePlugin like @a";
 		private const string CmdText1 = "select count(*) from PluginList where ID like @a or NomePlugin like @a";
 		//query de atualizaçao
-		private const string Atualizar = "update PluginList set NomePlugin = @a, AutorPlugin = @b, VersaoPlugin = @c, TipoPlugin = @d, preco_plugin = @e, DescricaoPlugin = @f, ImagemPadraoPersonalizada = @g where ID = @ID";
+		private const string Atualizar = "update PluginList set NomePlugin = @a, AutorPlugin = @b, VersaoPlugin = @c, TipoPlugin = @d, PrecoPlugin = @e, DescricaoPlugin = @f, ImagemPadraoPersonalizada = @g where ID = @ID";
 		#endregion
 		//guarda a DataTable com informaçoes do plugin.
 		public DataTable DataTable { get; set; }

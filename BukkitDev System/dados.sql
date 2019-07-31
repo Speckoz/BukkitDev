@@ -33,7 +33,7 @@ NomePlugin tinytext not null,
 AutorPlugin tinytext not null,
 VersaoPlugin char(5) not null,
 TipoPlugin char(10) not null,
-preco_plugin char(5),
+PrecoPlugin char(5),
 DescricaoPlugin text(1024) not null,
 ImagemPadraoPersonalizada boolean not null);
 
