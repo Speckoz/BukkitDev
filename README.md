@@ -23,17 +23,17 @@ Irá tirar a dor de cabeça quando algum cliente não cumpriu com o prometido e 
 - Listagem e Remoção
 - Suspensão e realocação.
 
-#### Menu de configuraçao.
-o software conta com menu cheio de configuraçoes para tornar sua usabilidade mais confortavel. dentre os recursos como alteraçao de cor, tema, ativa e desativar recursos. os que necessita de uma atençao extra sao: <br>
-- Alteraçao do entre conexao com o banco mysql e protocolo FTP.
-Onde ambos funcionam de forma iguais, em que o usuario altera entre *Local* e *Externo*, sendo que as opçoes se comportam igualmente, apenas mudando a configuraçao de qual conexao o usuario quer usar.
+#### Menu de configuração.
+o software conta com menu cheio de configurações para tornar sua usabilidade mais confortável. dentre os recursos como alteração de cor, tema, ativar e desativar recursos. os que necessita de uma atenção extra são: <br>
+- Alteração do entre conexão com o banco mysql e protocolo FTP.
+Onde ambos funcionam de forma igual, em que o usuário altera entre *Local* e *Externo*, sendo que as opções se comportam igualmente, apenas mudando a configuração de qual conexão o usuário quer usar.
 
 > qual a vantagem dessa ferramenta?
 
-Com essa opçao o desenvolvedor (usuario) nao precisa ficar trocando as credencias de conexao, com isso o usuario pode fazer testes em um servidor *Local* e quando quiser fazer um alteraçao global basta apenas um click e alterar para a conexao *Externa*.
+Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as credenciais de conexão, com isso o usuário pode fazer testes em um servidor *Local* e quando quiser fazer um alteração global basta apenas um click e alterar para a conexão *Externa*.
 <br>
 <br>
-Outra configuraçao interessante é o suporte de imagem para os plugins, ou seja, voce pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
+Outra configuração interessante é o suporte de imagem para os plugins, ou seja, você pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
 
 ## desenvolvedores
 - [@Logikoz](https://github.com/Logikoz) - Software
@@ -75,5 +75,3 @@ Não pode ser vendido de forma alguma, caso haja alguma pessoa fazendo isso, dev
 
 ### Menu de configurações do software.
 ![image](https://user-images.githubusercontent.com/37851168/62173784-e7161e80-b2fc-11e9-8e1e-fcf66c29fc2e.png)
-
-
