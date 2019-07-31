@@ -22,7 +22,6 @@ Irá tirar a dor de cabeça quando algum cliente não cumpriu com o prometido e 
 - Criação de licenças.
 - Listagem e Remoção
 - Suspensão e realocação.
-<br>
 
 ## desenvolvedores
 - [@Logikoz](https://github.com/Logikoz) - Software
