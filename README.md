@@ -1,12 +1,12 @@
 <h1 align="center"> BukkitDev Web </h1>
 
-### Site para mostrar os projetos para o publicco.
+### Site para mostrar os projetos para o publico.
 
 A lógica do projeto é ajudar os usuários da api a vender e mostrar os seus plugins por meio de uma plataforma simples, responsiva e bonita.
 
 ## desenvolvedores
-- [@Logikoz](https://github.com/Logikoz) - Software
-- [@marcopandolfo](https://github.com/marcopandolfo) - Site
+- [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Logikoz/BukkitDev-System)
+- [@marcopandolfo](https://github.com/marcopandolfo) - [Site](https://github.com/marcopandolfo/BukkitDev-Web/)
 
 Somos membros da comunidade He4rt Developers, que tem como objetivo disponibilizar a troca de conhecimentos entre desenvolvedores, majoritariamente brasileiros, para que possam crescer juntos como profissionais na área.
 <br>
