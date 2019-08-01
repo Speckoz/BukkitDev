@@ -36,8 +36,8 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 - Outra configuração interessante é o suporte de imagem para os plugins, ou seja, você pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
 
 ## desenvolvedores
-- [@Logikoz](https://github.com/Logikoz) - Software
-- [@marcopandolfo](https://github.com/marcopandolfo) - Site
+- [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Logikoz/BukkitDev-System)
+- [@marcopandolfo](https://github.com/marcopandolfo) - [Site](https://github.com/marcopandolfo/BukkitDev-Web/)
 
 Somos membros da comunidade He4rt Developers, que tem como objetivo disponibilizar a troca de conhecimentos entre desenvolvedores, majoritariamente brasileiros, para que possam crescer juntos como profissionais na área.
 <br>
