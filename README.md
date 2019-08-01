@@ -51,10 +51,6 @@ O programa é gratuito e pode ser editado, compartilhado, e pode ser usado de fo
 Não pode ser vendido de forma alguma, caso haja alguma pessoa fazendo isso, deve nos contatar.
 <br>
 
-### Site
-#### Tela inicial do site.
-![Image](https://user-images.githubusercontent.com/37851168/62178206-bf7b8200-b30d-11e9-8bf1-c103b4570a05.png)
-
 ### Software
 #### Tela de inicial do programa.
 ![image](https://user-images.githubusercontent.com/37851168/62172047-a61b0b80-b2f6-11e9-8ea2-857f4f39bc64.png)
