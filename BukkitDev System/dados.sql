@@ -28,22 +28,22 @@ insert into LicencaList values (99999999, 312909, "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
 
 drop table if exists PluginList;
 create table if not exists PluginList(
-ID MediumInt not null primary key,
-NomePlugin tinytext not null,
-AutorPlugin tinytext not null,
-VersaoPlugin char(5) not null,
-TipoPlugin char(10) not null,
-PrecoPlugin char(5),
-DescricaoPlugin text(1024) not null,
-ImagemPadraoPersonalizada boolean not null);
+ID 								MediumInt not null primary key,
+NomePlugin 						tinytext not null,
+AutorPlugin 					tinytext not null,
+VersaoPlugin 					char(5) not null,
+TipoPlugin 						char(10) not null,
+PrecoPlugin 					char(5),
+DescricaoPlugin 				text(1024) not null,
+ImagemPadraoPersonalizada 		boolean not null);
 
 drop table if exists LicencaList;
 create table if not exists licencaList(
-ClienteID int unsigned not null,
-#cliente_nome varchar(30) not null,
-PluginID MediumInt not null,
-LicencaKey tinytext not null,
-LicencaGlobal boolean not null,
-DataCriacao date not null,
-HorarioCriacao time not null,
-LicencaSuspensa bool);
+ClienteID 						int unsigned not null,
+#cliente_nome 					varchar(30) not null,
+PluginID 						MediumInt not null,
+LicencaKey 						tinytext not null,
+LicencaGlobal 					boolean not null,
+DataCriacao 					date not null,
+HorarioCriacao 					time not null,
+LicencaSuspensa 				bool);
