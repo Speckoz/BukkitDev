@@ -36,8 +36,8 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 - Outra configuração interessante é o suporte de imagem para os plugins, ou seja, você pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
 
 ## desenvolvedores
-- [@Logikoz](https://github.com/Logikoz) - Software
-- [@marcopandolfo](https://github.com/marcopandolfo) - Site
+- [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Logikoz/BukkitDev-System)
+- [@marcopandolfo](https://github.com/marcopandolfo) - [Site](https://github.com/marcopandolfo/BukkitDev-Web/)
 
 Somos membros da comunidade He4rt Developers, que tem como objetivo disponibilizar a troca de conhecimentos entre desenvolvedores, majoritariamente brasileiros, para que possam crescer juntos como profissionais na área.
 <br>
@@ -46,14 +46,10 @@ Somos membros da comunidade He4rt Developers, que tem como objetivo disponibiliz
 <img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/></a>
 </h3>
 
-## Licença [MIT](https://github.com/Logikoz/BukkitDev-System/blob/Licen%C3%A7a-Add/LICENSE)
+## Licença [MIT](https://github.com/Logikoz/BukkitDev-System/blob/master/LICENSE)
 O programa é gratuito e pode ser editado, compartilhado, e pode ser usado de forma comercial apenas para o uso do próprio desenvolvedor.
 Não pode ser vendido de forma alguma, caso haja alguma pessoa fazendo isso, deve nos contatar.
 <br>
-
-### Site
-#### Tela inicial do site.
-![Image](https://user-images.githubusercontent.com/37851168/62178206-bf7b8200-b30d-11e9-8bf1-c103b4570a05.png)
 
 ### Software
 #### Tela de inicial do programa.
