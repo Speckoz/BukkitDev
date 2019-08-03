@@ -28,7 +28,7 @@ insert into LicencaList values (99999999, 312909, "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
 
 drop table if exists PluginList;
 create table if not exists PluginList(
-ID 								MediumInt not null primary key,
+ID 								MediumInt not null primary key, 
 NomePlugin 						tinytext not null,
 AutorPlugin 					tinytext not null,
 VersaoPlugin 					char(5) not null,
