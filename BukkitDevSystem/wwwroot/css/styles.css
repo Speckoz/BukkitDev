@@ -171,3 +171,9 @@ nav {
 .icon-social-twitter {
     margin-right: 20px;
 }
+.card-topic {
+    color: green;
+}
+.card-box {
+    margin-top: 35px;
+}

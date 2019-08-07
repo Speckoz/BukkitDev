@@ -99,13 +99,26 @@
                     @{
                         foreach (var plugin in Model)
                         {
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 card-box">
                             <div class="card">
                                 <img src="~/img/default.jpg" class="card-img-top" alt="thumbnail">
                                 <div class="card-body">
-                                    <h5 class="card-title">@plugin.NomePlugin</h5>
+                                    <h5>@plugin.NomePlugin</h5>
+                                    <h6><span class="card-topic">ID:</span> @plugin.Id</h6>
+                                    <h6><span class="card-topic">Versão:</span> @plugin.VersaoPlugin</h6>
+                                    <h6><span class="card-topic">Autor:</span> @plugin.AutorPlugin</h6>
                                     <p class="card-text">@plugin.DescricaoPlugin</p>
-                                    <a href="" class="btn btn-primary">Download</a>
+                                    @{
+                                        if (plugin.TipoPlugin == "Pago")
+                                        {
+                                            <a href="" class="btn btn-warning">Comprar</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="" class="btn btn-primary">Download</a>
+                                        }
+
+                                    }
                                 </div>
                             </div>
                         </div>
