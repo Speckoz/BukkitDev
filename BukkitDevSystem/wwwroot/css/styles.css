@@ -177,3 +177,8 @@ nav {
 .card-box {
     margin-top: 35px;
 }
+
+#btn-plugin {
+    font-size: 1.4em;
+    font-weight: 500;
+}
