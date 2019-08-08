@@ -37,3 +37,11 @@ $('#btn-ver-mais').click(() => {
 
      $('#btn-ver-mais').remove();
 });
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+})

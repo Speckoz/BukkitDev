@@ -172,7 +172,7 @@ nav {
     margin-right: 20px;
 }
 .card-topic {
-    color: green;
+    font-weight: bold;
 }
 .card-box {
     margin-top: 35px;
@@ -181,4 +181,28 @@ nav {
 #btn-plugin {
     font-size: 1.4em;
     font-weight: 500;
+}
+
+.img-java-poop {
+    width: 220px;
+    height: 220px;
+    padding-top: 20px;
+}
+.normal-text {
+    font-weight: 400;
+}
+.card {
+    width: 350px;
+    height: 490px;
+}
+
+.ver-mais-card {
+    color: dodgerblue!important;
+    cursor: pointer;
+}
+.descricao-card {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
 }
