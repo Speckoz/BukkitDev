@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BukkitDevSystem.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using BukkitDevSystem.Models;
 
 namespace BukkitDevSystem.Controllers
 {
@@ -23,6 +20,23 @@ namespace BukkitDevSystem.Controllers
         {
             return View(await _context.Pluginlist.ToListAsync());
         }
+
+        // GET: Plugins/Gratuitos
+        public async Task<IActionResult> Gratuitos()
+        {
+            var plugins = await _context.Pluginlist.ToListAsync();
+            var gratuitos = plugins.Where(plugin => plugin.TipoPlugin == "Gratuito");
+            return View("Index", gratuitos);
+        }
+
+        // GET: Plugins/Pagos
+        public async Task<IActionResult> Pagos()
+        {
+            var plugins = await _context.Pluginlist.ToListAsync();
+            var gratuitos = plugins.Where(plugin => plugin.TipoPlugin == "Pago");
+            return View("Index", gratuitos);
+        }
+
 
         // GET: Plugins/Details/5
         public async Task<IActionResult> Details(int? id)
