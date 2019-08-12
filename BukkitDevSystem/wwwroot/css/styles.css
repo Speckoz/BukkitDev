@@ -253,3 +253,8 @@ nav {
     position: absolute;
     border: 0;
 }
+
+.logo-hover:hover {
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
