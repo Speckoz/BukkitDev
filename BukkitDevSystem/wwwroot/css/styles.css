@@ -3,12 +3,15 @@ body {
     background-color: rgb(31, 29, 29);
     color: rgb(207, 207, 207);
 }
+
 hr {
     border-top: 1px solid gray;
 }
+
 .subtitulo {
     text-align: center;
 }
+
 #sobre {
     margin-top: 21px;
 }
@@ -20,9 +23,11 @@ hr {
     vertical-align: middle;
     cursor: pointer;
 }
+
 .material-icons {
     vertical-align: middle;
 }
+
 .fto-principal {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -37,11 +42,12 @@ hr {
     background-color: black;
 }
 
-.icone-footer{
+.icone-footer {
     margin-left: 5px;
     width: 33px;
     height: 33px;
 }
+
 .footer a {
     margin: .2em;
 }
@@ -51,15 +57,19 @@ hr {
     .btn-github {
         display: none;
     }
+
     .btn-twitter {
         display: none;
     }
+
     .box-sobre {
         font-size: 17px;
     }
+
     .main-text {
         margin-bottom: 50px;
     }
+
     .segunda-coluna {
         margin-bottom: 30px;
     }
@@ -69,16 +79,20 @@ hr {
     .second-deck {
         margin-top: 1.7em;
     }
+
     .btn-github {
         display: block;
     }
+
     .btn-twitter {
         display: block;
         margin-left: 10px;
     }
+
     .alert-info {
         font-size: 22px;
     }
+
     .main-text {
         margin-bottom: 85px;
     }
@@ -94,25 +108,31 @@ hr {
     .barras-progresso {
         margin-top: 18px;
     }
+
     .fto-principal {
         margin-top: 26px;
     }
 }
+
 .ver-mais {
     margin-top: 8px;
     font-size: 1.2em;
 }
+
 .ver-mais-deck {
     display: none;
 }
+
 .bukkit-icon {
     vertical-align: top;
     width: 20px;
     margin-right: 10px;
 }
+
 nav {
     background-color: rgb(26, 128, 230);
 }
+
 .java-blue {
     width: 10%;
 }
@@ -128,6 +148,7 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .github-logo {
     width: 40%;
 }
@@ -135,45 +156,57 @@ nav {
 nav {
     color: white;
 }
+
 .text-white-nav {
-    color: rgb(235, 235, 235)!important;
+    color: rgb(235, 235, 235) !important;
 }
 
-.nav-link:hover,.btn-github:hover, .btn-twitter:hover {
-    text-shadow: 0 0 5px pink!important;
+.nav-link:hover, .btn-github:hover, .btn-twitter:hover {
+    text-shadow: 0 0 5px pink !important;
 }
+
 .start {
-    margin-top: 25px;   
+    margin-top: 25px;
 }
+
 .card {
     background-color: #353535;
     color: white;
 }
+
 .card-deck {
     margin-top: 50px;
 }
+
 #btn-ver-mais {
     margin-top: 20px;
 }
+
 .start-sobre {
     margin-top: 50px;
 }
+
 .icon {
     width: 50px;
 }
+
 .social-box a:hover {
     text-decoration: none;
-    text-shadow: 0 0 2px pink!important;
+    text-shadow: 0 0 2px pink !important;
 }
+
 .social-box a {
     color: rgb(235, 235, 235);
 }
+
 .icon-social-twitter {
     margin-right: 20px;
 }
+
 .card-topic {
     font-weight: bold;
 }
+
 .card-box {
     margin-top: 35px;
 }
@@ -188,21 +221,35 @@ nav {
     height: 220px;
     padding-top: 20px;
 }
+
 .normal-text {
     font-weight: 400;
 }
+
 .card {
     width: 350px;
     height: 490px;
 }
 
 .ver-mais-card {
-    color: dodgerblue!important;
+    color: dodgerblue !important;
     cursor: pointer;
 }
+
 .descricao-card {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 300px;
+}
+
+.dropdown-menu-nav a {
+    color: white;
+}
+
+.dropdown-menu-nav {
+    background-color: #1a80e6;
+    left: auto;
+    position: absolute;
+    border: 0;
 }
