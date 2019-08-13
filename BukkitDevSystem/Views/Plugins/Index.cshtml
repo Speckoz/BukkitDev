@@ -1,7 +1,11 @@
-﻿@model IEnumerable<BukkitDevSystem.Models.PluginModel>
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@model IEnumerable<BukkitDevSystem.Models.PluginModel>
 
 @{
     Layout = "";
+    string FtpServer = Configuration.GetConnectionString("BukkitDevSystemFtp");
 }
 
 <!DOCTYPE html>
@@ -119,8 +123,8 @@
                                         }
 
                                         <div align="center">
-                                            <a href="http://localhost/bukkitdev/assets/images/@aux" target="_blank">
-                                                <img src="http://localhost/bukkitdev/assets/images/@aux" class="card-img-top img-java-poop" alt="thumbnail">
+                                            <a href="@FtpServer/assets/images/@aux" target="_blank">
+                                                <img src="@FtpServer/assets/images/@aux" class="card-img-top img-java-poop" alt="thumbnail">
                                             </a>
                                         </div>
                                     }
@@ -166,11 +170,11 @@
                                         @{
                                             if (plugin.TipoPlugin == "Pago")
                                             {
-                                                <a href=@($"http://localhost/bukkitdev/assets/plugin/{plugin.Id}.jar") id="btn-plugin" class="btn btn-outline-warning btn-block">Comprar</a>
+                                                <a href=@($"{FtpServer}/assets/plugin/{plugin.Id}.jar") id="btn-plugin" class="btn btn-outline-warning btn-block">Comprar</a>
                                             }
                                             else
                                             {
-                                                <a href=@($"http://localhost/bukkitdev/assets/plugin/{plugin.Id}.jar") id="btn-plugin" class="btn btn-outline-primary btn-block">Download</a>
+                                                <a href=@($"{FtpServer}/assets/plugin/{plugin.Id}.jar") id="btn-plugin" class="btn btn-outline-primary btn-block">Download</a>
                                             }
                                         }
                                     </div>
