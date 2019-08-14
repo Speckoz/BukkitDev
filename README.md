@@ -39,12 +39,6 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 <br>
 - Outra configuração interessante é o suporte de imagem para os plugins, ou seja, você pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
 
-<div align="center">
-    Que tal avaliar nosso projeto?<br>
-    <a href="https://forms.gle/x9jJCCy1HAzfJCXw5" target="_blank">
-        Clique Aqui
-</div>
-
 ## desenvolvedores
 - [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Logikoz/BukkitDev-System)
 - [@marcopandolfo](https://github.com/marcopandolfo) - [Site](https://github.com/marcopandolfo/BukkitDev-Web/)
@@ -55,6 +49,12 @@ Somos membros da comunidade He4rt Developers, que tem como objetivo disponibiliz
     <a href="https://discord.gg/J3saJqq" target="_blank"> 
     <img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/></a>
 </h3>
+
+<div align="center">
+    Que tal avaliar nosso projeto?<br>
+    <a href="https://forms.gle/x9jJCCy1HAzfJCXw5" target="_blank">
+        Clique Aqui
+</div>
 
 ## Licença [MIT](https://github.com/Logikoz/BukkitDev-System/blob/master/LICENSE)
 O programa é gratuito e pode ser editado, compartilhado, e pode ser usado de forma comercial apenas para o uso do próprio desenvolvedor.
