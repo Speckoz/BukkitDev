@@ -38,13 +38,11 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 <br>
 <br>
 - Outra configuração interessante é o suporte de imagem para os plugins, ou seja, você pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
+
 <div align="center">
-    Que tal avaliar nosso projeto?
-</div>
-<div align="center">
+    Que tal avaliar nosso projeto?<br>
     <a href="https://forms.gle/x9jJCCy1HAzfJCXw5" target="_blank">
-        <img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/>
-    </a>
+        Clique Aqui
 </div>
 
 ## desenvolvedores
@@ -82,6 +80,5 @@ Não pode ser vendido de forma alguma, caso haja alguma pessoa fazendo isso, dev
 ![image](https://user-images.githubusercontent.com/37851168/62173700-85ee4b00-b2fc-11e9-9cd8-97c56faa1a05.png)
 #### Tela para suspensao e realocação de licença.
 ![image](https://user-images.githubusercontent.com/37851168/62173744-b209cc00-b2fc-11e9-92ca-771ed6d185d9.png)
-
-### Menu de configurações do software.
+#### Menu de configurações do software.
 ![image](https://user-images.githubusercontent.com/37851168/62173784-e7161e80-b2fc-11e9-8e1e-fcf66c29fc2e.png)
