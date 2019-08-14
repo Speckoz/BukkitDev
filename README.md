@@ -1,4 +1,6 @@
-<h1 align="center"> BukkitDev Web 1.0</h1>
+<h1 align="center"> 
+    BukkitDev Web 1.0
+</h1>
 
 <div align="center">
     <img src="bucketLava.gif"/>
@@ -23,10 +25,16 @@ Configure o arquivo `appsettings.json` com o dados do seu servidor MySql e FTP
 
 Somos membros da comunidade He4rt Developers, que tem como objetivo disponibilizar a troca de conhecimentos entre desenvolvedores, majoritariamente brasileiros, para que possam crescer juntos como profissionais na área.
 <br>
-<h3 align="center">
- <a href="http://discord.io/He4rt" target="_blank"> 
-<img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/></a>
-</h3>
+<div align="center">
+    <a href="https://discord.gg/J3saJqq" target="_blank"> 
+    <img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/></a>
+</div>
+
+<div align="center">
+    Que tal avaliar nosso projeto?<br>
+    <a href="https://forms.gle/x9jJCCy1HAzfJCXw5" target="_blank">
+        Clique Aqui
+</div>
 
 ## Licença [MIT](https://github.com/marcopandolfo/BukkitDev-Web/blob/master/LICENSE)
 O programa é gratuito e pode ser editado, compartilhado, e pode ser usado de forma comercial apenas para o uso do próprio desenvolvedor.
