@@ -57,5 +57,15 @@
         /// (true) Personalizada | (false) Padrao.
         /// </summary>
         public static string ImagemPlugin { get; set; }
+
+        public static string MySQLConfig()
+        {
+            return "server=localhost; userid=logikoz; pw=123; database=bukkitdev;port=3306;";
+        }
+        public static string FTPConfig()
+        {
+            return "ftp://localhost:21/bukkitdev/assets/";
+        }
+
     }
 }
