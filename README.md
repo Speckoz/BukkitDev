@@ -1,4 +1,8 @@
-<h1 align="center"> BukkitDev System </h1>
+<h1 align="center"> BukkitDev System 1.0 </h1>
+
+<div align="center">
+    <img src="bucketLava.gif"/>
+</div>
 
 ### Software de gerenciamento de projetos para desenvolvedores bukkit.
 
@@ -25,12 +29,12 @@ Irá tirar a dor de cabeça quando algum cliente não cumpriu com o prometido e 
 
 #### Menu de configuração.
 o software conta com menu cheio de configurações para tornar sua usabilidade mais confortável. dentre os recursos como alteração de cor, tema, ativar e desativar recursos. os que necessita de uma atenção extra são: <br>
-- Alteração do entre conexão com o banco mysql e protocolo FTP.
+- Alteração da conexão com o banco mysql e protocolo FTP.
 Onde ambos funcionam de forma igual, em que o usuário altera entre *Local* e *Externo*, sendo que as opções se comportam igualmente, apenas mudando a configuração de qual conexão o usuário quer usar.
 
 > qual a vantagem dessa ferramenta?
 
-Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as credenciais de conexão, com isso o usuário pode fazer testes em um servidor *Local* e quando quiser fazer um alteração global basta apenas um click e alterar para a conexão *Externa*.
+Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as credenciais de conexão, com isso o usuário pode fazer testes em um servidor *Local* e quando quiser fazer uma alteração global basta apenas um click e alterar para a conexão *Externa*.
 <br>
 <br>
 - Outra configuração interessante é o suporte de imagem para os plugins, ou seja, você pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
