@@ -38,14 +38,13 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 <br>
 <br>
 - Outra configuração interessante é o suporte de imagem para os plugins, ou seja, você pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
-
 <div align="center">
-    Que tal avaliar nosso projeto?<br>
-    
-    <div>
-        <a href="https://forms.gle/x9jJCCy1HAzfJCXw5" target="_blank">
-        <img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/></a>
-    </div>
+    Que tal avaliar nosso projeto?
+</div>
+<div align="center">
+    <a href="https://forms.gle/x9jJCCy1HAzfJCXw5" target="_blank">
+        <img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/>
+    </a>
 </div>
 
 ## desenvolvedores
