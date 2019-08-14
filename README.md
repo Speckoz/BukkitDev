@@ -1,9 +1,8 @@
 <h1 align="center"> BukkitDev Web 1.0</h1>
 
-<h3 align="center">
-  <img src="https://user-images.githubusercontent.com/40467826/62972728-12176c80-bdeb-11e9-9111-822af2d78d23.png" width="215"><br>
-</h3> 
-
+<div align="center">
+    <img src="bucketLava.gif"/>
+</div>
 
 ### Site para mostrar os projetos para o publico.
 
