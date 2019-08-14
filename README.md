@@ -45,10 +45,10 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 
 Somos membros da comunidade He4rt Developers, que tem como objetivo disponibilizar a troca de conhecimentos entre desenvolvedores, majoritariamente brasileiros, para que possam crescer juntos como profissionais na área.
 <br>
-<h3 align="center">
+<div align="center">
     <a href="https://discord.gg/J3saJqq" target="_blank"> 
     <img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/></a>
-</h3>
+</div>
 
 <div align="center">
     Que tal avaliar nosso projeto?<br>
