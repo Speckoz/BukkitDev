@@ -42,7 +42,8 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 <div align="center">
     Que tal avaliar nosso projeto?<br>
     <div>
-        <a href="https://forms.gle/x9jJCCy1HAzfJCXw5" target="_blank">Clique Aqui</a>
+        <a href="https://forms.gle/x9jJCCy1HAzfJCXw5" target="_blank">
+        <p>Clique Aqui</p>
     </div>
 </div>
 
