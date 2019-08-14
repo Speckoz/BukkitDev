@@ -1,5 +1,8 @@
 <h1 align="center"> BukkitDev System 1.0 </h1>
-![](bucketLava.gif)
+
+<div align="center">
+    <img src="http://www.bencloward.com/matt/minecraft/bucketLava.gif"/>
+</div>
 
 ### Software de gerenciamento de projetos para desenvolvedores bukkit.
 
