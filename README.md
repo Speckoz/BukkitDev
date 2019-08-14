@@ -39,6 +39,11 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 <br>
 - Outra configuração interessante é o suporte de imagem para os plugins, ou seja, você pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
 
+<div align="center">
+    Que tal avaliar nosso projeto?
+    <a href="https://forms.gle/x9jJCCy1HAzfJCXw5">Clique Aqui</a>
+</div>
+
 ## desenvolvedores
 - [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Logikoz/BukkitDev-System)
 - [@marcopandolfo](https://github.com/marcopandolfo) - [Site](https://github.com/marcopandolfo/BukkitDev-Web/)
@@ -58,6 +63,8 @@ Não pode ser vendido de forma alguma, caso haja alguma pessoa fazendo isso, dev
 ### Software
 #### Tela de inicial do programa.
 ![image](https://user-images.githubusercontent.com/37851168/62172047-a61b0b80-b2f6-11e9-8ea2-857f4f39bc64.png)
+#### Tela de informaçao sobre o software
+![image](https://user-images.githubusercontent.com/37851168/63056515-d7c2d380-bead-11e9-9146-c59bfa2980b6.png)
 #### Tela de adição de novo plugins.
 ![image](https://user-images.githubusercontent.com/37851168/62172147-eed2c480-b2f6-11e9-83d6-68ba9f1cd7aa.png)
 #### Tela para edição das informações de plugins
