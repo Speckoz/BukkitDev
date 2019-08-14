@@ -1,4 +1,4 @@
-<h1 align="center"> BukkitDev System </h1>
+<h1 align="center"> BukkitDev System 1.0 </h1>
 
 ### Software de gerenciamento de projetos para desenvolvedores bukkit.
 
