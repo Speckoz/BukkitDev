@@ -41,9 +41,10 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 
 <div align="center">
     Que tal avaliar nosso projeto?<br>
+    
     <div>
         <a href="https://forms.gle/x9jJCCy1HAzfJCXw5" target="_blank">
-        <p>Clique Aqui</p>
+        <img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/></a>
     </div>
 </div>
 
