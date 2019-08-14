@@ -39,10 +39,12 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 <br>
 - Outra configuração interessante é o suporte de imagem para os plugins, ou seja, você pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
 
-<h3 align="center">
+<div align="center">
     Que tal avaliar nosso projeto?<br>
-    <a href="https://forms.gle/x9jJCCy1HAzfJCXw5" target="_blank">Clique Aqui</a>
-</h3>
+    <div>
+        <a href="https://forms.gle/x9jJCCy1HAzfJCXw5" target="_blank">Clique Aqui</a>
+    </div>
+</div>
 
 ## desenvolvedores
 - [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Logikoz/BukkitDev-System)
