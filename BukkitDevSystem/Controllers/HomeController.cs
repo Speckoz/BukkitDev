@@ -15,13 +15,13 @@ namespace BukkitDevSystem.Controllers
             return RedirectToAction("index", "plugins");
         }
 
-        public IActionResult Privacy()
+        private IActionResult Privacy()
         {
             return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        private IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
