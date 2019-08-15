@@ -19,6 +19,8 @@ Essa plataforma web foi feita para ser usada em conjunto com o [BukkitDev Deskto
 
 - O diretório do FTP é http://localhost/bukkitdev
 
+- Certifique-se de estar usando a versão 2.2 do .Net Core
+
 ## desenvolvedores
 - [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Logikoz/BukkitDev-System)
 - [@marcopandolfo](https://github.com/marcopandolfo) - [Web](https://github.com/marcopandolfo/BukkitDev-Web/)
