@@ -146,9 +146,20 @@
                                                     plugin.NomePlugin = plugin.NomePlugin.Replace(" ", "");
                                                 }
                                             }
-                                            <a class="ver-mais-card" data-toggle="modal" data-target="@($"#{plugin.NomePlugin}")">
-                                                Ver mais
-                                            </a>
+
+                                            @{
+                                                if (plugin.DescricaoPlugin.Length > 38)
+                                                {
+                                                    <a class="ver-mais-card" data-toggle="modal" data-target="@($"#{plugin.NomePlugin}")">
+                                                        Ver mais
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <br />
+                                                }
+                                            }
+
                                             <!-- Modal -->
                                             <div class="modal fade text-body" id="@(plugin.NomePlugin)" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
