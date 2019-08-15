@@ -13,7 +13,7 @@ A lógica do projeto é ajudar os usuários da api a vender e mostrar os seus pl
 Essa plataforma web foi feita para ser usada em conjunto com o [BukkitDev Desktop](https://github.com/Logikoz/BukkitDev-System), por la você pode configurar e adicionar plugins.
 
 ## Antes de rodar o projeto:
-Configure o arquivo `appsettings.json` com o dados do seu servidor MySql e FTP
+- Configure o arquivo `appsettings.json` com o dados do seu servidor MySql e FTP e um link do seu Mercado Pago
 
 - Você deve ter um database com o nome `bukkitdev`
 

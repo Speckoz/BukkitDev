@@ -6,6 +6,7 @@
 @{
     Layout = "";
     string FtpServer = Configuration.GetConnectionString("BukkitDevSystemFtp");
+    string LinkMP = Configuration.GetSection("Links")["MP"];
 }
 
 <!DOCTYPE html>
@@ -146,7 +147,7 @@
                                                     plugin.NomePlugin = plugin.NomePlugin.Replace(" ", "");
                                                 }
                                             }
-
+                                            
                                             @{
                                                 if (plugin.DescricaoPlugin.Length > 38)
                                                 {
@@ -185,7 +186,7 @@
                                         @{
                                             if (plugin.TipoPlugin == "Pago")
                                             {
-                                                <a href=@($"{FtpServer}/assets/plugin/{plugin.Id}.jar") id="btn-plugin" class="btn btn-outline-warning btn-block">Comprar</a>
+                                                <a href="@LinkMP" id="btn-plugin" class="btn btn-outline-warning btn-block">Comprar</a>
                                             }
                                             else
                                             {
