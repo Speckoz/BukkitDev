@@ -39,7 +39,7 @@ namespace BukkitDevSystem.Controllers
 
 
         // GET: Plugins/Details/5
-        public async Task<IActionResult> Details(int? id)
+        private async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -57,7 +57,7 @@ namespace BukkitDevSystem.Controllers
         }
 
         // GET: Plugins/Create
-        public IActionResult Create()
+        private IActionResult Create()
         {
             return View();
         }
@@ -67,7 +67,7 @@ namespace BukkitDevSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("NomePlugin,AutorPlugin,VersaoPlugin,TipoPlugin,PrecoPlugin,DescricaoPlugin,ImagemPadraoPersonalizada,Id")] PluginModel pluginModel)
+        private async Task<IActionResult> Create([Bind("NomePlugin,AutorPlugin,VersaoPlugin,TipoPlugin,PrecoPlugin,DescricaoPlugin,ImagemPadraoPersonalizada,Id")] PluginModel pluginModel)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace BukkitDevSystem.Controllers
         }
 
         // GET: Plugins/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        private async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -99,7 +99,7 @@ namespace BukkitDevSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("NomePlugin,AutorPlugin,VersaoPlugin,TipoPlugin,PrecoPlugin,DescricaoPlugin,ImagemPadraoPersonalizada,Id")] PluginModel pluginModel)
+        private async Task<IActionResult> Edit(int id, [Bind("NomePlugin,AutorPlugin,VersaoPlugin,TipoPlugin,PrecoPlugin,DescricaoPlugin,ImagemPadraoPersonalizada,Id")] PluginModel pluginModel)
         {
             if (id != pluginModel.Id)
             {
@@ -130,7 +130,7 @@ namespace BukkitDevSystem.Controllers
         }
 
         // GET: Plugins/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        private async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -150,7 +150,7 @@ namespace BukkitDevSystem.Controllers
         // POST: Plugins/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        private async Task<IActionResult> DeleteConfirmed(int id)
         {
             var pluginModel = await _context.Pluginlist.FindAsync(id);
             _context.Pluginlist.Remove(pluginModel);
