@@ -43,5 +43,17 @@ Não pode ser vendido de forma alguma, caso haja alguma pessoa fazendo isso, dev
 
 ### Site
 #### Tela inicial do site.
-![Image](https://user-images.githubusercontent.com/37851168/62178206-bf7b8200-b30d-11e9-8bf1-c103b4570a05.png)
+![Image](https://user-images.githubusercontent.com/40467826/63122846-11630f80-bf7e-11e9-86a9-b8c8700df028.png)
 
+#### Também é possivel listar apenas os plugins pago ou gratuitos
+
+![image](https://user-images.githubusercontent.com/40467826/63123099-a8c86280-bf7e-11e9-8f2c-07f3ba18cbc9.png)
+
+
+##### Pagos
+
+![image](https://user-images.githubusercontent.com/40467826/63123200-d7463d80-bf7e-11e9-9d57-238ec101f6e4.png)
+
+#### Gratuitos
+
+![image](https://user-images.githubusercontent.com/40467826/63123404-3f951f00-bf7f-11e9-8776-0e585c62bdc8.png)
