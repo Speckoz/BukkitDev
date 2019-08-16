@@ -28,7 +28,7 @@ Irá tirar a dor de cabeça quando algum cliente não cumpriu com o prometido e 
 - Suspensão e realocação.
 
 #### Menu de configuração.
-o software conta com menu cheio de configurações para tornar sua usabilidade mais confortável. dentre os recursos como alteração de cor, tema, ativar e desativar recursos. os que necessita de uma atenção extra são: <br>
+O software possui um menu cheio de configurações para tornar sua usabilidade mais confortável. dentre os recursos como alteração de cor, tema, ativar e desativar recursos. os que necessita de uma atenção extra são: <br>
 - Alteração da conexão com o banco mysql e protocolo FTP.
 Onde ambos funcionam de forma igual, em que o usuário altera entre *Local* e *Externo*, sendo que as opções se comportam igualmente, apenas mudando a configuração de qual conexão o usuário quer usar.
 
