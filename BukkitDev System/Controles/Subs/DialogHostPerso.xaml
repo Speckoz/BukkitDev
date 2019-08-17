@@ -15,12 +15,29 @@
                 Text="aaaaaa"
                 TextWrapping="Wrap" />
         </ScrollViewer>
-        <Button
-            Margin="10,10,10,0"
-            HorizontalAlignment="Center"
-            Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
-            Content="Fechar"
-            IsDefault="True"
-            Style="{DynamicResource MaterialDesignFlatButton}" />
+        <Grid>
+            <Button
+                Margin="10,10,10,0"
+                HorizontalAlignment="Center"
+                Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+                Content="Fechar"
+                IsDefault="True"
+                Style="{DynamicResource MaterialDesignFlatButton}" />
+            <Button
+                Width="20"
+                Height="20"
+                Margin="10,10,10,0"
+                HorizontalAlignment="Right"
+                Click="Button_Click"
+                Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+                IsDefault="True"
+                Style="{DynamicResource MaterialDesignIconButton}"
+                ToolTip="Copiar">
+                <materialDesign:PackIcon
+                    Width="15"
+                    Height="15"
+                    Kind="ContentCopy" />
+            </Button>
+        </Grid>
     </StackPanel>
 </UserControl>
