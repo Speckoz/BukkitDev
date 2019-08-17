@@ -17,9 +17,12 @@ namespace Logikoz.BukkitDevSystem.Controles.Config
         {
             foreach (string v in dados)
             {
-                if (dados[tipoConexao.Equals("mysql") ? 3 : 2].Equals(string.Empty))
+                if (tipoConexao.Equals("mysql") || tipoConexao.Equals("ftp"))
                 {
-                    continue;
+                    if (v.Equals(string.Empty))
+                    {
+                        continue;
+                    }
                 }
 
                 if (string.IsNullOrEmpty(v))
