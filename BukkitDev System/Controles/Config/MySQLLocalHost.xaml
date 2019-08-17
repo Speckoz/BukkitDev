@@ -64,7 +64,7 @@
             <Button
                 Margin="0,30,0,20"
                 Click="Button_Click"
-                Style="{StaticResource MaterialDesignRaisedAccentButton}">
+                Style="{DynamicResource MaterialDesignRaisedAccentButton}">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon VerticalAlignment="Center" Kind="ContentSave" />
                     <TextBlock

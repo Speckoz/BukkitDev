@@ -143,7 +143,7 @@
                                 Style="{StaticResource MaterialDesignCaptionTextBlock}"
                                 TextWrapping="Wrap">
                                 <Run Text="Basta criar um 'Issue' no GitHub ou comentar no" />
-                                <Hyperlink NavigateUri="https://gamersboard.com.br/" RequestNavigate="Hyperlink_RequestNavigate">tópico na GamersBoard</Hyperlink>
+                                <Hyperlink NavigateUri="https://gamersboard.com.br/topic/69023-bukkitdev-sistema-para-gerenciamento-de-plugins/" RequestNavigate="Hyperlink_RequestNavigate">tópico na GamersBoard</Hyperlink>
                             </TextBlock>
                             <TextBlock />
                         </StackPanel>
