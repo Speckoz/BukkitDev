@@ -28,7 +28,7 @@ Irá tirar a dor de cabeça quando algum cliente não cumpriu com o prometido e 
 - Suspensão e realocação.
 
 #### Menu de configuração.
-o software conta com menu cheio de configurações para tornar sua usabilidade mais confortável. dentre os recursos como alteração de cor, tema, ativar e desativar recursos. os que necessita de uma atenção extra são: <br>
+O software possui um menu cheio de configurações para tornar sua usabilidade mais confortável. dentre os recursos como alteração de cor, tema, ativar e desativar recursos. os que necessita de uma atenção extra são: <br>
 - Alteração da conexão com o banco mysql e protocolo FTP.
 Onde ambos funcionam de forma igual, em que o usuário altera entre *Local* e *Externo*, sendo que as opções se comportam igualmente, apenas mudando a configuração de qual conexão o usuário quer usar.
 
@@ -45,10 +45,16 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 
 Somos membros da comunidade He4rt Developers, que tem como objetivo disponibilizar a troca de conhecimentos entre desenvolvedores, majoritariamente brasileiros, para que possam crescer juntos como profissionais na área.
 <br>
-<h3 align="center">
- <a href="https://discord.gg/J3saJqq" target="_blank"> 
-<img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/></a>
-</h3>
+<div align="center">
+    <a href="https://discord.gg/J3saJqq" target="_blank"> 
+    <img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/></a>
+</div>
+
+<div align="center">
+    Que tal avaliar nosso projeto?<br>
+    <a href="https://forms.gle/x9jJCCy1HAzfJCXw5" target="_blank">
+        Clique Aqui
+</div>
 
 ## Licença [MIT](https://github.com/Logikoz/BukkitDev-System/blob/master/LICENSE)
 O programa é gratuito e pode ser editado, compartilhado, e pode ser usado de forma comercial apenas para o uso do próprio desenvolvedor.
@@ -58,6 +64,8 @@ Não pode ser vendido de forma alguma, caso haja alguma pessoa fazendo isso, dev
 ### Software
 #### Tela de inicial do programa.
 ![image](https://user-images.githubusercontent.com/37851168/62172047-a61b0b80-b2f6-11e9-8ea2-857f4f39bc64.png)
+#### Tela de informaçao sobre o software
+![image](https://user-images.githubusercontent.com/37851168/63056515-d7c2d380-bead-11e9-9146-c59bfa2980b6.png)
 #### Tela de adição de novo plugins.
 ![image](https://user-images.githubusercontent.com/37851168/62172147-eed2c480-b2f6-11e9-83d6-68ba9f1cd7aa.png)
 #### Tela para edição das informações de plugins
@@ -72,6 +80,5 @@ Não pode ser vendido de forma alguma, caso haja alguma pessoa fazendo isso, dev
 ![image](https://user-images.githubusercontent.com/37851168/62173700-85ee4b00-b2fc-11e9-9cd8-97c56faa1a05.png)
 #### Tela para suspensao e realocação de licença.
 ![image](https://user-images.githubusercontent.com/37851168/62173744-b209cc00-b2fc-11e9-92ca-771ed6d185d9.png)
-
-### Menu de configurações do software.
+#### Menu de configurações do software.
 ![image](https://user-images.githubusercontent.com/37851168/62173784-e7161e80-b2fc-11e9-8e1e-fcf66c29fc2e.png)
