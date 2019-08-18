@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
-namespace BukkitDevSystem.Models
+namespace TheSpecko.BukkitDev.Models
 {
     /// <summary>
     /// Representa o modelo de um plugin

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace BukkitDevSystem
+namespace TheSpecko.BukkitDev
 {
     public class Program
     {

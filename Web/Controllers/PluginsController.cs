@@ -1,10 +1,10 @@
-﻿using BukkitDevSystem.Models;
+﻿using TheSpecko.BukkitDev.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BukkitDevSystem.Controllers
+namespace TheSpecko.BukkitDev.Controllers
 {
     public class PluginsController : Controller
     {
