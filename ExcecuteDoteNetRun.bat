@@ -2,7 +2,7 @@
 title YourTitle
 color D
 
-echo Iniciando projeto aguarde...
+echo =========== INICIANDO BUKKIT DEV SYSTEM WEB =============
 
 cd Web
 dotnet run --project Web.csproj
