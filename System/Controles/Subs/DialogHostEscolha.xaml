@@ -1,0 +1,35 @@
+﻿<UserControl
+    x:Class="Logikoz.BukkitDev.Controles.Subs.DialogHostEscolha"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    MaxWidth="350"
+    mc:Ignorable="d">
+    <StackPanel Margin="15" Orientation="Vertical">
+        <ScrollViewer MaxHeight="300" VerticalScrollBarVisibility="Auto">
+            <TextBlock
+                x:Name="Mensagem_txt"
+                FontSize="13"
+                Text="aaaaaa"
+                TextWrapping="Wrap" />
+        </ScrollViewer>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button
+                x:Name="Aceitar_bt"
+                Margin="10,10,10,0"
+                Click="Aceitar_bt_Click"
+                Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+                Content="Aceitar"
+                Style="{DynamicResource MaterialDesignFlatButton}" />
+            <Button
+                Margin="0,10,10,0"
+                materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+                Content="Cancelar"
+                Foreground="White"
+                IsDefault="True" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

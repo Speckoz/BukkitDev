@@ -1,0 +1,104 @@
+﻿<UserControl
+    x:Class="Logikoz.BukkitDev.Controles.Plugins.Plugin.RemoverPlugin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Logikoz.BukkitDev.Controles.Plugins.Plugin"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid>
+        <materialDesign:Card HorizontalAlignment="Center" materialDesign:ShadowAssist.ShadowDepth="Depth1">
+            <StackPanel Orientation="Vertical">
+                <GroupBox
+                    Width="173"
+                    Margin="20"
+                    Style="{StaticResource MaterialDesignCardGroupBox}">
+                    <GroupBox.Header>
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Foreground="White" Kind="RemoveCircle" />
+                                <TextBlock
+                                    Margin="10,0,0,0"
+                                    Foreground="White"
+                                    Text="Remover Plugin" />
+                            </StackPanel>
+                            <materialDesign:PackIcon
+                                HorizontalAlignment="Right"
+                                Foreground="White"
+                                Kind="Information"
+                                ToolTipService.ShowDuration="100000">
+                                <materialDesign:PackIcon.ToolTip>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="Adicione o IDs dos plugins que deseja excluir." TextAlignment="Center" />
+                                        <TextBlock />
+                                        <TextBlock Text="voce pode passar o mouse em cima do plugin adicionado" TextAlignment="Center" />
+                                        <TextBlock Text="para ver informaçoes sobre o mesmo!" TextAlignment="Center" />
+                                        <TextBlock />
+                                        <TextBlock Text="Se tiver certeza que quer excluir o plugin" TextAlignment="Center" />
+                                        <TextBlock Text="Voce pode clicar no 'x' do plugin desejado" TextAlignment="Center" />
+                                        <TextBlock Text="e o mesmo será removido!" TextAlignment="Center" />
+                                    </StackPanel>
+                                </materialDesign:PackIcon.ToolTip>
+                            </materialDesign:PackIcon>
+                        </Grid>
+                    </GroupBox.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox
+                            x:Name="PluginID_txt"
+                            Width="100"
+                            VerticalAlignment="Center"
+                            materialDesign:HintAssist.Hint="Plugin ID"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <materialDesign:Badged
+                            x:Name="ContarPluginAdd_bg"
+                            Margin="5"
+                            VerticalAlignment="Bottom"
+                            BadgeColorZoneMode="PrimaryDark">
+                            <Button
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Button_Click"
+                                Content="{materialDesign:PackIcon Add}"
+                                IsDefault="True"
+                                Style="{DynamicResource MaterialDesignFloatingActionAccentButton}"
+                                ToolTip="Adicionar" />
+                        </materialDesign:Badged>
+
+                    </StackPanel>
+
+                </GroupBox>
+                <ScrollViewer
+                    MaxHeight="200"
+                    Margin="10"
+                    VerticalScrollBarVisibility="Auto">
+                    <WrapPanel x:Name="ListChips_wp" />
+                </ScrollViewer>
+
+                <Button
+                    Margin="20"
+                    HorizontalAlignment="Center"
+                    BorderBrush="{DynamicResource PrimaryHueDarkBrush}"
+                    BorderThickness="1"
+                    Click="Button_Click_1"
+                    Foreground="{DynamicResource PrimaryHueDarkBrush}"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    Visibility="Collapsed">
+                    <Button.ToolTip>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="" />
+                        </StackPanel>
+                    </Button.ToolTip>
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon VerticalAlignment="Center" Kind="DeleteForever" />
+                        <TextBlock
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Text="Excluir Todos" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </materialDesign:Card>
+    </Grid>
+</UserControl>

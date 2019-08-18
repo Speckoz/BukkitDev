@@ -1,0 +1,243 @@
+﻿<UserControl
+    x:Class="Logikoz.BukkitDev.Controles.Plugins.Plugin.EditarPlugin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Logikoz.BukkitDev.Controles.Plugins.Plugin"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    mc:Ignorable="d">
+    <md:Card
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top"
+        md:ShadowAssist.ShadowDepth="Depth1">
+        <StackPanel Orientation="Vertical">
+            <GroupBox Margin="15" HorizontalAlignment="Center">
+                <GroupBox.Header>
+                    <StackPanel Orientation="Horizontal" TextBlock.Foreground="White">
+                        <md:PackIcon Kind="Edit" />
+                        <TextBlock Margin="10,0,0,0" Text="Editar plugin" />
+                    </StackPanel>
+                </GroupBox.Header>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox
+                        x:Name="CodigoPlugin_txt"
+                        Width="150"
+                        VerticalAlignment="Center"
+                        md:HintAssist.Hint="Codigo"
+                        Foreground="{DynamicResource MaterialDesignBody}"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <Button
+                        x:Name="ProcurarPlugin_bt"
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Center"
+                        Click="ProcurarPlugin_bt_Click"
+                        Style="{StaticResource MaterialDesignIconButton}">
+                        <md:PackIcon Kind="Search" />
+                    </Button>
+                </StackPanel>
+            </GroupBox>
+            <WrapPanel
+                x:Name="InformacoesPlugin_wp"
+                Orientation="Vertical"
+                Visibility="Collapsed">
+                <WrapPanel HorizontalAlignment="Center" Orientation="Vertical">
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Center"
+                        Orientation="Vertical">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                <CheckBox
+                                    x:Name="UsarImg_cb"
+                                    Margin="3"
+                                    HorizontalAlignment="Center"
+                                    Click="UsarImg_cb_Click"
+                                    Content="Usar imagem"
+                                    Foreground="{DynamicResource MaterialDesignBody}"
+                                    IsChecked="True" />
+                                <CheckBox
+                                    x:Name="EscolherNovaImagem_cb"
+                                    Margin="3"
+                                    HorizontalAlignment="Center"
+                                    Click="EscolherNovaImagem_cb_Click"
+                                    ToolTipService.ShowDuration="999999"
+                                    Visibility="Collapsed">
+                                    <CheckBox.ToolTip>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="Com está opçao ativa voce poderar dizer para o programa" TextAlignment="Center" />
+                                            <TextBlock Text="se quer utilizar a imagem que ja estava no plugin ou uma nova" TextAlignment="Center" />
+                                            <TextBlock Text="que será voce mesmo que terá de selecionar!" TextAlignment="Center" />
+                                            <TextBlock Text="Ativo -&gt; Nova" TextAlignment="Center" />
+                                            <TextBlock Text="Desativado -&gt; Atual" TextAlignment="Center" />
+                                        </StackPanel>
+                                    </CheckBox.ToolTip>
+                                </CheckBox>
+                            </StackPanel>
+                            <md:Card
+                                x:Name="cardImagemPlugin"
+                                Width="100"
+                                Height="100"
+                                md:ShadowAssist.ShadowDepth="Depth1"
+                                Cursor="Hand"
+                                MouseDown="CardImagemPlugin_MouseDown"
+                                ToolTip="Selecione uma Imagem"
+                                Visibility="Collapsed">
+                                <Image x:Name="ImagemPlugin_img" />
+                            </md:Card>
+                        </StackPanel>
+
+
+                        <StackPanel Margin="10" Orientation="Horizontal">
+                            <TextBox
+                                x:Name="CaminhoArquivo_txt"
+                                Width="200"
+                                VerticalAlignment="Center"
+                                md:HintAssist.Hint="Caminho"
+                                Foreground="{DynamicResource MaterialDesignBody}"
+                                IsReadOnly="True"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <md:PopupBox
+                                x:Name="AgruparBtArquivo_pb"
+                                Width="40"
+                                Height="40"
+                                Margin="10,0,0,0"
+                                Foreground="White"
+                                PlacementMode="TopAndAlignCentres"
+                                Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}"
+                                ToolTipService.Placement="Right">
+                                <StackPanel>
+                                    <Button
+                                        x:Name="ProcurarArquivo_bt"
+                                        Width="30"
+                                        Height="30"
+                                        VerticalAlignment="Center"
+                                        Click="ProcurarArquivo_bt_Click"
+                                        Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                                        ToolTip="Procurar Plugin"
+                                        ToolTipService.Placement="Left">
+                                        <md:PackIcon Kind="Paperclip" />
+                                    </Button>
+                                    <Button
+                                        x:Name="ExcluirArquivo_bt"
+                                        Width="30"
+                                        Height="30"
+                                        Margin="10"
+                                        VerticalAlignment="Center"
+                                        Click="ExcluirArquivo_bt_Click"
+                                        IsEnabled="False"
+                                        ToolTip="Exclui Selecionado"
+                                        ToolTipService.Placement="Left">
+                                        <md:PackIcon Kind="GarbageCan" />
+                                    </Button>
+                                </StackPanel>
+                            </md:PopupBox>
+                        </StackPanel>
+
+                    </WrapPanel>
+
+                    <WrapPanel HorizontalAlignment="Center">
+                        <TextBox
+                            x:Name="NomeDoPlugin_txt"
+                            Width="200"
+                            Margin="10"
+                            md:HintAssist.Hint="Nome"
+                            Foreground="{DynamicResource MaterialDesignBody}"
+                            MaxLength="50"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox
+                            x:Name="VersaoDoPlugin_txt"
+                            Width="135"
+                            Margin="10"
+                            md:HintAssist.Hint="Versao"
+                            Foreground="{DynamicResource MaterialDesignBody}"
+                            MaxLength="5"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    </WrapPanel>
+
+                    <WrapPanel HorizontalAlignment="Center">
+                        <WrapPanel Margin="10" HorizontalAlignment="Center">
+                            <ComboBox
+                                x:Name="TipoDoPlugin_gb"
+                                Width="110"
+                                md:HintAssist.Hint="Tipo"
+                                Foreground="{DynamicResource MaterialDesignBody}"
+                                SelectionChanged="TipoDoPlugin_gb_SelectionChanged"
+                                Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                                <ComboBoxItem Content="Gratuito" />
+                                <ComboBoxItem Content="Pago" />
+                            </ComboBox>
+                            <TextBox
+                                x:Name="PrecoDoPlugin_txt"
+                                Width="80"
+                                Margin="10,0,0,0"
+                                md:HintAssist.Hint="Valor (R$)"
+                                Foreground="{DynamicResource MaterialDesignBody}"
+                                IsEnabled="False"
+                                MaxLength="5"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        </WrapPanel>
+                        <WrapPanel HorizontalAlignment="Center">
+                            <TextBox
+                                x:Name="AutorDoPlugin_txt"
+                                Width="135"
+                                Margin="10"
+                                md:HintAssist.Hint="Autor"
+                                Foreground="{DynamicResource MaterialDesignBody}"
+                                MaxLength="50"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        </WrapPanel>
+
+
+                    </WrapPanel>
+
+                    <TextBox
+                        x:Name="DescricaoDoPlugin_txt"
+                        Width="200"
+                        Margin="10"
+                        md:HintAssist.Hint="Descriçao"
+                        Foreground="{DynamicResource MaterialDesignBody}"
+                        MaxLength="1024"
+                        Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto" />
+                </WrapPanel>
+                <StackPanel
+                    Margin="5,10,5,10"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Orientation="Horizontal">
+                    <!--  Botao de adicionar  -->
+                    <Button
+                        Click="AtualizarInfos_bt_Click"
+                        IsDefault="True"
+                        Style="{StaticResource MaterialDesignFlatDarkBgButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <md:PackIcon VerticalAlignment="Center" Kind="Update" />
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="Atualizar" />
+                        </StackPanel>
+                    </Button>
+
+                    <!--  Botao de limpar  -->
+                    <Button
+                        Margin="10,0,0,0"
+                        BorderBrush="{DynamicResource PrimaryHueMidBrush}"
+                        Click="Button_Click"
+                        Style="{StaticResource MaterialDesignOutlinedButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <md:PackIcon VerticalAlignment="Center" Kind="Garbage" />
+                            <TextBlock
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="Limpar" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </WrapPanel>
+        </StackPanel>
+    </md:Card>
+</UserControl>

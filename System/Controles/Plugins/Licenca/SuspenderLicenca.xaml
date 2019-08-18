@@ -1,0 +1,71 @@
+﻿<UserControl
+    x:Class="Logikoz.BukkitDev.Controles.Plugins.Licenca.SuspenderLicenca"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    mc:Ignorable="d">
+    <GroupBox
+        Margin="30,0,30,0"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top"
+        Style="{StaticResource MaterialDesignCardGroupBox}">
+        <GroupBox.Header>
+            <StackPanel Orientation="Horizontal" TextBlock.Foreground="White">
+                <md:PackIcon VerticalAlignment="Center" Kind="NetworkOff" />
+                <TextBlock Margin="10,0,0,0" Text="Suspençao de Licença" />
+            </StackPanel>
+        </GroupBox.Header>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Margin="5" Orientation="Vertical">
+                <TextBox
+                    x:Name="KeyLicencaProcurar_txt"
+                    Width="250"
+                    md:HintAssist.Hint="Key"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <Button
+                    Margin="10"
+                    HorizontalAlignment="Center"
+                    Click="Button_Click"
+                    Content="Procurar"
+                    Style="{StaticResource MaterialDesignOutlinedButton}" />
+            </StackPanel>
+            <TextBlock
+                MaxWidth="500"
+                Text="Caso nao queira excluir uma licença diretamente, essa é uma boa escolha."
+                TextAlignment="Center"
+                TextWrapping="Wrap" />
+            <TextBlock />
+            <TextBlock
+                MaxWidth="500"
+                Text="Informe uma key no campo acima, e clique em 'Procurar' e espere um dos botoes abaixo ficar totalmente azul."
+                TextAlignment="Center"
+                TextWrapping="Wrap" />
+            <TextBlock
+                MaxWidth="500"
+                Text="se o botao de 'Suspender' ficar azul, é porque a licença atual nao está suspensa, caso contrario, quer dizer que a licença ja está suspensa e voce pode 'Realocar' ela (voltar a funcionar)."
+                TextAlignment="Center"
+                TextWrapping="Wrap" />
+            <StackPanel
+                x:Name="BotoesAcao_sp"
+                Margin="10"
+                HorizontalAlignment="Center"
+                IsEnabled="False"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="SuspenderLicenca_bt"
+                    Margin="5"
+                    Click="Acao_bts_Click"
+                    Content="Suspender"
+                    Style="{StaticResource MaterialDesignFlatButton}" />
+                <Button
+                    x:Name="RealocarLicenca_bt"
+                    Margin="5"
+                    Click="Acao_bts_Click"
+                    Content="Realocar"
+                    Style="{StaticResource MaterialDesignFlatButton}" />
+            </StackPanel>
+        </StackPanel>
+    </GroupBox>
+</UserControl>

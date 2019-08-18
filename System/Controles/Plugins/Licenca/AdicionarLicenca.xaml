@@ -1,0 +1,92 @@
+﻿<UserControl
+    x:Class="Logikoz.BukkitDev.Controles.Plugins.Licenca.AdicionarLicenca"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Logikoz.BukkitDev.Controles.Plugins.Licenca"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    VerticalAlignment="Top"
+    mc:Ignorable="d">
+    <GroupBox HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignCardGroupBox}">
+        <GroupBox.Header>
+            <Grid>
+                <TextBlock
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    Text="Adicionar Licença" />
+            </Grid>
+        </GroupBox.Header>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical">
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBox
+                        x:Name="LicencaGerada_txt"
+                        Width="180"
+                        Margin="5"
+                        materialDesign:HintAssist.Foreground="{DynamicResource MaterialDesignBody}"
+                        materialDesign:HintAssist.Hint="Key"
+                        IsReadOnly="True" />
+                    <Button
+                        x:Name="GerarLicenca_bt"
+                        Click="GerarLicenca_bt_Click"
+                        Content="{materialDesign:PackIcon ShieldKeyOutline}"
+                        Style="{DynamicResource MaterialDesignFlatButton}"
+                        ToolTip="Gerar nova licença" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBox
+                        x:Name="CodigoPlugin_txt"
+                        Width="100"
+                        Margin="5"
+                        materialDesign:HintAssist.Foreground="{DynamicResource MaterialDesignBody}"
+                        materialDesign:HintAssist.Hint="Codigo do Plugin"
+                        KeyDown="CodigoPlugin_txt_KeyDown"
+                        MaxLength="6" />
+                    <CheckBox x:Name="LicencaGlobal_tb" Click="LicencaGlobal_tb_Click">
+                        <CheckBox.ToolTip>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Licença Global" TextAlignment="Center" />
+                            </StackPanel>
+                        </CheckBox.ToolTip>
+                    </CheckBox>
+                </StackPanel>
+                <StackPanel
+                    Margin="20"
+                    Opacity="0.6"
+                    Orientation="Vertical">
+                    <TextBlock
+                        Text="Se a opçao 'Licença Global' estiver Ativa"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Text="o cliente com esta key, poderá usar qualquer plugin"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+                    <TextBlock />
+                    <TextBlock
+                        Text="Ao clicar no botao de gerar uma key"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Text="O programa irá gerar uma key aleatoria, mas pode acontecer"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Text="de ja ter essa licença no banco, as chances sao muito baixas"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Text="mas caso ocorra um erro, basta clicar novamente no 'Adicionar'."
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+                </StackPanel>
+            </StackPanel>
+            <Button
+                x:Name="AdicionarLicenca_bt"
+                Click="AdicionarLicenca_bt_Click"
+                Content="Adicionar"
+                Style="{DynamicResource MaterialDesignFlatButton}" />
+        </StackPanel>
+    </GroupBox>
+</UserControl>
