@@ -45,7 +45,7 @@ Não pode ser vendido de forma alguma, caso haja alguma pessoa fazendo isso, dev
 
 ### Site
 #### Tela inicial do site.
-![Image](https://user-images.githubusercontent.com/40467826/63122846-11630f80-bf7e-11e9-86a9-b8c8700df028.png)
+![Image](https://user-images.githubusercontent.com/37851168/63219996-45882d00-c144-11e9-8d05-f8090275b923.png)
 
 #### Também é possivel listar apenas os plugins pago ou gratuitos
 
