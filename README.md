@@ -22,8 +22,8 @@ Essa plataforma web foi feita para ser usada em conjunto com o [BukkitDev Deskto
 - Certifique-se de estar usando a versão 2.2 do .Net Core
 
 ## desenvolvedores
-- [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Logikoz/BukkitDev-System)
-- [@marcopandolfo](https://github.com/marcopandolfo) - [Web](https://github.com/marcopandolfo/BukkitDev-Web/)
+- [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Speckoz/BukkitDev-System)
+- [@marcopandolfo](https://github.com/marcopandolfo) - [Web](https://github.com/Speckoz/BukkitDev-Web/)
 
 Somos membros da comunidade He4rt Developers, que tem como objetivo disponibilizar a troca de conhecimentos entre desenvolvedores, majoritariamente brasileiros, para que possam crescer juntos como profissionais na área.
 <br>
