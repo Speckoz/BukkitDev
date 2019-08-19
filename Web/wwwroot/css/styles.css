@@ -287,7 +287,7 @@ nav {
     box-shadow: 0 1px rgba(27, 25, 25, 0.46)
 }
 
-.banner-price:hover {
-    text-decoration: none;
-    color: inherit;
-}
+    .banner-price:hover {
+        text-decoration: none;
+        color: inherit;
+    }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TheSpecko.BukkitDev.Models
+namespace Speckoz.BukkitDev.Models
 {
     /// <summary>
     /// Representa o modelo de uma licença

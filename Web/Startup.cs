@@ -1,4 +1,4 @@
-﻿using TheSpecko.BukkitDev.Models;
+﻿using Speckoz.BukkitDev.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace TheSpecko.BukkitDev
+namespace Speckoz.BukkitDev
 {
     public class Startup
     {

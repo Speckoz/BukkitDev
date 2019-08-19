@@ -1,6 +1,6 @@
 using System;
 
-namespace TheSpecko.BukkitDev.Models
+namespace Speckoz.BukkitDev.Models
 {
     public class ErrorViewModel
     {

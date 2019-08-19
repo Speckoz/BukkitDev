@@ -1,9 +1,9 @@
 ﻿using System;
-using TheSpecko.BukkitDev.Models;
+using Speckoz.BukkitDev.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace TheSpecko.BukkitDev.Models
+namespace Speckoz.BukkitDev.Models
 {
     public class BukkitDevSystemContext : DbContext
     {

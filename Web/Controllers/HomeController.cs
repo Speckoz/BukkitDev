@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TheSpecko.BukkitDev.Models;
+using Speckoz.BukkitDev.Models;
 
-namespace TheSpecko.BukkitDev.Controllers
+namespace Speckoz.BukkitDev.Controllers
 {
     public class HomeController : Controller
     {
