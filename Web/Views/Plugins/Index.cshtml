@@ -134,6 +134,16 @@
                                         <div align="center">
                                             <a href="@FtpServer/assets/images/@aux" target="_blank">
                                                 <img src="@FtpServer/assets/images/@aux" class="card-img-top img-java-poop" alt="thumbnail">
+                                                @{
+                                                    if (plugin.TipoPlugin == "Pago")
+                                                    {
+                                                        <a class="banner-price">R$ @plugin.PrecoPlugin</a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a class="banner-price">Gratis</a>
+                                                    }
+                                                }
                                             </a>
                                         </div>
                                     }
@@ -157,7 +167,7 @@
                                                 if (plugin.DescricaoPlugin.Length > 34)
                                                 {
                                                     <a class="ver-mais-card" data-toggle="modal" data-target="@($"#{plugin.NomePlugin}")">
-                                                        Ver maisa
+                                                        Ver mais
                                                     </a>
                                                 }
                                                 else
