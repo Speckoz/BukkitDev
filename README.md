@@ -13,6 +13,8 @@ A lógica da API até o momento é verificar se uma licença de um plugin existe
 Essa plataforma foi feita para ser usada em conjunto com o [BukkitDev Desktop](https://github.com/Logikoz/BukkitDev-System), por la você pode configurar e adicionar plugins/licenças.
 
 ## Antes de rodar o projeto:
+- Certifique-se de ter o Node.js instalado.
+
 - Instale todas as dependencias do projeto (`package.json`). Isso vai instalar tudo que você precisa.
 
 ```
@@ -21,7 +23,6 @@ npm install
 
 - Insira seus dados de conexão no arquivo `.env.example`, renomeando para `.env`
 
-- Certifique-se de ter o Node.js instalado.
 
 ## Rodando o projeto:
 - Com tudo pronto, para rodar o projeto digite:
