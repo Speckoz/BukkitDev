@@ -1,4 +1,4 @@
-﻿using Logikoz.BukkitDev._dep;
+﻿using Speckoz.BukkitDev._dep;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Logikoz.BukkitDev.Principal
+namespace Speckoz.BukkitDev.Principal
 {
 	public partial class Sobre : Window
 	{

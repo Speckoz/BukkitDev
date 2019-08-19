@@ -1,11 +1,11 @@
-﻿using Logikoz.BukkitDev._dep;
-using Logikoz.BukkitDev._dep.FTP;
-using Logikoz.BukkitDev._dep.MySQL;
-using Logikoz.BukkitDev._dep.SQLite;
-using Logikoz.BukkitDev._dep.XML;
-using Logikoz.BukkitDev.Controles.Config;
-using Logikoz.BukkitDev.Controles.Plugins.Plugin;
-using Logikoz.BukkitDev.Controles.Subs;
+﻿using Speckoz.BukkitDev._dep;
+using Speckoz.BukkitDev._dep.FTP;
+using Speckoz.BukkitDev._dep.MySQL;
+using Speckoz.BukkitDev._dep.SQLite;
+using Speckoz.BukkitDev._dep.XML;
+using Speckoz.BukkitDev.Controles.Config;
+using Speckoz.BukkitDev.Controles.Plugins.Plugin;
+using Speckoz.BukkitDev.Controles.Subs;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Win32;
 using System;
@@ -19,7 +19,7 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
-namespace Logikoz.BukkitDev.Principal
+namespace Speckoz.BukkitDev.Principal
 {
     public partial class TelaInicial : Window
     {

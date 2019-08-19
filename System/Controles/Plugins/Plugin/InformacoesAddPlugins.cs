@@ -1,10 +1,10 @@
-﻿using Logikoz.BukkitDev._dep;
+﻿using Speckoz.BukkitDev._dep;
 using Microsoft.Win32;
 using System;
 using System.IO;
 using System.Windows.Media.Imaging;
 
-namespace Logikoz.BukkitDev.Controles.Plugins.Plugin
+namespace Speckoz.BukkitDev.Controles.Plugins.Plugin
 {
 	/// <summary>
 	/// Cria uma nova instancia de <see cref="InformacoesAddPlugins"/>.

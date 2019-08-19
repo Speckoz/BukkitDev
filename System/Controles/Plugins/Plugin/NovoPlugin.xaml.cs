@@ -1,8 +1,8 @@
-﻿using Logikoz.BukkitDev._dep;
-using Logikoz.BukkitDev._dep.FTP;
-using Logikoz.BukkitDev._dep.MySQL;
-using Logikoz.BukkitDev._dep.SQLite;
-using Logikoz.BukkitDev.Principal;
+﻿using Speckoz.BukkitDev._dep;
+using Speckoz.BukkitDev._dep.FTP;
+using Speckoz.BukkitDev._dep.MySQL;
+using Speckoz.BukkitDev._dep.SQLite;
+using Speckoz.BukkitDev.Principal;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
-namespace Logikoz.BukkitDev.Controles.Plugins.Plugin
+namespace Speckoz.BukkitDev.Controles.Plugins.Plugin
 {
 	public partial class NovoPlugin : UserControl
 	{

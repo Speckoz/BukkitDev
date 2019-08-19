@@ -1,7 +1,7 @@
-﻿using Logikoz.BukkitDev._dep;
-using Logikoz.BukkitDev.Controles.Plugins.Plugin;
-using Logikoz.BukkitDev._dep.MySQL;
-using Logikoz.BukkitDev.Principal;
+﻿using Speckoz.BukkitDev._dep;
+using Speckoz.BukkitDev.Controles.Plugins.Plugin;
+using Speckoz.BukkitDev._dep.MySQL;
+using Speckoz.BukkitDev.Principal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,10 +17,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Logikoz.BukkitDev._dep.FTP;
-using Logikoz.BukkitDev._dep.SQLite;
+using Speckoz.BukkitDev._dep.FTP;
+using Speckoz.BukkitDev._dep.SQLite;
 
-namespace Logikoz.BukkitDev.Controles.Plugins.Plugin
+namespace Speckoz.BukkitDev.Controles.Plugins.Plugin
 {
     /// <summary>
     /// Interaction logic for EditarPlugin.xaml

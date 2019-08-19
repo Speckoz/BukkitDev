@@ -1,6 +1,6 @@
-﻿using Logikoz.BukkitDev._dep;
-using Logikoz.BukkitDev._dep.MySQL;
-using Logikoz.BukkitDev.Principal;
+﻿using Speckoz.BukkitDev._dep;
+using Speckoz.BukkitDev._dep.MySQL;
+using Speckoz.BukkitDev.Principal;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace Logikoz.BukkitDev.Controles.Plugins.Licenca
+namespace Speckoz.BukkitDev.Controles.Plugins.Licenca
 {
 	public partial class ListarLicenca : UserControl
 	{

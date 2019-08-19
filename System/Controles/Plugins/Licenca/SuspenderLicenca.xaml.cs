@@ -1,5 +1,5 @@
-﻿using Logikoz.BukkitDev._dep;
-using Logikoz.BukkitDev._dep.MySQL;
+﻿using Speckoz.BukkitDev._dep;
+using Speckoz.BukkitDev._dep.MySQL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Logikoz.BukkitDev.Controles.Plugins.Licenca
+namespace Speckoz.BukkitDev.Controles.Plugins.Licenca
 {
 	/// <summary>
 	/// Interaction logic for SuspenderLicenca.xaml

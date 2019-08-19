@@ -1,9 +1,9 @@
-﻿using Logikoz.BukkitDev._dep.MySQL;
-using Logikoz.BukkitDev.Principal;
+﻿using Speckoz.BukkitDev._dep.MySQL;
+using Speckoz.BukkitDev.Principal;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Logikoz.BukkitDev.Controles.Plugins.Plugin
+namespace Speckoz.BukkitDev.Controles.Plugins.Plugin
 {
 	public partial class ListarPlugins : UserControl
 	{

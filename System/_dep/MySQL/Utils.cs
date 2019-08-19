@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Logikoz.BukkitDev._dep.MySQL
+namespace Speckoz.BukkitDev._dep.MySQL
 {
     /// <summary>
     /// Cria uma nova instancia de <see cref="Utils"/>.

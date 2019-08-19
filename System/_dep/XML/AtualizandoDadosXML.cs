@@ -3,7 +3,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.XPath;
 
-namespace Logikoz.BukkitDev._dep.XML
+namespace Speckoz.BukkitDev._dep.XML
 {
 	/// <summary>
 	/// Cria uma nova instancia de <see cref="AtualizandoDadosXML"/>.

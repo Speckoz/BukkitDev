@@ -1,4 +1,4 @@
-﻿using Logikoz.BukkitDev._dep;
+﻿using Speckoz.BukkitDev._dep;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
 
-namespace Logikoz.BukkitDev.Principal
+namespace Speckoz.BukkitDev.Principal
 {
 	public partial class HomeControl : UserControl
 	{

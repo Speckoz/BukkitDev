@@ -1,8 +1,8 @@
-﻿using Logikoz.BukkitDev._dep;
+﻿using Speckoz.BukkitDev._dep;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Logikoz.BukkitDev.Controles.Subs
+namespace Speckoz.BukkitDev.Controles.Subs
 {
     public partial class DialogHostSimples : UserControl
     {

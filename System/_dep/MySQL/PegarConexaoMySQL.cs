@@ -1,8 +1,8 @@
-﻿using Logikoz.BukkitDev._dep.SQLite;
+﻿using Speckoz.BukkitDev._dep.SQLite;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Logikoz.BukkitDev._dep.MySQL
+namespace Speckoz.BukkitDev._dep.MySQL
 {
 	/// <summary>
 	/// Cria uma nova instancia de <see cref="PegarConexaoMySQL"/>.

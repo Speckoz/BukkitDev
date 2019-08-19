@@ -1,9 +1,9 @@
-﻿using Logikoz.BukkitDev._dep.XML;
+﻿using Speckoz.BukkitDev._dep.XML;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Threading.Tasks;
 
-namespace Logikoz.BukkitDev._dep
+namespace Speckoz.BukkitDev._dep
 {
     internal static class MudarCor
     {

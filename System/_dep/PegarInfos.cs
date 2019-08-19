@@ -1,4 +1,4 @@
-﻿namespace Logikoz.BukkitDev._dep
+﻿namespace Speckoz.BukkitDev._dep
 {
     /// <summary>
     /// Contem informaçoes de configuraçao do software.

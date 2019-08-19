@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace Logikoz.BukkitDev._dep.XML
+namespace Speckoz.BukkitDev._dep.XML
 {
 	/// <summary>
 	/// Cria uma nova instancia de <see cref="CriandoArquivoXML"/>.

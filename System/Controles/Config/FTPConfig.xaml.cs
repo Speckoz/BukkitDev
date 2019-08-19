@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Logikoz.BukkitDev.Controles.Config
+namespace Speckoz.BukkitDev.Controles.Config
 {
 	/// <summary>
 	/// Interação lógica para FTPConfig.xam

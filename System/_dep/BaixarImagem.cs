@@ -1,4 +1,4 @@
-﻿using Logikoz.BukkitDev._dep.SQLite;
+﻿using Speckoz.BukkitDev._dep.SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,7 +6,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Logikoz.BukkitDev._dep
+namespace Speckoz.BukkitDev._dep
 {
     /// <summary>
     /// Cria uma nova instancia de <see cref="BaixarImagem"/>.

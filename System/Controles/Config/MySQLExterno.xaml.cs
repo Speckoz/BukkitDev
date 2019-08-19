@@ -1,9 +1,9 @@
-﻿using Logikoz.BukkitDev._dep.SQLite;
+﻿using Speckoz.BukkitDev._dep.SQLite;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Logikoz.BukkitDev.Controles.Config
+namespace Speckoz.BukkitDev.Controles.Config
 {
     /// <summary>
     /// Interação lógica para MySQLExterno.xam

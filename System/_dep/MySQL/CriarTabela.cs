@@ -1,9 +1,9 @@
-﻿using Logikoz.BukkitDev.Principal;
+﻿using Speckoz.BukkitDev.Principal;
 using MySql.Data.MySqlClient;
 using System;
 using System.Threading.Tasks;
 
-namespace Logikoz.BukkitDev._dep.MySQL
+namespace Speckoz.BukkitDev._dep.MySQL
 {
     /// <summary>
     /// Cria uma nova instancia de <see cref="CriarTabela"/>.

@@ -1,11 +1,11 @@
-﻿using Logikoz.BukkitDev._dep.XML;
-using Logikoz.BukkitDev.Principal;
+﻿using Speckoz.BukkitDev._dep.XML;
+using Speckoz.BukkitDev.Principal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace Logikoz.BukkitDev._dep
+namespace Speckoz.BukkitDev._dep
 {
 	internal static class MetodosConstantes
 	{

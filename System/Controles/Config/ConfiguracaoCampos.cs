@@ -1,10 +1,10 @@
-﻿using Logikoz.BukkitDev._dep;
-using Logikoz.BukkitDev._dep.SQLite;
+﻿using Speckoz.BukkitDev._dep;
+using Speckoz.BukkitDev._dep.SQLite;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace Logikoz.BukkitDev.Controles.Config
+namespace Speckoz.BukkitDev.Controles.Config
 {
     /// <summary>
     /// Crian uma nova instancia de <see cref="ConfiguracaoCampos"/>.

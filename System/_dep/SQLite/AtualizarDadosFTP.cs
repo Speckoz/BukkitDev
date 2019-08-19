@@ -2,7 +2,7 @@
 using System.Data.SQLite;
 using System.Threading.Tasks;
 
-namespace Logikoz.BukkitDev._dep.SQLite
+namespace Speckoz.BukkitDev._dep.SQLite
 {
 	/// <summary>
 	/// Cria uma nova instancia de <see cref="AtualizarDadosFTP"/>.

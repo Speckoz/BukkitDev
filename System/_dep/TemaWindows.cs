@@ -3,7 +3,7 @@ using System;
 using System.Windows.Controls;
 using Reg = Microsoft.Win32.Registry;
 
-namespace Logikoz.BukkitDev._dep
+namespace Speckoz.BukkitDev._dep
 {
 	/// <summary>
 	/// Cria uma nova instancia de <see cref="TemaWindows"/>.

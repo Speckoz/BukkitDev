@@ -1,9 +1,9 @@
-﻿using Logikoz.BukkitDev._dep;
-using Logikoz.BukkitDev._dep.FTP;
-using Logikoz.BukkitDev._dep.MySQL;
-using Logikoz.BukkitDev._dep.SQLite;
-using Logikoz.BukkitDev.Controles.Subs;
-using Logikoz.BukkitDev.Principal;
+﻿using Speckoz.BukkitDev._dep;
+using Speckoz.BukkitDev._dep.FTP;
+using Speckoz.BukkitDev._dep.MySQL;
+using Speckoz.BukkitDev._dep.SQLite;
+using Speckoz.BukkitDev.Controles.Subs;
+using Speckoz.BukkitDev.Principal;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Logikoz.BukkitDev.Controles.Plugins.Plugin
+namespace Speckoz.BukkitDev.Controles.Plugins.Plugin
 {
 	/// <summary>
 	/// Interação lógica para RemoverPlugin.xaml

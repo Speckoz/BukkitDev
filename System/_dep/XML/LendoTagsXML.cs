@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace Logikoz.BukkitDev._dep.XML
+namespace Speckoz.BukkitDev._dep.XML
 {
 	internal class LendoTagsXML
 	{
