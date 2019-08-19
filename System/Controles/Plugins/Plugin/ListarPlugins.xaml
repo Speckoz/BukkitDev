@@ -6,7 +6,10 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <materialDesign:Card HorizontalAlignment="Center" materialDesign:ShadowAssist.ShadowDepth="Depth1">
+    <materialDesign:Card
+        Margin="20,0,20,0"
+        HorizontalAlignment="Center"
+        materialDesign:ShadowAssist.ShadowDepth="Depth1">
         <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
             <GroupBox
                 Margin="15"

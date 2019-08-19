@@ -51,7 +51,7 @@
                     Width="150"
                     Margin="10"
                     materialDesign:HintAssist.Hint="Senha"
-                    Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                    Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center">
                 <TextBox
@@ -65,6 +65,8 @@
             <!--  Botao de adicionar  -->
             <Button
                 Margin="0,30,0,20"
+                Background="{DynamicResource PrimaryHueMidBrush}"
+                BorderBrush="{DynamicResource PrimaryHueMidBrush}"
                 Click="Button_Click"
                 Style="{StaticResource MaterialDesignRaisedAccentButton}">
                 <StackPanel Orientation="Horizontal">

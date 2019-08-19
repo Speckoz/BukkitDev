@@ -23,11 +23,13 @@
                     Orientation="Horizontal">
                     <RadioButton
                         x:Name="ExternoSelecionado_rb"
+                        BorderBrush="{DynamicResource PrimaryHueMidBrush}"
                         Checked="ExternoSelecionado_rb_Checked"
                         Content="Externo"
                         Style="{StaticResource MaterialDesignTabRadioButton}" />
                     <RadioButton
                         x:Name="LocalSelecionado_rb"
+                        BorderBrush="{DynamicResource PrimaryHueMidBrush}"
                         Checked="LocalSelecionado_rb_Checked"
                         Content="Local"
                         Style="{StaticResource MaterialDesignTabRadioButton}" />

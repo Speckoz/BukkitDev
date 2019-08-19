@@ -57,6 +57,8 @@
             <!--  Botao de adicionar  -->
             <Button
                 Margin="0,30,0,20"
+                Background="{DynamicResource PrimaryHueMidBrush}"
+                BorderBrush="{DynamicResource PrimaryHueMidBrush}"
                 Click="Button_Click"
                 Style="{StaticResource MaterialDesignRaisedAccentButton}">
                 <StackPanel Orientation="Horizontal">

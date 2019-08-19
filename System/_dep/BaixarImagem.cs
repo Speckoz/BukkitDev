@@ -22,7 +22,7 @@ namespace Logikoz.BukkitDev._dep
         {
             try
             {
-                List<string> credenciaisFTP = await PegarFTPConAsync();
+                List<string> credenciaisFTP = await PegarFTPConAsync("ftp");
 
                 HttpWebRequest w = (HttpWebRequest)WebRequest.Create($"http://{credenciaisFTP[0]}/BukkitDev/assets/Images/{nomeImg}.png");
                 w.AllowWriteStreamBuffering = true;
@@ -50,9 +50,9 @@ namespace Logikoz.BukkitDev._dep
             }
         }
 
-        private static async Task<List<string>> PegarFTPConAsync()
+        private static async Task<List<string>> PegarFTPConAsync(string a)
         {
-            return await new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, PegarInfos.ConfigFTP, "ftp");
+            return await new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, PegarInfos.ConfigFTP, a);
         }
     }
 }
