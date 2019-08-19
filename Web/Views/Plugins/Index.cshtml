@@ -130,22 +130,22 @@
                                             aux = "default.png";
                                         }
 
+                                        if (plugin.TipoPlugin == "Pago")
+                                        {
+                                            <a href="" class="banner-price">R$ @plugin.PrecoPlugin</a>
+                                        }
+                                        else
+                                        {
+                                            <a class="banner-price">Gratis</a>
+                                        }
+
                                         <!-- Card img -->
                                         <div align="center">
                                             <a href="@FtpServer/assets/images/@aux" target="_blank">
                                                 <img src="@FtpServer/assets/images/@aux" class="card-img-top img-java-poop" alt="thumbnail">
-                                                @{
-                                                    if (plugin.TipoPlugin == "Pago")
-                                                    {
-                                                        <a class="banner-price">R$ @plugin.PrecoPlugin</a>
-                                                    }
-                                                    else
-                                                    {
-                                                        <a class="banner-price">Gratis</a>
-                                                    }
-                                                }
                                             </a>
                                         </div>
+
                                     }
 
                                     <div class="card-body">
