@@ -16,7 +16,7 @@
     "bukkit"
   ],
   "author": "Speckoz",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Speckoz/BukkitDev-API/issues"
   },
