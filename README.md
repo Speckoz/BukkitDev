@@ -8,9 +8,9 @@
 
 ### API Do BukkitDevSystem
 
-A lógica da API até o momento é verificar se una licença de um plugin existe e é valida.
+A lógica da API até o momento é verificar se uma licença de um plugin existe e é valida.
 
-Essa plataforma web foi feita para ser usada em conjunto com o [BukkitDev Desktop](https://github.com/Logikoz/BukkitDev-System), por la você pode configurar e adicionar plugins/licenças.
+Essa plataforma foi feita para ser usada em conjunto com o [BukkitDev Desktop](https://github.com/Logikoz/BukkitDev-System), por la você pode configurar e adicionar plugins/licenças.
 
 ## Antes de rodar o projeto:
 - Instale todas as dependencias do projeto (`package.json`). Isso vai instalar tudo que você precisa.
@@ -39,7 +39,7 @@ Se a licença for válida, a API irá retornar um JSON com os dados da licença
 
 Se for inválida ou estiver suspensa, irá retornar o status 404 (not found)
 
-Basta apenas você verificar o status/conteudo da reposta da api
+Basta apenas você verificar o status/conteudo da *reposta da api*
 
 ## desenvolvedores
 - [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Speckoz/)
