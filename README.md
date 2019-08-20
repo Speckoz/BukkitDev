@@ -10,6 +10,8 @@
 
 A lógica da API até o momento é verificar se uma licença de um plugin existe e é valida.
 
+Se alguém tentar usar uma licença inválida, a API salvará o IP da pessoa no arquivo de log.
+
 Essa plataforma foi feita para ser usada em conjunto com o [BukkitDev Desktop](https://github.com/Logikoz/BukkitDev-System), por la você pode configurar e adicionar plugins/licenças.
 
 ## Antes de rodar o projeto:
