@@ -1,0 +1,2 @@
+Sempre que alguém tentar utilizar uma licença inválida, o IP da pessoa ficará
+registrado no arquivo invalidLicenses.log junto com algumas informações
