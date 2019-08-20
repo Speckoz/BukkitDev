@@ -29,7 +29,7 @@ namespace Speckoz.BukkitDev._dep.MySQL
 
                         byte valid = byte.Parse((await ver.ExecuteScalarAsync()).ToString());
 
-                        return valid >= 1;
+                        return valid > 0;
                     }
                 }
                 catch (Exception e)
@@ -60,7 +60,7 @@ namespace Speckoz.BukkitDev._dep.MySQL
 
                         byte valid = byte.Parse((await ver.ExecuteScalarAsync()).ToString());
 
-                        return valid >= 1;
+                        return valid > 0;
                     }
                 }
                 catch (Exception e)

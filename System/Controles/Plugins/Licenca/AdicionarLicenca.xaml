@@ -8,7 +8,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     VerticalAlignment="Top"
     mc:Ignorable="d">
-    <GroupBox HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignCardGroupBox}">
+    <GroupBox
+        Margin="20,0,20,0"
+        HorizontalAlignment="Center"
+        Style="{DynamicResource MaterialDesignCardGroupBox}">
         <GroupBox.Header>
             <Grid>
                 <TextBlock
@@ -22,7 +25,7 @@
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <TextBox
                         x:Name="LicencaGerada_txt"
-                        Width="180"
+                        Width="190"
                         Margin="5"
                         materialDesign:HintAssist.Foreground="{DynamicResource MaterialDesignBody}"
                         materialDesign:HintAssist.Hint="Key"
@@ -34,6 +37,13 @@
                         Style="{DynamicResource MaterialDesignFlatButton}"
                         ToolTip="Gerar nova licença" />
                 </StackPanel>
+                <TextBox
+                    x:Name="ServidorIP_txt"
+                    Width="200"
+                    Margin="5"
+                    HorizontalAlignment="Center"
+                    materialDesign:HintAssist.Hint="Server IP"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <TextBox
                         x:Name="CodigoPlugin_txt"
@@ -55,13 +65,23 @@
                     Margin="20"
                     Opacity="0.6"
                     Orientation="Vertical">
-                    <TextBlock
-                        Text="Se a opçao 'Licença Global' estiver Ativa"
-                        TextAlignment="Center"
-                        TextWrapping="Wrap" />
+                    <TextBlock TextAlignment="Center" TextWrapping="Wrap">
+                        <Run Text="Se a opçao" />
+                        <Run FontWeight="Bold" Text="Licença Global" />
+                        <Run Text="estiver Ativa" />
+                    </TextBlock>
                     <TextBlock
                         Text="o cliente com esta key, poderá usar qualquer plugin"
                         TextAlignment="Center"
+                        TextWrapping="Wrap" />
+                    <TextBlock />
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        Text="Com o ip do servidor, o plugin irá fazer uma requisiçao para a API, "
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        Text="que verificará se a key setada na config + o Ip que está fazendo a requisiçao é uma licença válida!"
                         TextWrapping="Wrap" />
                     <TextBlock />
                     <TextBlock
