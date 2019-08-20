@@ -46,4 +46,5 @@ LicencaKey 						tinytext not null,
 LicencaGlobal 					boolean not null,
 DataCriacao 					date not null,
 HorarioCriacao 					time not null,
-LicencaSuspensa 				bool);
+LicencaSuspensa 				bool,
+IPPermitido						tinytext not null);
