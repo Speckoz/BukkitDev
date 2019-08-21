@@ -8,7 +8,7 @@
 
 ### API Do BukkitDevSystem
 
-A lógica da API até o momento é verificar se uma licença de um plugin existe e é valida.
+A lógica da API até o momento é verificar se uma licença de um plugin existe e é valida e gerar os links de pagamento do mercado pago.
 
 Se alguém tentar usar uma licença inválida ou de um IP não permitido, a API salvará o IP da pessoa no arquivo de log.
 
