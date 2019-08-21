@@ -1,5 +1,5 @@
 const LicencaDAO = require('../infra/LicencaDAO');
-const logger = require('../../config/logger');
+const { verifyIP, verifyLic } = require('../../utils/LicencaUtils');
 
 module.exports = {
   async verifyLic(req, res) {
@@ -9,14 +9,7 @@ module.exports = {
 
     const licencaObj = await LicencaDAO.getLic(licenca);
 
-    if (!licencaObj || licencaObj.LicencaSuspensa === 1) {
-      logger.info('Tentativa de usar uma licença invalida!',
-        {
-          ip: req.connection.remoteAddress,
-          key: licenca,
-          data: new Date(),
-        });
-
+    if (!verifyIP(req, licencaObj.IPPermitido) || !verifyLic(req, licencaObj)) {
       return res.status(404).send();
     }
 
