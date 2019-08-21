@@ -1,12 +1,23 @@
 const Logger = require('../config/Logger');
 
-module.exports.verifyIP = (req, allowedIP) => {
+module.exports.verifyIP = (req, licencaObj) => {
   let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
   if (ip.substr(0, 7) === '::ffff:') ip = ip.substr(7);
 
-  // Local IP's
-  return (ip === allowedIP) || (ip === '::1') || (ip.startsWith('192.168')) || (ip.startsWith('127.0'));
+  // Local IP's and Licence IP
+  if ((ip === licencaObj.IPPermitido) || (ip === '::1') || (ip.startsWith('192.168')) || (ip.startsWith('127.0'))) {
+    return true;
+  }
+
+  Logger.info('Tentativa de usar a licença de um IP não permitido!',
+    {
+      ip: req.connection.remoteAddress,
+      key: licencaObj.LicencaKey,
+      data: new Date(),
+    });
+
+  return false;
 };
 
 module.exports.verifyLic = (req, licencaObj) => {
