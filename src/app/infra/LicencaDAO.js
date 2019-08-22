@@ -6,11 +6,15 @@ function LicencaDAO() {
 
 LicencaDAO.prototype.getLic = function getLic(lic) {
   return new Promise((resolve, reject) => {
-    this.connection.query('SELECT * FROM licencalist WHERE licencaKey = ?', [lic], (err, result) => {
-      if (err) return reject(err);
+    this.connection.query(
+      'SELECT * FROM licencalist WHERE licencaKey = ?',
+      [lic],
+      (err, result) => {
+        if (err) return reject(err);
 
-      return resolve(result[0]);
-    });
+        return resolve(result[0]);
+      }
+    );
   });
 };
 

@@ -5,7 +5,8 @@ module.exports = {
   async verifyLic(req, res) {
     const { licenca } = req.params;
 
-    if (!licenca) return res.status(400).json({ errors: ['Licenca format is invalid'] });
+    if (!licenca)
+      return res.status(400).json({ errors: ['Licenca format is invalid'] });
 
     const licencaObj = await LicencaDAO.getLic(licenca);
 

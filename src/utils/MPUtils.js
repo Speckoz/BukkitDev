@@ -1,6 +1,6 @@
 const mercadopago = require('../services/MPService');
 
-module.exports.Purchase = async (plugin) => {
+module.exports.Purchase = async plugin => {
   const { ID, NomePlugin, PrecoPlugin } = plugin;
 
   // Create a preference structure
@@ -14,14 +14,13 @@ module.exports.Purchase = async (plugin) => {
   };
 
   const preference = {
-    items: [
-      item,
-    ],
+    items: [item],
   };
 
-  return mercadopago.preferences.create(preference)
-    .then((response) => response.response)
-    .then((response) => {
+  return mercadopago.preferences
+    .create(preference)
+    .then(response => response.response)
+    .then(response => {
       console.log('Pagamento CRIADO');
       // console.log(response);
       return {
@@ -30,7 +29,7 @@ module.exports.Purchase = async (plugin) => {
         description: response.items[0].description,
       };
     })
-    .catch((error) => {
+    .catch(error => {
       console.log(error);
       return { error };
     });
