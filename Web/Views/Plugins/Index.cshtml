@@ -1,4 +1,6 @@
 ﻿@using Microsoft.Extensions.Configuration
+@using Web.Models
+
 @inject IConfiguration Configuration
 
 @model IEnumerable<Speckoz.BukkitDev.Models.PluginModel>
@@ -8,6 +10,7 @@
     string FtpServer = Configuration.GetConnectionString("BukkitDevSystemFtp");
     string LinkAPI = Configuration.GetConnectionString("BukkitDevSystemAPI");
     string LinkMP = Configuration.GetSection("Links")["MP"];
+    string MOLINK = new PurchaseModel().NodeJsonValue("Links", "BukkitDevSystemAPI");
 }
 
 <!DOCTYPE html>
@@ -63,6 +66,7 @@
         <section id="home" class="container">
             <img class="java-blue mx-auto d-block" src="~/img/java-blue.png" alt="Logo Java">
             <h2 class="text-center">Bem vindo ao BukkitDev</h2>
+            @MOLINK;
             <div class="subtitulo"><h6>Versão Beta</h6></div>
             <hr style="width: 300px">
 

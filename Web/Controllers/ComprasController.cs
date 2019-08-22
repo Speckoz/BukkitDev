@@ -14,10 +14,10 @@ namespace Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult CreatePaymentLink(int id)
-        {
-            var purchase = PurchaseService.CreatePayment(id);
-            return Redirect(purchase.Link);
-        }
+        //public IActionResult CreatePaymentLink(int id)
+        //{
+        //    var purchase = PurchaseService.CreatePayment(id);
+        //    return Redirect(purchase.Link);
+        //}
     }
 }

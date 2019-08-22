@@ -7,25 +7,24 @@ namespace Web.Services
 {
     public class PurchaseService
     {
-        private IConfiguration _config;
-        private static string LinkAPI;
+        private static string _linkAPI;
 
-        public PurchaseService(IConfiguration config)
+        public PurchaseService()
         {
-            _config = config;
-            LinkAPI = _config.GetConnectionString("BukkitDevSystemAPI");
+            _linkAPI = new PurchaseModel().NodeJsonValue("Links", "BukkitDevSystemAPI");
         }
 
+        public static string LinkAPI { get; } = _linkAPI;
 
         // POST CreatePayment
-        static public PurchaseModel CreatePayment(int pluginId)
+        public static PurchaseModel CreatePayment(int pluginId)
         {
-            RestClient client = new RestClient($"{LinkAPI}/CreatePayment");
-            var request = new RestRequest(Method.POST);
+            RestClient client = new RestClient($"{_linkAPI}/CreatePayment");
+            RestRequest request = new RestRequest(Method.POST);
             string json = JsonConvert.SerializeObject(new { pluginId });
-            request.AddHeader("Accept", "application/json");
+            _ = request.AddHeader("Accept", "application/json");
             request.RequestFormat = DataFormat.Json;
-            request.AddJsonBody(json);
+            _ = request.AddJsonBody(json);
             IRestResponse response = client.Execute(request);
             return JsonConvert.DeserializeObject<PurchaseModel>(response.Content);
         }

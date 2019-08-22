@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Web.Models;
+using System;
 
 namespace Speckoz.BukkitDev
 {
@@ -21,19 +23,20 @@ namespace Speckoz.BukkitDev
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
+            _ = services.Configure<CookiePolicyOptions>(options =>
+              {
+                  // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                  options.CheckConsentNeeded = context => true;
+                  options.MinimumSameSitePolicy = SameSiteMode.None;
+              });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            _ = services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<BukkitDevSystemContext>(options =>
-                options.UseMySql(Configuration.GetConnectionString("BukkitDevSystemContext"), builder =>
-                    builder.MigrationsAssembly("BukkitDevSystem")));
-
+            _ = services.AddDbContext<BukkitDevSystemContext>
+                (
+                options => options.UseMySql(Configuration.GetConnectionString("BukkitDevSystemContext"),
+                builder => builder.MigrationsAssembly("BukkitDevSystem"))
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

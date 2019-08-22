@@ -15,4 +15,7 @@
     <PackageReference Include="RestSharp" Version="106.6.10" />
   </ItemGroup>
 
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
 </Project>
