@@ -11,13 +11,13 @@ namespace Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult CreatePaymentLink(int pluginId)
         {
             var purchase = PurchaseService.CreatePayment(pluginId);
-            return Redirect(purchase.Link) ;
+            return Redirect(purchase.Link);
         }
     }
 }
