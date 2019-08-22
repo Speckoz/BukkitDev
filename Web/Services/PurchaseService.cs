@@ -1,15 +1,26 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using RestSharp;
 using Web.Models;
 
 namespace Web.Services
 {
-    public static class PurchaseService
+    public class PurchaseService
     {
+        private IConfiguration _config;
+        private static string LinkAPI;
+
+        public PurchaseService(IConfiguration config)
+        {
+            _config = config;
+            LinkAPI = _config.GetConnectionString("BukkitDevSystemAPI");
+        }
+
+
         // POST CreatePayment
         static public PurchaseModel CreatePayment(int pluginId)
         {
-            RestClient client = new RestClient(@"http://localhost:3000/CreatePayment");
+            RestClient client = new RestClient($"{LinkAPI}/CreatePayment");
             var request = new RestRequest(Method.POST);
             string json = JsonConvert.SerializeObject(new { pluginId });
             request.AddHeader("Accept", "application/json");
