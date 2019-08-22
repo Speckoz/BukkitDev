@@ -6,6 +6,7 @@
 @{
     Layout = "";
     string FtpServer = Configuration.GetConnectionString("BukkitDevSystemFtp");
+    string LinkAPI = Configuration.GetConnectionString("BukkitDevSystemAPI");
     string LinkMP = Configuration.GetSection("Links")["MP"];
 }
 
@@ -71,7 +72,7 @@
                     <h3 class="text-center">He4rt Developers</h3>
                     <div class="text-center">
                         <div class="he4rt-box">
-                            <a href="http://discord.io/He4rt" class="logo-centered">
+                            <a href="http://discord.io/He4rt" target="_blank" class="logo-centered">
                                 <img src="~/img/logo.png" class="logo-hover" alt="logo-he4rtdevs">
                             </a>
                             <img src="~/img/he4rt.png" alt="foto-he4rtdevs" class="img-fluid fto-principal">
@@ -87,7 +88,7 @@
                     <h3 class="text-center">Open Source</h3>
                     <div class="text-center">
                         <div class="he4rt-box">
-                            <a href="www.google.com" class="logo-centered">
+                            <a href="https://github.com/Speckoz" target="_blank" class="logo-centered">
                                 <img src="~/img/github-logo.png" class="logo-hover" alt="logo-he4rtdevs">
                             </a>
                             <img src="~/img/opensource-bg.png" alt="foto-he4rtdevs" class="img-fluid fto-principal">
@@ -200,7 +201,7 @@
                                         @{
                                             if (plugin.TipoPlugin == "Pago")
                                             {
-                                                <a href="@LinkMP" id="btn-plugin" class="btn btn-outline-warning btn-block">Comprar</a>
+                                                <a href="/Compras/CreatePaymentLink/@plugin.Id" id="btn-plugin" class="btn btn-outline-warning btn-block">Comprar</a>
                                             }
                                             else
                                             {
