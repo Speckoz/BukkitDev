@@ -11,7 +11,7 @@ namespace Web.Services
         {
             RestClient client = new RestClient(@"http://localhost:3000/CreatePayment");
             var request = new RestRequest(Method.POST);
-            string json = JsonConvert.SerializeObject(pluginId);
+            string json = JsonConvert.SerializeObject(new { pluginId });
             request.AddHeader("Accept", "application/json");
             request.RequestFormat = DataFormat.Json;
             request.AddJsonBody(json);

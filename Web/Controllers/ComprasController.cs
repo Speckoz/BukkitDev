@@ -14,9 +14,9 @@ namespace Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult CreatePaymentLink(int pluginId)
+        public IActionResult CreatePaymentLink(int id)
         {
-            var purchase = PurchaseService.CreatePayment(pluginId);
+            var purchase = PurchaseService.CreatePayment(id);
             return Redirect(purchase.Link);
         }
     }
