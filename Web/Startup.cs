@@ -61,7 +61,7 @@ namespace Speckoz.BukkitDev
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Plugins}/{action=Index}/{id?}");
             });
         }
     }

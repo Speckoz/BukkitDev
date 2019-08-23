@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Web.Models;
 using Web.Services;
 
 namespace Web.Controllers
@@ -14,10 +15,9 @@ namespace Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        //public IActionResult CreatePaymentLink(int id)
-        //{
-        //    var purchase = PurchaseService.CreatePayment(id);
-        //    return Redirect(purchase.Link);
-        //}
+        public IActionResult CreatePaymentLink(int id)
+        {
+            return Redirect(new PurchaseService("Links", "BukkitDevSystemAPI").CreatePayment(id).LinkAPI);
+        }
     }
 }

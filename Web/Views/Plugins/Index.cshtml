@@ -1,5 +1,5 @@
 ﻿@using Microsoft.Extensions.Configuration
-@using Web.Models
+@using Web.Services
 
 @inject IConfiguration Configuration
 
@@ -10,7 +10,7 @@
     string FtpServer = Configuration.GetConnectionString("BukkitDevSystemFtp");
     string LinkAPI = Configuration.GetConnectionString("BukkitDevSystemAPI");
     string LinkMP = Configuration.GetSection("Links")["MP"];
-    string MOLINK = new PurchaseModel().NodeJsonValue("Links", "BukkitDevSystemAPI");
+    //string MOLINK = new PurchaseService("Links", "BukkitDevSystemAPI").CreatePayment(123456).LinkAPI;
 }
 
 <!DOCTYPE html>
@@ -66,7 +66,7 @@
         <section id="home" class="container">
             <img class="java-blue mx-auto d-block" src="~/img/java-blue.png" alt="Logo Java">
             <h2 class="text-center">Bem vindo ao BukkitDev</h2>
-            @MOLINK;
+            @*@MOLINK;*@
             <div class="subtitulo"><h6>Versão Beta</h6></div>
             <hr style="width: 300px">
 

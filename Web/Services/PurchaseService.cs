@@ -1,23 +1,23 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using RestSharp;
+using System;
+using System.IO;
 using Web.Models;
 
 namespace Web.Services
 {
     public class PurchaseService
     {
-        private static string _linkAPI;
+        private string _linkAPI;
 
-        public PurchaseService()
+        public PurchaseService(string dad, string children)
         {
-            _linkAPI = new PurchaseModel().NodeJsonValue("Links", "BukkitDevSystemAPI");
+            _linkAPI = NodeJsonValue(dad, children);
         }
 
-        public static string LinkAPI { get; } = _linkAPI;
-
         // POST CreatePayment
-        public static PurchaseModel CreatePayment(int pluginId)
+        public PurchaseModel CreatePayment(int pluginId)
         {
             RestClient client = new RestClient($"{_linkAPI}/CreatePayment");
             RestRequest request = new RestRequest(Method.POST);
@@ -27,6 +27,17 @@ namespace Web.Services
             _ = request.AddJsonBody(json);
             IRestResponse response = client.Execute(request);
             return JsonConvert.DeserializeObject<PurchaseModel>(response.Content);
+        }
+
+        private string NodeJsonValue(string a, string b)
+        {
+            return GetJson().GetSection(a).GetSection(b).Value;
+        }
+
+        private IConfigurationRoot GetJson()
+        {
+            var b = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", true, true);
+            return b.Build();
         }
     }
 }
