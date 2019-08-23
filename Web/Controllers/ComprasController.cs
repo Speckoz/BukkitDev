@@ -12,7 +12,7 @@ namespace Web.Controllers
     {
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Plugins");
         }
 
         public IActionResult CreatePaymentLink(int id)
