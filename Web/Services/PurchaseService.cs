@@ -9,8 +9,12 @@ namespace Web.Services
 {
     public class PurchaseService
     {
-        private string _linkAPI;
-
+        private readonly string _linkAPI;
+        /// <summary>
+        /// Cria um novo pagamento, chamando <see cref="CreatePayment(int)"/> para a criaçao do model.
+        /// </summary>
+        /// <param name="dad">Nome do Nó dentro do json.</param>
+        /// <param name="children">Nome do filho desse nó.</param>
         public PurchaseService(string dad, string children)
         {
             _linkAPI = NodeJsonValue(dad, children);
@@ -29,12 +33,12 @@ namespace Web.Services
             return JsonConvert.DeserializeObject<PurchaseModel>(response.Content);
         }
 
-        private string NodeJsonValue(string a, string b)
+        private static string NodeJsonValue(string a, string b)
         {
             return GetJson().GetSection(a).GetSection(b).Value;
         }
 
-        private IConfigurationRoot GetJson()
+        private static IConfigurationRoot GetJson()
         {
             var b = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", true, true);
             return b.Build();

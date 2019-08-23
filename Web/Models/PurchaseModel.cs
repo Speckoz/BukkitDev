@@ -1,7 +1,4 @@
-﻿using System.IO;
-using Microsoft.Extensions.Configuration;
-
-namespace Web.Models
+﻿namespace Web.Models
 {
     public class PurchaseModel
     {

@@ -10,7 +10,6 @@
     string FtpServer = Configuration.GetConnectionString("BukkitDevSystemFtp");
     string LinkAPI = Configuration.GetConnectionString("BukkitDevSystemAPI");
     string LinkMP = Configuration.GetSection("Links")["MP"];
-    //string MOLINK = new PurchaseService("Links", "BukkitDevSystemAPI").CreatePayment(123456).LinkAPI;
 }
 
 <!DOCTYPE html>
@@ -58,7 +57,7 @@
                     </ul>
                 </div>
             </div>
-            <a href="https://github.com/marcopandolfo/BukkitDev-Web" class="btn btn-github text-white-nav">Github</a>
+            <a href="https://github.com/speckoz" class="btn btn-github text-white-nav">Github</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScYADC6oPS6F7Ws20kxsuqZNnmX9NxfQEe2yE8Yo9fhibkS2g/viewform" class="btn btn-twitter text-white-nav">Avalie</a>
         </nav>
     </header>
@@ -69,7 +68,6 @@
         <section id="home" class="container">
             <img class="java-blue mx-auto d-block" src="~/img/java-blue.png" alt="Logo Java">
             <h2 class="text-center">Bem vindo ao BukkitDev</h2>
-            @*@MOLINK;*@
             <div class="subtitulo"><h6>Versão Beta</h6></div>
             <hr style="width: 300px">
 
@@ -140,7 +138,7 @@
 
                                         if (plugin.TipoPlugin == "Pago")
                                         {
-                                            <a href="" class="banner-price">R$ @plugin.PrecoPlugin</a>
+                                            <a class="banner-price">R$ @plugin.PrecoPlugin</a>
                                         }
                                         else
                                         {
@@ -251,7 +249,7 @@
                         <h3 class="text-center">Social media</h3>
                         <div class="text-center social-box">
                             <p>
-                                <a href="https://github.com/marcopandolfo/BukkitDev-Web">
+                                <a href="https://github.com/speckoz">
                                     <img src="~/img/github-icon.png" class="icon" alt="github-logo">
                                     Confira o projeto no github!
                                 </a>
