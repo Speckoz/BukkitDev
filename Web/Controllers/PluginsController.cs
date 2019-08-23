@@ -8,6 +8,7 @@ namespace Speckoz.BukkitDev.Controllers
 {
     public class PluginsController : Controller
     {
+        private const string BindText = "NomePlugin,AutorPlugin,VersaoPlugin,TipoPlugin,PrecoPlugin,DescricaoPlugin,ImagemPadraoPersonalizada,Id";
         private readonly BukkitDevSystemContext _context;
 
         public PluginsController(BukkitDevSystemContext context)
@@ -37,7 +38,6 @@ namespace Speckoz.BukkitDev.Controllers
             return View("Index", gratuitos);
         }
 
-
         // GET: Plugins/Details/5
         private async Task<IActionResult> Details(int? id)
         {
@@ -65,7 +65,7 @@ namespace Speckoz.BukkitDev.Controllers
         // POST: Plugins/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        private async Task<IActionResult> Create([Bind("NomePlugin,AutorPlugin,VersaoPlugin,TipoPlugin,PrecoPlugin,DescricaoPlugin,ImagemPadraoPersonalizada,Id")] PluginModel pluginModel)
+        private async Task<IActionResult> Create([Bind(BindText)] PluginModel pluginModel)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace Speckoz.BukkitDev.Controllers
         // POST: Plugins/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        private async Task<IActionResult> Edit(int id, [Bind("NomePlugin,AutorPlugin,VersaoPlugin,TipoPlugin,PrecoPlugin,DescricaoPlugin,ImagemPadraoPersonalizada,Id")] PluginModel pluginModel)
+        private async Task<IActionResult> Edit(int id, [Bind(BindText)] PluginModel pluginModel)
         {
             if (id != pluginModel.Id)
             {
