@@ -12,7 +12,7 @@ namespace Web.Controllers
 
         public IActionResult CreatePaymentLink(int id)
         {
-            return Redirect(new PurchaseService("Links", "BukkitDevSystemAPI").CreatePayment(id).LinkAPI);
+            return Redirect(PurchaseService.CreatePayment(id).Link);
         }
     }
 }

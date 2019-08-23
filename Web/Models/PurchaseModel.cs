@@ -2,6 +2,6 @@
 {
     public class PurchaseModel
     {
-        public string LinkAPI { get; set; }
+        public string Link { get; set; }
     }
 }
