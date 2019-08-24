@@ -7,9 +7,8 @@
 
 @{
     Layout = "";
-    string FtpServer = Configuration.GetConnectionString("BukkitDevSystemFtp");
-    string LinkAPI = Configuration.GetConnectionString("BukkitDevSystemAPI");
-    string LinkMP = Configuration.GetSection("Links")["MP"];
+    string FtpServer = Configuration.GetSection("Links").GetSection("BukkitDevSystemFTP").Value;
+    string LinkAPI = Configuration.GetSection("Links").GetSection("BukkitDevSystemAPI").Value;
 }
 
 <!DOCTYPE html>
