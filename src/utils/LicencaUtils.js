@@ -1,6 +1,8 @@
 const Logger = require('../config/Logger');
 
 module.exports.verifyIP = (req, licencaObj) => {
+  if (!licencaObj) return false;
+
   let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
   if (ip.substr(0, 7) === '::ffff:') ip = ip.substr(7);
