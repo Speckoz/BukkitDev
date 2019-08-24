@@ -10,7 +10,7 @@ module.exports = {
 
     const licencaObj = await LicencaDAO.getLic(licenca);
 
-    if (!verifyIP(req, licencaObj) || !verifyLic(req, licencaObj)) {
+    if (!verifyLic(req, licencaObj) || !verifyIP(req, licencaObj)) {
       return res.status(404).send();
     }
 

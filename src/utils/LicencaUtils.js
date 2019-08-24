@@ -30,7 +30,6 @@ module.exports.verifyLic = (req, licencaObj) => {
   if (!licencaObj || licencaObj.LicencaSuspensa === 1) {
     Logger.info('Tentativa de usar uma licença invalida!', {
       ip: req.connection.remoteAddress,
-      key: licencaObj.LicencaKey,
       data: new Date(),
     });
 
