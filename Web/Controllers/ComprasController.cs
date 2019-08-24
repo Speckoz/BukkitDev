@@ -14,5 +14,10 @@ namespace Web.Controllers
         {
             return Redirect(PurchaseService.CreatePayment(id).Link);
         }
+
+        public IActionResult Resgatar()
+        {
+            return View();
+        }
     }
 }
