@@ -1,4 +1,4 @@
-<h1 align="center"> BukkitDev System 1.0 </h1>
+<h1 align="center"> BukkitDev Desktop 1.0 </h1>
 
 <div align="center">
     <img src="bucketLava.gif"/>
