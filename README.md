@@ -46,7 +46,7 @@ Basta apenas você verificar o status/conteudo da *reposta da api*
 
 ## desenvolvedores
 - [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Speckoz/)
-- [@marcopandolfo](https://github.com/marcopandolfo) - [Site](https://github.com/Speckoz/BukkitDev-Web/) - [API](https://github.com/Speckoz)
+- [@marcopandolfo](https://github.com/marcopandolfo) - [Site](https://github.com/Speckoz/BukkitDev-Web/) - [API](https://github.com/Speckoz/BukkitDev-API)
 
 Somos membros da comunidade He4rt Developers, que tem como objetivo disponibilizar a troca de conhecimentos entre desenvolvedores, majoritariamente brasileiros, para que possam crescer juntos como profissionais na área.
 <br>
