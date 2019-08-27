@@ -41,7 +41,7 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 
 ## desenvolvedores
 - [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Speckoz/BukkitDev-System)
-- [@marcopandolfo](https://github.com/marcopandolfo) - [Site](https://github.com/Speckoz/BukkitDev-Web/) - [API](https://github.com/Speckoz)
+- [@marcopandolfo](https://github.com/marcopandolfo) - [Site](https://github.com/Speckoz/BukkitDev-Web/) - [API](https://github.com/Speckoz/BukkitDev-API)
 
 Somos membros da comunidade He4rt Developers, que tem como objetivo disponibilizar a troca de conhecimentos entre desenvolvedores, majoritariamente brasileiros, para que possam crescer juntos como profissionais na área.
 <br>
