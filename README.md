@@ -26,6 +26,13 @@ npm install
 - Insira seus dados de conexão no arquivo `.env.example`, renomeando para `.env`
 
 
+## Token do MP
+
+Para pegar seu token do MP é muito simples, basta logar com sua conta [aqui](https://www.mercadopago.com/mlb/account/credentials) e copiar o *Access token*
+
+OBS:
+* Você pode copiar o token do Modo Sandbox e do Modo Produção, onde o SandBox é um token para testes (testar a api) e o Modo Produção é para de fato você receber os pagamentos.
+
 ## Rodando o projeto:
 - Com tudo pronto, para rodar o projeto digite:
 
