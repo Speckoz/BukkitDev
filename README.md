@@ -39,7 +39,8 @@ Para usar a API é simples, basta apenas, dentro de seus plugins, fazer uma requ
 Formato da URI: http://localhost:3000/licenca/234324324234
 
 Se a licença for válida, a API irá retornar um JSON com os dados da licença
-```{
+```
+{
   "ClienteID": 38497283,
   "PluginID": 0,
   "LicencaKey": "kbhit-qn0rn-ao7k7-l7it0-zcilb",
@@ -48,7 +49,8 @@ Se a licença for válida, a API irá retornar um JSON com os dados da licença
   "HorarioCriacao": "01:13:42",
   "LicencaSuspensa": 0,
   "IPPermitido": "127.0.0.1"
-}```
+}
+```
 
 Se for inválida ou estiver suspensa, irá retornar o status 404 (not found)
 
