@@ -84,7 +84,7 @@ Somos membros da comunidade He4rt Developers, que tem como objetivo disponibiliz
       Clique Aqui
 </div>
 
-## Licença [MIT](https://github.com/marcopandolfo/BukkitDev-Web/blob/master/LICENSE)
+## [Licença](https://github.com/marcopandolfo/BukkitDev-Web/blob/master/LICENSE)
 O programa é gratuito e pode ser editado, compartilhado, e pode ser usado de forma comercial apenas para o uso do próprio desenvolvedor.
 Não pode ser vendido de forma alguma, caso haja alguma pessoa fazendo isso, deve nos contatar.
 <br>
