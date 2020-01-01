@@ -39,9 +39,19 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 <br>
 - Outra configuração interessante é o suporte de imagem para os plugins, ou seja, você pode adicionar uma imagem especifica para um plugin e ser mostrada no site na hora da listagem. sendo que pode ser alterado essa imagem a qualquer momento dentro do software.
 
+## Site
+### Antes de rodar o projeto:
+- Configure o arquivo `appsettings.json` com o dados do seu servidor MySql e FTP e um link do seu Mercado Pago
+
+- Você deve ter um database com o nome `bukkitdev`
+
+- O diretório do FTP é http://localhost/bukkitdev
+
+- Certifique-se de estar usando a versão 3.1 do .Net Core
+
 ## desenvolvedores
-- [@Logikoz](https://github.com/Logikoz) - [Software](https://github.com/Speckoz/BukkitDev-System)
-- [@marcopandolfo](https://github.com/marcopandolfo) - [Site](https://github.com/Speckoz/BukkitDev-Web/) - [API](https://github.com/Speckoz/BukkitDev-API)
+- [@Logikoz](https://github.com/Logikoz)
+- [@marcopandolfo](https://github.com/marcopandolfo)
 
 <div align="center">
   <img src="https://cdn.discordapp.com/attachments/553858177331101696/611775488825753610/logo.png" alt="He4rt Developers" />

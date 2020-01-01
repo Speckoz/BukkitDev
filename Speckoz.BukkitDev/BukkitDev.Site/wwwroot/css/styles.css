@@ -1,0 +1,292 @@
+body {
+    margin-top: 70px;
+    background-color: rgb(31, 29, 29);
+    color: rgb(207, 207, 207);
+}
+
+hr {
+    border-top: 1px solid gray;
+}
+
+.subtitulo {
+    text-align: center;
+}
+
+#sobre {
+    margin-top: 21px;
+}
+
+.btn-copy {
+    background: none;
+    border: none;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+.fto-principal {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 3%;
+    width: 400px;
+    height: 230px;
+}
+
+.footer {
+    padding: 8px;
+    color: white;
+    background-color: black;
+}
+
+.icone-footer {
+    margin-left: 5px;
+    width: 33px;
+    height: 33px;
+}
+
+.footer a {
+    margin: .2em;
+}
+
+/*Tela pequena*/
+@media(max-width: 1020px) {
+    .btn-github {
+        display: none;
+    }
+
+    .btn-twitter {
+        display: none;
+    }
+
+    .box-sobre {
+        font-size: 17px;
+    }
+
+    .main-text {
+        margin-bottom: 50px;
+    }
+
+    .segunda-coluna {
+        margin-bottom: 30px;
+    }
+}
+/*Tela Grande */
+@media(min-width: 1024px) {
+    .second-deck {
+        margin-top: 1.7em;
+    }
+
+    .btn-github {
+        display: block;
+    }
+
+    .btn-twitter {
+        display: block;
+        margin-left: 10px;
+    }
+
+    .alert-info {
+        font-size: 22px;
+    }
+
+    .main-text {
+        margin-bottom: 85px;
+    }
+}
+/*Tela 1024 IpadPro*/
+@media(min-width: 1024px) {
+    .segunda-coluna {
+        margin-bottom: 30px;
+    }
+}
+/*Tela mais que grande*/
+@media (min-width: 1200px) {
+    .barras-progresso {
+        margin-top: 18px;
+    }
+
+    .fto-principal {
+        margin-top: 26px;
+    }
+}
+
+.ver-mais {
+    margin-top: 8px;
+    font-size: 1.2em;
+}
+
+.ver-mais-deck {
+    display: none;
+}
+
+.bukkit-icon {
+    vertical-align: top;
+    width: 20px;
+    margin-right: 10px;
+}
+
+nav {
+    background-color: rgb(26, 128, 230);
+}
+
+.java-blue {
+    width: 10%;
+}
+
+.he4rt-box {
+    position: relative;
+    text-align: center;
+}
+
+.logo-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.github-logo {
+    width: 40%;
+}
+
+nav {
+    color: white;
+}
+
+.text-white-nav {
+    color: rgb(235, 235, 235) !important;
+}
+
+.nav-link:hover, .btn-github:hover, .btn-twitter:hover {
+    text-shadow: 0 0 5px pink !important;
+}
+
+.start {
+    margin-top: 25px;
+}
+
+.card {
+    background-color: #353535;
+    color: white;
+}
+
+.card-deck {
+    margin-top: 50px;
+}
+
+#btn-ver-mais {
+    margin-top: 20px;
+}
+
+.start-sobre {
+    margin-top: 50px;
+}
+
+.icon {
+    width: 50px;
+}
+
+.social-box a:hover {
+    text-decoration: none;
+    text-shadow: 0 0 2px pink !important;
+}
+
+.social-box a {
+    color: rgb(235, 235, 235);
+}
+
+.icon-social-twitter {
+    margin-right: 20px;
+}
+
+.card-topic {
+    font-weight: bold;
+}
+
+.card-box {
+    margin-top: 35px;
+}
+
+#btn-plugin {
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.img-java-poop {
+    width: 220px;
+    height: 220px;
+    padding-top: 20px;
+}
+
+.normal-text {
+    font-weight: 400;
+}
+
+.card {
+    width: 350px;
+    height: 490px;
+}
+
+.ver-mais-card {
+    color: dodgerblue !important;
+    cursor: pointer;
+}
+
+.descricao-card {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}
+
+.dropdown-menu-nav a {
+    color: white;
+}
+
+.dropdown-menu-nav {
+    background-color: #1a80e6;
+    left: auto;
+    position: absolute;
+    border: 0;
+}
+
+.logo-hover:hover {
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
+
+@keyframes aparece {
+    from {
+        opacity: 0;
+        transform: scale(0.001);
+    }
+}
+
+.banner-price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 1.1;
+    -webkit-transform: translate(calc(.707 * (3.5em - 100%) + 100%), calc(-.707 * 3.5em)) rotate(45deg);
+    transform: translate(calc(.707 * (3.5em - 100%) + 100%), calc(-.707 * 3.5em)) rotate(45deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    padding: 1em 3em;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(51, 51, 51);
+    color: rgb(226, 226, 226);
+    font-size: 1.1em;
+    font-family: "Open Sans Condensed", sans-serif;
+    border-radius: 5%;
+    box-shadow: 0 1px rgba(27, 25, 25, 0.46)
+}
+
+    .banner-price:hover {
+        text-decoration: none;
+        color: inherit;
+    }
