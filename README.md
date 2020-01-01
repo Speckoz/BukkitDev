@@ -4,10 +4,12 @@
     <img src="bucketLava.gif"/>
 </div>
 
-### Software de gerenciamento de projetos para desenvolvedores bukkit.
+### Plataforma de gerenciamento de projetos para desenvolvedores bukkit.
 
 A lógica do projeto é ajudar os usuários da api a vender e mostrar os seus plugins por meio de uma plataforma simples, responsiva e bonita.
-<br>
+
+
+## Desktop APP
 O programa conta com várias funcionalidades para ajudar você desenvolvedor a se planejar melhor e administrar os seus projetos. tais como:
 
 **Gerenciamento de plugins.**
@@ -99,3 +101,13 @@ Não pode ser vendido de forma alguma, caso haja alguma pessoa fazendo isso, dev
 ![image](https://user-images.githubusercontent.com/37851168/62173744-b209cc00-b2fc-11e9-92ca-771ed6d185d9.png)
 #### Menu de configurações do software.
 ![image](https://user-images.githubusercontent.com/37851168/62173784-e7161e80-b2fc-11e9-8e1e-fcf66c29fc2e.png)
+
+### Site	
+#### Tela inicial do site.	
+![Image](https://user-images.githubusercontent.com/37851168/63219996-45882d00-c144-11e9-8d05-f8090275b923.png)	
+#### Também é possivel listar apenas os plugins pago ou gratuitos	
+![image](https://user-images.githubusercontent.com/40467826/63123099-a8c86280-bf7e-11e9-8f2c-07f3ba18cbc9.png)	
+##### Pagos	
+![image](https://user-images.githubusercontent.com/40467826/63123200-d7463d80-bf7e-11e9-9d57-238ec101f6e4.png)	
+#### Gratuitos	
+![image](https://user-images.githubusercontent.com/40467826/63123404-3f951f00-bf7f-11e9-8776-0e585c62bdc8.png)
