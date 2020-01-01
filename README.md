@@ -1,4 +1,4 @@
-<h1 align="center"> BukkitDev Desktop 1.0 </h1>
+<h1 align="center"> BukkitDev </h1>
 
 <div align="center">
     <img src="bucketLava.gif"/>
@@ -48,6 +48,9 @@ Com essa opção o desenvolvedor (usuário) não precisa ficar trocando as crede
 - O diretório do FTP é http://localhost/bukkitdev
 
 - Certifique-se de estar usando a versão 3.1 do .Net Core
+
+## API 
+**[Clique Aqui](/Speckoz.BukkitDev/BukkitDev.API)**
 
 ## desenvolvedores
 - [@Logikoz](https://github.com/Logikoz)
