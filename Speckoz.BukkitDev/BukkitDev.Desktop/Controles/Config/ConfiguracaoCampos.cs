@@ -1,5 +1,6 @@
 ﻿using Speckoz.BukkitDev._dep;
 using Speckoz.BukkitDev._dep.SQLite;
+
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -40,13 +41,10 @@ namespace Speckoz.BukkitDev.Controles.Config
             }
             MetodosConstantes.EnviarMenssagem("Dados Gravados com sucesso!");
         }
+
         public async Task<List<string>> CarregarAsync(UserControl uS, string conexao, string tipoConexao)
         {
-            if (uS.IsLoaded)
-            {
-                return await new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, conexao, tipoConexao);
-            }
-            return null;
+            return uS.IsLoaded ? await new PegarConexaoMySQL_FTP().PegarAsync(PegarInfos.NomeArquivoSQLite, conexao, tipoConexao) : null;
         }
     }
 }

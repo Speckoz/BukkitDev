@@ -3,6 +3,8 @@
 using RestSharp;
 
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 using Web.Exceptions;
 using Web.Models;
@@ -17,24 +19,21 @@ namespace Web.Services
         /// <summary>
         /// URI da api do BukkitDev
         /// </summary>
-        private static string _linkAPI = ConfigurationService.NodeJsonValue("Links", "BukkitDevSystemAPI");
+        private static readonly string _linkAPI = ConfigurationService.NodeJsonValue("Links", "BukkitDevSystemAPI");
 
         /// <summary>
         /// Cria um novo link de pagamento.
         /// </summary>
         /// <param name="pluginId">ID do plugin à ser comprado</param>
-        public static PurchaseModel CreatePayment(int pluginId)
+        public static async Task<PurchaseModel> CreatePayment(int pluginId)
         {
             try
             {
-                RestClient client = new RestClient($"{_linkAPI}/CreatePayment");
-                RestRequest request = new RestRequest(Method.POST);
-                string json = JsonConvert.SerializeObject(new { pluginId });
-                _ = request.AddHeader("Accept", "application/json");
-                request.RequestFormat = DataFormat.Json;
-                _ = request.AddJsonBody(json);
-                IRestResponse response = client.Execute(request);
-                return JsonConvert.DeserializeObject<PurchaseModel>(response.Content);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Content-Type", "application/json");
+                request.AddJsonBody(JsonConvert.SerializeObject(new { pluginId }));
+                var client = new RestClient($"{_linkAPI}/CreatePayment");
+                return JsonConvert.DeserializeObject<PurchaseModel>((await client.ExecuteAsync(request, new CancellationToken())).Content);
             }
             catch (Exception)
             {

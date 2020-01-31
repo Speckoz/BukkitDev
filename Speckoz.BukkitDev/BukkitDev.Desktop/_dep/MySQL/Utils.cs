@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+
 using System;
 using System.Threading.Tasks;
 
@@ -17,13 +18,13 @@ namespace Speckoz.BukkitDev._dep.MySQL
         /// <param name="coluna">Index para a busca.</param>
         public async Task<bool> VerificarExisteAsync(string itemProcurado, string tabela, string coluna)
         {
-            using (MySqlConnection con = new MySqlConnection(await PegarConexaoMySQL.ConexaoAsync()))
+            using (var con = new MySqlConnection(await PegarConexaoMySQL.ConexaoAsync()))
             {
                 try
                 {
                     await con.OpenAsync();
 
-                    using (MySqlCommand ver = new MySqlCommand($"select count(*) from {tabela} where {coluna} = @a", con))
+                    using (var ver = new MySqlCommand($"select count(*) from {tabela} where {coluna} = @a", con))
                     {
                         _ = ver.Parameters.Add(new MySqlParameter("@a", itemProcurado));
 
@@ -39,6 +40,7 @@ namespace Speckoz.BukkitDev._dep.MySQL
                 }
             }
         }
+
         /// <summary>
         /// Procurar por um determinado item dentro do banco de dados
         /// </summary>
@@ -47,16 +49,16 @@ namespace Speckoz.BukkitDev._dep.MySQL
         /// <param name="coluna">Indexs para a busca.</param>
         public async Task<bool> VerificarExisteAsync(string[] itemProcurado, string tabela, string[] coluna)
         {
-            using (MySqlConnection con = new MySqlConnection(await PegarConexaoMySQL.ConexaoAsync()))
+            using (var con = new MySqlConnection(await PegarConexaoMySQL.ConexaoAsync()))
             {
                 try
                 {
                     await con.OpenAsync();
 
-                    using (MySqlCommand ver = new MySqlCommand($"select count(*) from {tabela} where {coluna[0]} = @a && {coluna[1]} = @b", con))
+                    using (var ver = new MySqlCommand($"select count(*) from {tabela} where {coluna[0]} = @a && {coluna[1]} = @b", con))
                     {
-                        _ = ver.Parameters.Add(new MySqlParameter("@a", itemProcurado[0]));
-                        _ = ver.Parameters.Add(new MySqlParameter("@b", itemProcurado[1]));
+                        ver.Parameters.Add(new MySqlParameter("@a", itemProcurado[0]));
+                        ver.Parameters.Add(new MySqlParameter("@b", itemProcurado[1]));
 
                         byte valid = byte.Parse((await ver.ExecuteScalarAsync()).ToString());
 
@@ -70,6 +72,7 @@ namespace Speckoz.BukkitDev._dep.MySQL
                 }
             }
         }
+
         /// <summary>
         /// Gera um numero aleatorio para ser adicionado no banco como algum tipo de Index.
         /// </summary>
@@ -83,7 +86,7 @@ namespace Speckoz.BukkitDev._dep.MySQL
             uint idGerado;
             try
             {
-                Random ale = new Random();
+                var ale = new Random();
                 do
                 {
                     idGerado = (uint)ale.Next(min, max);
@@ -97,7 +100,6 @@ namespace Speckoz.BukkitDev._dep.MySQL
                 MetodosConstantes.MostrarExceptions(e);
                 return 0;
             }
-
         }
     }
 }
