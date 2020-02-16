@@ -13,12 +13,16 @@ A lógica do projeto é ajudar os usuários da api a vender e mostrar os seus pl
 O programa conta com várias funcionalidades para ajudar você desenvolvedor a se planejar melhor e administrar os seus projetos. tais como:
 
 ##### Gerenciamento de plugins.
-<br>
+<br/>
 Ajuda você a controlar os seus plugins tanto pagos como gratuitos.
-<br>
+<br/>
+
 - Adição
+
 - Edição
+
 - Listagem
+
 - Remoção
 
 
@@ -26,9 +30,12 @@ Ajuda você a controlar os seus plugins tanto pagos como gratuitos.
 <br/>
 Irá tirar a dor de cabeça quando algum cliente não cumpriu com o prometido e também gerenciar a quantidade de pessoas usando o seu serviço.
 <br/>
-- Criação de licenças.
+
+- Criação de licenças
+
 - Listagem e Remoção
-- Suspensão e realocação.
+
+- Suspensão e realocação
 
 
 #### Menu de configuração.
